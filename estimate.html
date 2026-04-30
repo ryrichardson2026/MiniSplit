@@ -536,7 +536,7 @@
       const consent = document.getElementById('consentCheck').checked;
       const ownership = document.querySelector('input[name="ownership"]:checked');
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      document.getElementById('leadSubmit').disabled = !(firstName.length>=2 && lastName.length>=2 && address.length>=5 && phone.length===10 && emailRe.test(email) && consent && !!ownership);
+      document.getElementById('leadSubmit').disabled = !(firstName.length>=2 && lastName.length>=2 && address.length>=5 && phone.length>=10 && emailRe.test(email) && consent && !!ownership);
     }
 
     document.getElementById('leadPhone').addEventListener('input', function(e) {
@@ -564,7 +564,7 @@
       if (!emailRe.test(email)) { document.getElementById('emailError').textContent='Please enter a valid email address'; document.getElementById('emailError').classList.add('visible'); valid=false; }
       if (!ownership) { document.getElementById('ownershipError').textContent='Please select one'; document.getElementById('ownershipError').classList.add('visible'); valid=false; }
       if (!valid) return;
-      fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', brand:state.brand||'', size:state.size||'', result_range:state.result_range||'', first_name:firstName, last_name:lastName, service_address:address, phone, email, ownership, timestamp:new Date().toISOString() });
+      fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', brand:state.brand||'', size:state.size||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, last_name:lastName, service_address:address, phone, email, ownership, timestamp:new Date().toISOString() });
       if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{zip:state.city,system:'mini_split'}); }
       document.getElementById('leadFormWrap').classList.remove('visible');
       document.getElementById('thankyouWrap').classList.add('visible');
