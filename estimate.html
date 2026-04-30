@@ -272,7 +272,7 @@
         <!-- STEP 4: ZIP -->
         <div class="flow-step" id="step4">
           <div class="flow-title">What ZIP code is the project in?</div>
-          <div class="flow-sub">Snohomish &amp; King County ZIP codes only.</div>
+          <div class="flow-sub"></div>
           <div class="city-select-wrap">
             <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center; font-size:20px; font-weight:700; letter-spacing:0.12em;" />
             <div id="zipHint" style="text-align:center; font-size:13px; color:var(--navy-soft); margin-top:8px;"></div>
@@ -311,23 +311,15 @@
               </div>
               <div class="results-not-included">Not typically included: permit fees &middot; electrical panel upgrades &middot; wall patching or finish work</div>
               <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="dollarGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0%" stop-color="#f97316"/>
-                      <stop offset="100%" stop-color="#7b2ff7"/>
-                    </linearGradient>
-                  </defs>
-                  <circle cx="12" cy="12" r="10" stroke="url(#dollarGrad)" stroke-width="2"/>
-                  <path d="M12 6v12M9 8.5h4.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H15" stroke="url(#dollarGrad)" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
+                <span style="font-size:18px; font-weight:800; background:linear-gradient(135deg, #f97316, #7b2ff7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; flex-shrink:0;">$</span>
                 <span id="rebateLine" style="font-size:13px; color:var(--navy-soft);">Ask your installer about current promotions, rebates, and financing options.</span>
               </div>
             </div>
 
             <div class="quote-bridge">
-              <div class="quote-title">More Questions? Connect with a mini split specialist.</div>
-              <button class="btn btn-primary" type="button" onclick="showLeadForm()">Yes, connect me &#8594;</button>
+              <div class="quote-title">Ready for a Real Quote?</div>
+              <div class="quote-sub">We'll connect you with one local installer — no obligation.</div>
+              <button class="btn btn-primary" type="button" onclick="showLeadForm()">Yes &#8594;</button>
 
               <div class="lead-form-wrap" id="leadFormWrap">
                 <div class="lead-fields">
