@@ -362,7 +362,7 @@
                   <input class="consent-check" type="checkbox" id="consentCheck" onchange="updateSubmit()" />
                   <label class="consent-text" for="consentCheck">I agree to be contacted by one local HVAC professional to discuss my project and estimate.</label>
                 </div>
-                <button class="lead-submit" id="leadSubmit" type="button" disabled onclick="submitLead()">Send My Request &#8594;</button>
+                <button class="lead-submit" id="leadSubmit" type="button" onclick="submitLead()">Send My Request &#8594;</button>
               </div>
 
               <div class="thankyou-wrap" id="thankyouWrap">
@@ -508,7 +508,6 @@
 
     function runLoading() {
       showStep('loadingStep');
-      fireWebhook({ event:'quiz_start', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', brand:state.brand||'', size:state.size||'', timestamp:new Date().toISOString() });
       const messages = ['Analyzing your inputs\u2026','Matching to similar mini split installs\u2026','Checking local pricing patterns\u2026','Building your range\u2026'];
       const el = document.getElementById('loadingCycleText');
       let i = 0;
@@ -555,7 +554,9 @@
       const email = document.getElementById('leadEmail').value.trim();
       const ownershipEl = document.querySelector('input[name="ownership"]:checked');
       const ownership = ownershipEl ? ownershipEl.value : '';
+      const consent = document.getElementById('consentCheck').checked;
       const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      console.log('submitLead called', { firstName, lastName, address, phone, email, ownership, consent });
       let valid = true;
       if (firstName.length<2) { document.getElementById('firstNameError').textContent='Please enter your first name'; document.getElementById('firstNameError').classList.add('visible'); valid=false; }
       if (lastName.length<2) { document.getElementById('lastNameError').textContent='Please enter your last name'; document.getElementById('lastNameError').classList.add('visible'); valid=false; }
@@ -563,8 +564,12 @@
       if (phone.replace(/\D/g,'').length<10) { document.getElementById('phoneError').textContent='Enter a valid 10-digit phone number'; document.getElementById('phoneError').classList.add('visible'); valid=false; }
       if (!emailRe.test(email)) { document.getElementById('emailError').textContent='Please enter a valid email address'; document.getElementById('emailError').classList.add('visible'); valid=false; }
       if (!ownership) { document.getElementById('ownershipError').textContent='Please select one'; document.getElementById('ownershipError').classList.add('visible'); valid=false; }
+      if (!consent) { valid=false; }
+      console.log('validation result:', valid);
       if (!valid) return;
-      fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', brand:state.brand||'', size:state.size||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, last_name:lastName, service_address:address, phone, email, ownership, timestamp:new Date().toISOString() });
+      const payload = { event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', brand:state.brand||'', size:state.size||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, last_name:lastName, service_address:address, phone, email, ownership, timestamp:new Date().toISOString() };
+      console.log('Firing webhook with:', payload);
+      fireWebhook(payload);
       if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{zip:state.city,system:'mini_split'}); }
       document.getElementById('leadFormWrap').classList.remove('visible');
       document.getElementById('thankyouWrap').classList.add('visible');
