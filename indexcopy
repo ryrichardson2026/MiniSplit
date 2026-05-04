@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wkvjq84lgb");
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Split Installation Calculator — HVAC Cost Guide</title>
+  <meta name="description" content="See local mini split installation cost estimates for King and Snohomish County. Get a realistic price range in minutes." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg height='52' viewBox='0 0 56 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0%25' stop-color='%237b2ff7'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='36' width='8' height='12' rx='2' fill='url(%23b)'/%3E%3Crect x='15' y='28' width='8' height='20' rx='2' fill='url(%23b)'/%3E%3Crect x='26' y='20' width='8' height='28' rx='2' fill='url(%23b)'/%3E%3Crect x='37' y='12' width='8' height='36' rx='2' fill='url(%23b)'/%3E%3Cpath d='M48 6 Q56 6 56 14 L56 48 L48 48 Z' fill='url(%23b)'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WF65GPHQ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GT-WF65GPHQ');
+    gtag('config', 'AW-17039190320');
+  </script>
+  <style>
+    :root {
+      --navy: #14213d; --navy-soft: #52607a; --accent: #540d6e; --accent-2: #ee4266;
+      --bg: #f7f9fc; --card: #ffffff; --border: rgba(20,33,61,0.06); --border-strong: rgba(20,33,61,0.1);
+      --shadow-soft: 0 4px 16px rgba(20,33,61,0.05), 0 1px 2px rgba(20,33,61,0.03);
+      --shadow-card: 0 10px 26px rgba(20,33,61,0.07), 0 2px 6px rgba(20,33,61,0.03);
+      --shadow-hover: 0 14px 28px rgba(20,33,61,0.09), 0 3px 8px rgba(20,33,61,0.04);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Inter", sans-serif; color: var(--navy);
+      background-color: #f0edf8;
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><g opacity='0.5'><g transform='translate(18,12) rotate(-8,22,22) scale(0.55)'><path d='M10 38 L40 10 L70 38' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M18 34 L18 66 L62 66 L62 34' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><rect x='31' y='47' width='18' height='19' rx='2' stroke='%23540d6e' stroke-width='2.5' fill='none'/><circle cx='46' cy='57' r='2' fill='%23540d6e'/></g><g transform='translate(180,10) scale(0.5)'><line x1='40' y1='8' x2='40' y2='72' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='8' y1='40' x2='72' y2='40' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='17' y1='17' x2='63' y2='63' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='63' y1='17' x2='17' y2='63' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><circle cx='40' cy='40' r='4' fill='%23540d6e'/><circle cx='40' cy='8' r='3' fill='%23540d6e'/><circle cx='40' cy='72' r='3' fill='%23540d6e'/><circle cx='8' cy='40' r='3' fill='%23540d6e'/><circle cx='72' cy='40' r='3' fill='%23540d6e'/></g><g transform='translate(10,120) rotate(35,20,20) scale(0.5)'><path d='M22 18 C16 18 11 23 11 29 C11 35 16 40 22 40 C25 40 27 39 29 37 L54 62 C56 64 59 64 61 62 C63 60 63 57 61 55 L36 30 C38 28 39 26 39 23 C39 17 34 12 28 12 C26 12 24 12 22 14 L28 20 L28 26 L22 26 Z' stroke='%23540d6e' stroke-width='3' stroke-linejoin='round' stroke-linecap='round' fill='none'/></g><g transform='translate(160,110) scale(0.5)'><rect x='8' y='22' width='64' height='36' rx='6' stroke='%23540d6e' stroke-width='3.5' fill='none'/><line x1='20' y1='34' x2='20' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><line x1='30' y1='34' x2='30' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><line x1='40' y1='34' x2='40' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><circle cx='58' cy='40' r='10' stroke='%23540d6e' stroke-width='2.5' fill='none'/><circle cx='58' cy='40' r='3' fill='%23540d6e'/><circle cx='16' cy='28' r='3' fill='%23540d6e'/></g><g transform='translate(50,200) scale(0.5)'><rect x='34' y='8' width='12' height='44' rx='6' stroke='%23540d6e' stroke-width='3' fill='none'/><rect x='37.5' y='28' width='5' height='22' rx='2.5' fill='%23540d6e'/><circle cx='40' cy='62' r='12' stroke='%23540d6e' stroke-width='3' fill='none'/><circle cx='40' cy='62' r='7' fill='%23540d6e'/></g></g></svg>");
+      background-repeat: repeat; line-height: 1.5;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    img, svg { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
+
+    .hero { padding: 56px 0 44px; background: rgba(255,255,255,0.82); text-align: center; }
+    .hero-mark { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 24px; }
+    .hero-mark-icon { display: block; }
+    .hero-mark-label { font-family: "Inter", sans-serif; font-size: 15px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy-soft); }
+    .hero h1 { font-family: "Fraunces", serif; font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--navy); max-width: 780px; margin: 0 auto 14px; }
+    .hero-sub { max-width: 560px; font-size: 1.15rem; font-weight: 700; line-height: 1.65; margin: 0 auto 28px; background: linear-gradient(90deg, #f97316, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .proof-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; justify-content: center; }
+    .proof-chip { display: inline-flex; align-items: center; gap: 10px; border: none; border-radius: 999px; padding: 10px 14px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 600; box-shadow: 0 2px 12px rgba(20,33,61,0.1), 0 1px 4px rgba(20,33,61,0.06); }
+    .proof-chip .dot { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+
+    .hero-question-label { font-family: "Fraunces", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.04; letter-spacing: -0.03em; font-weight: 700; color: var(--navy); margin-bottom: 14px; text-align: center; }
+
+    .answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 860px; margin: 0 auto; }
+    .answer-card { border: 1px solid rgba(84,13,110,0.14); border-radius: 22px; background: var(--card); padding: 20px 16px 18px; cursor: pointer; text-align: center; transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; box-shadow: var(--shadow-soft); min-height: 196px; display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .answer-card:hover { transform: translateY(-2px); border-color: rgba(238,66,102,0.34); box-shadow: var(--shadow-hover); background: #fff9fb; }
+    .answer-icon { width: 76px; height: 76px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
+    .answer-title { font-size: 17px; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 6px; }
+    .answer-sub { font-size: 13px; line-height: 1.48; color: var(--navy-soft); max-width: 200px; margin: 0 auto; }
+    .answer-range { font-size: 13px; font-weight: 700; color: var(--accent); margin: 6px 0 10px; letter-spacing: 0.01em; }
+    .answer-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 16px; border-radius: 999px; background: var(--accent-2); color: #fff; font-size: 13px; font-weight: 800; line-height: 1; box-shadow: 0 10px 24px rgba(238,66,102,0.16); }
+
+    .section { padding: 36px 0; text-align: center; background: #ffffff; }
+    .section-head { margin-bottom: 22px; text-align: center; }
+    .section-kicker { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-2); margin-bottom: 6px; }
+    .section h2 { font-family: "Fraunces", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 8px; }
+    .section-lead { color: var(--navy-soft); max-width: 560px; font-size: 0.97rem; line-height: 1.65; margin: 0 auto; }
+
+    .faq-list { display: grid; gap: 12px; max-width: 640px; margin: 0 auto; text-align: left; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-soft); }
+    .faq-q { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+    .faq-a { font-size: 14px; color: var(--navy-soft); line-height: 1.6; }
+
+    .bottom-cta-wrap { padding: 40px 0 48px; background: #f7f9fc; border-top: 1px solid var(--border); text-align: center; }
+    .bottom-cta-wrap h2 { font-family: "Fraunces", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 10px; }
+    .bottom-cta-wrap p { color: var(--navy-soft); font-size: 1rem; margin-bottom: 22px; }
+    .bottom-cta-wrap .btn { display: block; margin: 0 auto; width: fit-content; }
+
+    .btn { appearance: none; border: none; cursor: pointer; border-radius: 999px; padding: 15px 28px; font-size: 15px; font-weight: 800; transition: transform 0.16s ease, box-shadow 0.16s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent-2); color: #fff; box-shadow: 0 10px 24px rgba(238,66,102,0.2); }
+    .btn-primary:hover { box-shadow: 0 14px 30px rgba(238,66,102,0.28); }
+
+    .footer { background: #fff; border-top: 1px solid var(--border); padding: 24px 0 40px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--navy-soft); font-size: 14px; }
+
+    @media (max-width: 1040px) { .answer-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 720px) {
+      .hero { padding: 36px 0 28px; }
+      .hero h1 { font-size: clamp(1.95rem, 8vw, 2.55rem); margin-bottom: 10px; }
+      .hero-sub { font-size: 0.95rem; margin-bottom: 18px; }
+      .proof-chips { gap: 8px; margin-bottom: 22px; }
+      .proof-chip { width: 100%; justify-content: flex-start; padding: 9px 12px; font-size: 13px; }
+      .proof-chip .dot { width: 24px; height: 24px; }
+      .hero-question-label { font-size: clamp(1.4rem, 5vw, 1.7rem); margin-bottom: 12px; }
+      .answer-grid { grid-template-columns: 1fr; gap: 12px; }
+      .answer-card { min-height: auto; padding: 16px 14px 14px; border-radius: 18px; }
+      .answer-icon { width: 58px; height: 58px; margin-bottom: 8px; }
+      .answer-icon svg { width: 58px; height: 58px; }
+      .answer-title { font-size: 16px; }
+      .answer-sub { font-size: 13px; max-width: 100%; }
+      .section { padding: 28px 0; }
+      .faq-list { max-width: 100%; }
+      .bottom-cta-wrap { padding: 32px 0 38px; }
+      .footer-inner { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-mark">
+        <svg class="hero-mark-icon" height="64" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="hbarGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
+            <linearGradient id="hswooshGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c026d3"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
+            <linearGradient id="hswoosh2Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
+          </defs>
+          <rect x="4" y="36" width="8" height="12" rx="2" fill="url(#hbarGrad)"/>
+          <rect x="15" y="28" width="8" height="20" rx="2" fill="url(#hbarGrad)"/>
+          <rect x="26" y="20" width="8" height="28" rx="2" fill="url(#hbarGrad)"/>
+          <rect x="37" y="12" width="8" height="36" rx="2" fill="url(#hbarGrad)"/>
+          <path d="M48 6 Q56 6 56 14 L56 48 L48 48 Z" fill="url(#hbarGrad)"/>
+          <path d="M2 34 Q18 20 46 26" stroke="url(#hswoosh2Grad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <path d="M8 26 Q28 4 52 10 Q58 11 56 6" stroke="url(#hswooshGrad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <circle cx="55" cy="6" r="3" fill="#f97316"/>
+        </svg>
+        <span class="hero-mark-label">HVAC Cost Guide</span>
+      </div>
+      <div class="section-kicker" style="margin-bottom:12px;">King &amp; Snohomish County</div>
+      <h1>What Should You Pay for a Mini Split?</h1>
+      <p class="hero-sub">Real pricing ranges for Greater King County and North Sound.</p>
+
+      <div class="proof-chips">
+        <div class="proof-chip">
+          <span class="dot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          No Info Required
+        </div>
+        <div class="proof-chip">
+          <span class="dot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M7 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          Realistic Ranges
+        </div>
+        <div class="proof-chip">
+          <span class="dot">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2C8.686 2 6 4.686 6 8c0 4.418 6 12 6 12s6-7.582 6-12c0-3.314-2.686-6-6-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="12" cy="8" r="2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </span>
+          Local Quotes
+        </div>
+      </div>
+
+      <div class="hero-question-label">What best matches your situation?</div>
+      <div class="answer-grid">
+        <button class="answer-card" type="button" onclick="goToQuiz('add')">
+          <div class="answer-icon">
+            <svg width="76" height="76" viewBox="0 0 120 120" fill="none">
+              <rect x="20" y="38" width="80" height="28" rx="8" stroke="#14213d" stroke-width="3" fill="none"/>
+              <line x1="36" y1="48" x2="84" y2="48" stroke="#52607a" stroke-width="2" stroke-linecap="round"/>
+              <line x1="36" y1="56" x2="72" y2="56" stroke="#52607a" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="88" cy="52" r="6" fill="#540d6e"/>
+              <path d="M60 72 L60 88" stroke="#540d6e" stroke-width="3" stroke-linecap="round"/>
+              <path d="M48 88 L72 88" stroke="#540d6e" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="94" cy="30" r="14" fill="none" stroke="#540d6e" stroke-width="2"/>
+              <line x1="94" y1="22" x2="94" y2="38" stroke="#540d6e" stroke-width="3" stroke-linecap="round"/>
+              <line x1="86" y1="30" x2="102" y2="30" stroke="#540d6e" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="answer-title">Add mini splits to my home</div>
+          <div class="answer-range">Typical range: $5,000 &#8211; $18,000</div>
+          <div class="answer-cta">Get My Estimate &#8594;</div>
+        </button>
+        <button class="answer-card" type="button" onclick="goToQuiz('replace')">
+          <div class="answer-icon">
+            <svg width="76" height="76" viewBox="0 0 120 120" fill="none">
+              <rect x="18" y="32" width="64" height="44" rx="8" stroke="#14213d" stroke-width="3" fill="none"/>
+              <line x1="30" y1="46" x2="30" y2="62" stroke="#52607a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="40" y1="46" x2="40" y2="62" stroke="#52607a" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="50" y1="46" x2="50" y2="62" stroke="#52607a" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="66" cy="54" r="6" fill="#ee4266"/>
+              <line x1="12" y1="82" x2="88" y2="82" stroke="#540d6e" stroke-width="3" stroke-linecap="round"/>
+              <path d="M88 54 L104 54" stroke="#ee4266" stroke-width="3" stroke-linecap="round"/>
+              <path d="M97 46 L106 54 L97 62" stroke="#ee4266" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <div class="answer-title">Replace my mini split</div>
+          <div class="answer-range">Typical range: $5,000 &#8211; $14,000</div>
+          <div class="answer-cta">Get My Estimate &#8594;</div>
+        </button>
+        <button class="answer-card" type="button" onclick="goToQuiz('unsure')">
+          <div class="answer-icon">
+            <svg width="76" height="76" viewBox="0 0 120 120" fill="none">
+              <rect x="8" y="38" width="36" height="22" rx="5" stroke="#14213d" stroke-width="2.5" fill="none"/>
+              <line x1="16" y1="46" x2="16" y2="52" stroke="#52607a" stroke-width="2" stroke-linecap="round"/>
+              <line x1="22" y1="46" x2="22" y2="52" stroke="#52607a" stroke-width="2" stroke-linecap="round"/>
+              <rect x="76" y="36" width="36" height="26" rx="5" stroke="#14213d" stroke-width="2.5" fill="none"/>
+              <circle cx="94" cy="49" r="8" stroke="#540d6e" stroke-width="2" fill="none"/>
+              <circle cx="94" cy="49" r="3" fill="#540d6e"/>
+              <line x1="60" y1="30" x2="60" y2="90" stroke="#e0e8ee" stroke-width="2" stroke-dasharray="4 4"/>
+              <text x="60" y="86" text-anchor="middle" font-family="Fraunces, serif" font-size="28" font-weight="700" fill="#ee4266">?</text>
+            </svg>
+          </div>
+          <div class="answer-title">Not sure yet</div>
+          <div class="answer-range">Typical range: $5,000 &#8211; $18,000</div>
+          <div class="answer-cta">Get My Estimate &#8594;</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f7f9fc;">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">FAQ</div>
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">Do mini splits require ductwork?</div>
+          <div class="faq-a">No — that's one of the main advantages. Mini splits are ductless, making them ideal for homes without existing duct systems, room additions, or retrofits where running ductwork isn't practical.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can a mini split handle both heating and cooling?</div>
+          <div class="faq-a">Yes. Most mini splits are heat pumps — they cool by moving heat out of your home and heat by working in reverse, pulling warmth from outdoor air inside. One system handles both seasons, which is a significant advantage in the Pacific Northwest.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I know what size mini split I need?</div>
+          <div class="faq-a">It's not just square footage. High ceilings, open floor plans, kitchen proximity, and how much sunlight a room gets all affect the capacity you need. Most units range from 9,000 to 24,000 BTU. A 12,000 BTU unit typically covers 350–550 sq ft depending on the room. An installer can help size it correctly for your space.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How long does a mini split last?</div>
+          <div class="faq-a">A mini split from a reputable brand typically lasts 10–15 years, and often longer with proper maintenance. They're generally more durable than window units and comparable in lifespan to central AC systems.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I install a mini split myself?</div>
+          <div class="faq-a">Some models are marketed as DIY, but even those require precise work — placing the indoor unit, running the copper line set, wiring electrical, and installing a condensate drain. A mini split also needs a dedicated electrical circuit. Most HVAC pros recommend professional installation, and your local building code may require a permit regardless.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are mini splits more efficient than central AC?</div>
+          <div class="faq-a">Generally yes. Central air loses roughly 30% of its energy through duct leakage according to the Department of Energy. Mini splits deliver conditioned air directly to the room, which makes them more efficient — especially in homes where only certain areas need cooling.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can one outdoor unit support multiple rooms?</div>
+          <div class="faq-a">Yes — multi-zone systems use a single outdoor compressor connected to multiple indoor air handlers. This can be more cost-effective than installing separate systems for each room and avoids having multiple compressors outside your home.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Are there rebates available for mini splits?</div>
+          <div class="faq-a">Often yes. Puget Sound Energy and Snohomish PUD offer rebates on qualifying heat pump mini splits. The federal 25C tax credit may also apply for qualifying systems. Ask your installer about current offers before signing anything.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this an exact quote?</div>
+          <div class="faq-a">No. This gives you a realistic local range based on homes and installs similar to yours. A specialist can confirm the exact number for your space.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom-cta-wrap">
+    <div class="container">
+      <h2>See your mini split cost range</h2>
+      <p>Takes less than 2 minutes. No contact info required.</p>
+      <button class="btn btn-primary" type="button" onclick="goToQuiz('unsure')">Get My Estimate &#8594;</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>&copy; 2026 HVAC Cost Guide</div>
+      <div>Informational estimates only &middot; <a href="https://www.termsfeed.com/live/30b803b4-2d68-4cab-a2d5-0ef398f021cf">Privacy Policy</a></div>
+    </div>
+  </footer>
+
+  <script>
+    function goToQuiz(intent) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'quiz_start', { system: 'mini_split', intent: intent });
+      }
+      window.location.href = 'https://minisplit.hvacinstallcosts.com/estimate.html?intent=' + intent;
+    }
+  </script>
+</body>
+</html>
