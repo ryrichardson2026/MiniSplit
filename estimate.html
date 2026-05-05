@@ -342,11 +342,7 @@
                 </div>
                 <div class="consent-wrap">
                   <input class="consent-check" type="checkbox" id="repairConsentCheck" onchange="updateRepairSubmit()" />
-                  <label class="consent-text" for="repairConsentCheck">I agree to be contacted by a local HVAC professional regarding my estimate. Consent is not required to obtain services.</label>
-                </div>
-                <div class="consent-wrap">
-                  <input class="consent-check" type="checkbox" id="repairConsentSMS" onchange="updateRepairSubmit()" />
-                  <label class="consent-text" for="repairConsentSMS">I agree to receive SMS messages regarding my estimate. Message and data rates may apply. Reply STOP to opt out.</label>
+                  <label class="consent-text" for="repairConsentCheck">I agree to be contacted by a local HVAC professional via call, text, or email regarding my estimate. Consent is not required to obtain services. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
                 </div>
                 <button class="lead-submit" id="repairSubmit" type="button" onclick="submitRepairLead()">Send My Request &#8594;</button>
               </div>
@@ -591,8 +587,7 @@
       const firstName = document.getElementById('repairFirstName').value.trim();
       const phone = document.getElementById('repairPhone').value.replace(/\D/g,'');
       const consent = document.getElementById('repairConsentCheck').checked;
-      const consentSMS = document.getElementById('repairConsentSMS').checked;
-      document.getElementById('repairSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && consent && consentSMS);
+      document.getElementById('repairSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && consent);
     }
 
     document.getElementById('leadPhone').addEventListener('input', function(e) {
@@ -634,7 +629,6 @@
       const firstName = document.getElementById('repairFirstName').value.trim();
       const phone = document.getElementById('repairPhone').value.trim();
       const consent = document.getElementById('repairConsentCheck').checked;
-      const consentSMS = document.getElementById('repairConsentSMS').checked;
       let valid = true;
       if (firstName.length<2) { document.getElementById('repairFirstNameError').textContent='Please enter your first name'; document.getElementById('repairFirstNameError').classList.add('visible'); valid=false; }
       if (phone.replace(/\D/g,'').length<10) { document.getElementById('repairPhoneError').textContent='Enter a valid 10-digit phone number'; document.getElementById('repairPhoneError').classList.add('visible'); valid=false; }
@@ -654,7 +648,7 @@
       const intent = params.get('intent');
       if (zones && ['single','multi','whole'].includes(zones)) state.zones = zones;
       else state.zones = 'multi';
-      if (intent && ['add','replace','unsure'].includes(intent)) {
+      if (intent && ['add','replace'].includes(intent)) {
         state.intent = intent;
         state.jobType = 'install';
         showStep('step2');
