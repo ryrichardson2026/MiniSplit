@@ -186,7 +186,7 @@
 
   <section class="page-header">
     <div class="container">
-      <h1 class="page-title">Build your mini split estimate</h1>
+      <h1 class="page-title">See what a mini split costs near you</h1>
     </div>
   </section>
 
@@ -201,163 +201,186 @@
           <span class="progress-pill" id="p5"></span>
         </div>
 
-    <!-- STEP 1: Repair or install? -->
-    <div class="flow-step active" id="step1">
-      <div class="flow-title">Are you looking to install or repair?</div>
-      <div class="flow-sub">This helps us show the right cost range.</div>
-      <div class="answers-grid cols-2">
-        <button class="answer-card" type="button" data-value="install" onclick="selectCard(this,'jobType','install','toStep2')">
-          <div class="answer-title">Install / Replace</div>
-          <div class="answer-sub">New system or swapping an existing one</div>
-        </button>
-        <button class="answer-card" type="button" data-value="repair" onclick="onRepairSelected()">
-          <div class="answer-title">Repair</div>
-          <div class="answer-sub">Fix or service an existing unit</div>
-        </button>
+   <!-- STEP 1: Zones -->
+<div class="flow-step active" id="step1">
+  <div class="flow-title">How many rooms need cooling?</div>
+  <div class="flow-sub">Room count drives installation cost.</div>
+
+  <div class="answers-grid cols-3">
+    
+    <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','toStep2')">
+      <div class="answer-title">1 Room</div>
+      <div class="answer-sub">Bedroom, office, garage, or addition</div>
+    </button>
+
+    <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','toStep2')">
+      <div class="answer-title">2–3 Rooms</div>
+      <div class="answer-sub">Multi-Zone System</div>
+    </button>
+
+    <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','toStep2')">
+      <div class="answer-title">Whole Home</div>
+      <div class="answer-sub">4+ rooms or full-home coverage</div>
+    </button>
+
+  </div>
+
+  <div class="step-actions">
+    <button class="btn btn-primary" type="button" id="toStep2" disabled>
+      Continue &#8594;
+    </button>
+  </div>
+</div>
+
+    <!-- STEP 2: System type -->
+<div class="flow-step" id="step2">
+ <div class="flow-title">How will you use the system?</div>
+  <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
+
+  <div class="answers-grid cols-3">
+
+    <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','toStep3')">
+      <div class="answer-title">Heating &amp; Cooling</div>
+      <div class="answer-sub">Heat pump mini split</div>
+    </button>
+
+    <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','toStep3')">
+      <div class="answer-title">Cooling Only</div>
+      <div class="answer-sub">Traditional AC-focused system</div>
+    </button>
+
+    <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','toStep3')">
+      <div class="answer-title">Not Sure</div>
+      <div class="answer-sub">We’ll estimate a common setup</div>
+    </button>
+
+  </div>
+
+  <div class="step-actions">
+    <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
+    <button class="btn btn-primary" type="button" id="toStep3" disabled>
+      Continue &#8594;
+    </button>
+  </div>
+</div>
+  
+   <!-- STEP 3: Home size -->
+<div class="flow-step" id="step3">
+  <div class="flow-title">How big is your home?</div>
+
+  <div class="flow-sub">
+    This helps narrow the system size and installation cost.
+  </div>
+
+  <div class="answers-grid cols-3">
+
+    <button class="answer-card" type="button"
+      data-value="small"
+      onclick="selectCard(this,'size','small','toStep4')">
+
+      <div class="answer-title">Small</div>
+
+      <div class="answer-sub">
+        Under 1,500 sq ft
       </div>
-      <div class="step-actions">
-        <button class="btn btn-primary" type="button" id="toStep2" disabled>Continue &#8594;</button>
+    </button>
+
+    <button class="answer-card" type="button"
+      data-value="medium"
+      onclick="selectCard(this,'size','medium','toStep4')">
+
+      <div class="answer-title">Medium</div>
+
+      <div class="answer-sub">
+        1,500–2,500 sq ft
       </div>
+    </button>
+
+    <button class="answer-card" type="button"
+      data-value="large"
+      onclick="selectCard(this,'size','large','toStep4')">
+
+      <div class="answer-title">Large</div>
+
+      <div class="answer-sub">
+        Over 2,500 sq ft
+      </div>
+    </button>
+
+  </div>
+
+  <div class="step-actions">
+
+    <button class="btn btn-ghost"
+      type="button"
+      onclick="showStep('step2')">
+
+      &#8592; Back
+    </button>
+
+    <button class="btn btn-primary"
+      type="button"
+      id="toStep4"
+      disabled>
+
+      Continue &#8594;
+    </button>
+
+  </div>
+</div>
+
+<!-- STEP 4: ZIP -->
+<div class="flow-step" id="step4">
+
+  <div class="flow-title">
+    What ZIP code is the project in?
+  </div>
+
+  <div class="flow-sub">
+    Local labor and equipment availability can impact pricing.
+  </div>
+
+  <div class="city-select-wrap">
+
+    <input
+      class="city-select"
+      type="text"
+      id="zipInput"
+      inputmode="numeric"
+      maxlength="5"
+      placeholder="e.g. 98012"
+      oninput="onZipInput(this)"
+      style="text-align:center;font-size:20px;font-weight:700;letter-spacing:.12em;"
+    />
+
+    <div id="zipHint"
+      style="text-align:center;font-size:13px;color:var(--navy-soft);margin-top:8px;">
+
+      King &amp; Snohomish County ZIP codes only.
     </div>
 
-    <!-- STEP 2: Zones -->
-    <div class="flow-step" id="step2">
-      <div class="flow-title">How many rooms need cooling?</div>
-      <div class="flow-sub">This is the biggest factor in mini split pricing.</div>
-      <div class="answers-grid cols-3">
-        <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','toStep3')">
-          <div class="answer-title">1 Room / Zone</div>
-          <div class="answer-sub">Single room or area</div>
-        </button>
-        <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','toStep3')">
-          <div class="answer-title">2&#8211;3 Rooms</div>
-          <div class="answer-sub">Multi-zone system</div>
-        </button>
-        <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','toStep3')">
-          <div class="answer-title">Whole Home (4+)</div>
-          <div class="answer-sub">Full home coverage</div>
-        </button>
-      </div>
-      <div class="step-actions">
-        <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
-        <button class="btn btn-primary" type="button" id="toStep3" disabled>Continue &#8594;</button>
-      </div>
-    </div>
+  </div>
 
-    <!-- STEP 3: System type -->
-    <div class="flow-step" id="step3">
-      <div class="flow-title">What type of system do you want?</div>
-      <div class="flow-sub">Most mini splits in the Pacific Northwest handle both heating and cooling.</div>
-      <div class="answers-grid cols-3">
-        <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','toStep4')">
-          <div class="answer-title">Heating &amp; Cooling</div>
-          <div class="answer-sub">Heat pump — both seasons</div>
-        </button>
-        <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','toStep4')">
-          <div class="answer-title">Cooling Only</div>
-          <div class="answer-sub">Standard mini split</div>
-        </button>
-        <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','toStep4')">
-          <div class="answer-title">Not Sure</div>
-          <div class="answer-sub">Your installer can advise</div>
-        </button>
-      </div>
-      <div class="step-actions">
-        <button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button>
-        <button class="btn btn-primary" type="button" id="toStep4" disabled>Continue &#8594;</button>
-      </div>
-    </div>
+  <div class="step-actions">
 
-    <!-- STEP 4: Home size -->
-    <div class="flow-step" id="step4">
-      <div class="flow-title">How big is your home?</div>
-      <div class="flow-sub">This helps narrow the system capacity and your price range.</div>
-      <div class="answers-grid cols-3">
-        <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','toStep5')">
-          <div class="answer-title">Small</div>
-          <div class="answer-sub">Under 1,500 sq ft</div>
-        </button>
-        <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','toStep5')">
-          <div class="answer-title">Medium</div>
-          <div class="answer-sub">1,500&#8211;2,500 sq ft</div>
-        </button>
-        <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','toStep5')">
-          <div class="answer-title">Large</div>
-          <div class="answer-sub">Over 2,500 sq ft</div>
-        </button>
-      </div>
-      <div class="step-actions">
-        <button class="btn btn-ghost" type="button" onclick="showStep('step3')">&#8592; Back</button>
-        <button class="btn btn-primary" type="button" id="toStep5" disabled>Continue &#8594;</button>
-      </div>
-    </div>
+    <button class="btn btn-ghost"
+      type="button"
+      onclick="showStep('step3')">
 
-    <!-- STEP 5: ZIP -->
-    <div class="flow-step" id="step5">
-      <div class="flow-title">What ZIP code is the project in?</div>
-      <div class="city-select-wrap">
-        <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center; font-size:20px; font-weight:700; letter-spacing:0.12em;" />
-        <div id="zipHint" style="text-align:center; font-size:13px; color:var(--navy-soft); margin-top:8px;">Snohomish &amp; King County ZIP codes only.</div>
-      </div>
-      <div class="step-actions">
-        <button class="btn btn-ghost" type="button" onclick="showStep('step4')">&#8592; Back</button>
-        <button class="btn btn-primary" type="button" id="seeResults" disabled>See My Results &#8594;</button>
-      </div>
-    </div>
+      &#8592; Back
+    </button>
 
-    <!-- REPAIR RESULT -->
-    <div class="flow-step" id="repairStep">
-      <div class="results-stack">
-        <div class="results-card">
-          <div class="results-label">Mini Split Repair Estimate</div>
-          <div class="results-type">Mini Split Repair</div>
-          <div class="results-range">$150 &#8211; $800</div>
-          <div class="results-labor">Most repairs fall in this range depending on the issue</div>
-          <div class="results-copy">Common repairs: refrigerant recharge ($150&#8211;$400), capacitor replacement ($100&#8211;$300), sensor issues ($100&#8211;$250), drain cleaning ($75&#8211;$150). Major compressor or board failures may warrant replacement.</div>
-          <div class="results-divider"></div>
-          <div class="results-includes-head">Usually includes</div>
-          <div class="results-includes">
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Diagnostic visit &amp; assessment</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Parts &amp; labor for standard repairs</div>
-          </div>
-          <div class="results-not-included">Major component failures may require a replacement quote instead.</div>
-          <div style="font-size:13px; color:#16a34a; font-weight:600; text-align:center; margin-top:14px;">Ask your installer about current promotions, rebates, and financing options.</div>
-        </div>
-        <div class="quote-bridge">
-          <div class="quote-title">Have more questions?</div>
-          <div class="quote-sub">Review your estimate with a local mini split specialist.</div>
-          <button class="btn btn-primary" type="button" onclick="showRepairLeadForm()">Yes, let&#8217;s talk &#8594;</button>
-          <div class="lead-form-wrap" id="leadFormWrapRepair">
-            <div class="lead-form-title">Request a Callback</div>
-            <div class="lead-form-sub">Someone from our team will call or text you within 1 hour during business hours.</div>
-            <div class="lead-fields">
-              <div class="lead-field">
-                <label class="lead-label" for="repairFirstName">First name</label>
-                <input class="lead-input" type="text" id="repairFirstName" placeholder="First name" autocomplete="given-name" oninput="updateRepairSubmit()" />
-                <div class="lead-error" id="repairFirstNameError"></div>
-              </div>
-              <div class="lead-field">
-                <label class="lead-label" for="repairPhone">Phone number</label>
-                <input class="lead-input" type="tel" id="repairPhone" placeholder="(206) 555-0100" autocomplete="tel" oninput="updateRepairSubmit()" />
-                <div class="lead-error" id="repairPhoneError"></div>
-              </div>
-            </div>
-            <div class="consent-wrap">
-              <input class="consent-check" type="checkbox" id="repairConsentCheck" onchange="updateRepairSubmit()" />
-              <label class="consent-text" for="repairConsentCheck">I agree to be contacted by a local HVAC professional via call, text, or email regarding my estimate. Consent is not required to obtain services. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
-            </div>
-            <button class="lead-submit" id="repairSubmit" type="button" onclick="submitRepairLead()">Send My Request &#8594;</button>
-          </div>
-          <div class="thankyou-wrap" id="thankyouWrapRepair">
-            <div class="thankyou-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="thankyou-title">You&#8217;re all set.</div>
-            <div class="thankyou-body">A local specialist will reach out shortly to discuss your repair.</div>
-          </div>
-        </div>
+    <button class="btn btn-primary"
+      type="button"
+      id="seeResults"
+      disabled>
 
-      </div>
-    </div>
+      See My Results &#8594;
+    </button>
 
+  </div>
+</div>
+  
     <!-- LOADING -->
     <div class="flow-step" id="loadingStep">
       <div class="loading-block">
@@ -503,14 +526,17 @@
       if (btn) btn.disabled = false;
     }
 
-    function onRepairSelected() {
-      showStep('repairStep');
-    }
-
     function showStep(id) {
       document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      const stepMap = { step1:1, step2:2, step3:3, step4:4, step5:5, repairStep:2, loadingStep:5, resultsStep:5 };
+      const stepMap = {
+  step1:1,
+  step2:2,
+  step3:3,
+  step4:4,
+  loadingStep:5,
+  resultsStep:5
+};
       const idx = (stepMap[id] || 1) - 1;
       ['p1','p2','p3','p4','p5'].forEach((pid, i) => {
         document.getElementById(pid).classList.toggle('active', i === idx);
@@ -525,8 +551,6 @@
       if (toStep3) toStep3.addEventListener('click', () => showStep('step3'));
       const toStep4 = document.getElementById('toStep4');
       if (toStep4) toStep4.addEventListener('click', () => showStep('step4'));
-      const toStep5 = document.getElementById('toStep5');
-      if (toStep5) toStep5.addEventListener('click', () => showStep('step5'));
     });
 
     function onZipInput(el) {
@@ -572,11 +596,6 @@
       setTimeout(() => document.getElementById('leadFormWrap').scrollIntoView({ behavior:'smooth', block:'start' }), 50);
     }
 
-    function showRepairLeadForm() {
-      document.getElementById('leadFormWrapRepair').classList.add('visible');
-      setTimeout(() => document.getElementById('leadFormWrapRepair').scrollIntoView({ behavior:'smooth', block:'start' }), 50);
-    }
-
     function updateSubmit() {
       const firstName = document.getElementById('leadFirstName').value.trim();
       const phone = document.getElementById('leadPhone').value.replace(/\D/g,'');
@@ -586,22 +605,7 @@
       document.getElementById('leadSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && emailRe.test(email) && consent);
     }
 
-    function updateRepairSubmit() {
-      const firstName = document.getElementById('repairFirstName').value.trim();
-      const phone = document.getElementById('repairPhone').value.replace(/\D/g,'');
-      const consent = document.getElementById('repairConsentCheck').checked;
-      document.getElementById('repairSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && consent);
-    }
-
     document.getElementById('leadPhone').addEventListener('input', function(e) {
-      let v = e.target.value.replace(/\D/g,'').slice(0,10);
-      if (v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
-      else if (v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
-      else if (v.length>=1) v='('+v;
-      e.target.value=v;
-    });
-
-    document.getElementById('repairPhone').addEventListener('input', function(e) {
       let v = e.target.value.replace(/\D/g,'').slice(0,10);
       if (v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
       else if (v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
@@ -628,35 +632,16 @@
       document.getElementById('thankyouWrap').scrollIntoView({ behavior:'smooth', block:'start' });
     }
 
-    function submitRepairLead() {
-      const firstName = document.getElementById('repairFirstName').value.trim();
-      const phone = document.getElementById('repairPhone').value.trim();
-      const consent = document.getElementById('repairConsentCheck').checked;
-      let valid = true;
-      if (firstName.length<2) { document.getElementById('repairFirstNameError').textContent='Please enter your first name'; document.getElementById('repairFirstNameError').classList.add('visible'); valid=false; }
-      if (phone.replace(/\D/g,'').length<10) { document.getElementById('repairPhoneError').textContent='Enter a valid 10-digit phone number'; document.getElementById('repairPhoneError').classList.add('visible'); valid=false; }
-      if (!consent) { valid=false; }
-      if (!valid) return;
-      fireWebhook({ event:'lead_submit', site_label:'Mini Split Repair', zip:'', job_type:'repair', first_name:firstName, phone, consent:'yes', timestamp:new Date().toISOString() });
-      if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{system:'mini_split_repair'}); }
-      document.getElementById('leadFormWrapRepair').classList.remove('visible');
-      document.getElementById('thankyouWrapRepair').classList.add('visible');
-      document.getElementById('thankyouWrapRepair').scrollIntoView({ behavior:'smooth', block:'start' });
-    }
+// Read intent/zones from URL on load
+window.addEventListener('load', () => {
+  const params = new URLSearchParams(window.location.search);
+  const zones = params.get('zones');
 
-    // Read intent/zones from URL on load
-    window.addEventListener('load', () => {
-      const params = new URLSearchParams(window.location.search);
-      const zones = params.get('zones');
-      const intent = params.get('intent');
-      if (zones && ['single','multi','whole'].includes(zones)) state.zones = zones;
-      else state.zones = 'multi';
-      if (intent && ['add','replace'].includes(intent)) {
-        state.intent = intent;
-        state.jobType = 'install';
-        showStep('step2');
-      }
-    });
+  if (zones && ['single','multi','whole'].includes(zones)) {
+    state.zones = zones;
+    showStep('step2');
+  }
+});
   </script>
 
 </body>
