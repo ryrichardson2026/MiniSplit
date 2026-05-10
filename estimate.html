@@ -186,6 +186,9 @@
   <section class="page-header">
     <div class="container">
       <h1 class="page-title">See what a mini split costs near you</h1>
+      <p class="hero-sub" style="margin-top:12px; max-width:680px;">
+        See real local pricing for mini split installation in Greater King County and North Sound.
+      </p>
     </div>
   </section>
 
@@ -203,23 +206,22 @@
    <!-- STEP 1: Zones -->
 <div class="flow-step active" id="step1">
   <div class="flow-title">How many rooms need cooling?</div>
-  <div class="flow-sub">Room count drives installation cost.</div>
+  <div class="flow-sub">
+  Based on recent installation pricing across King &amp; Snohomish County.
+</div>
   <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','toStep2')">
+    <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','step2')">
       <div class="answer-title">1 Room</div>
       <div class="answer-sub">Bedroom, office, garage, or addition</div>
     </button>
-    <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','toStep2')">
+    <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','step2')">
       <div class="answer-title">2–3 Rooms</div>
       <div class="answer-sub">Multi-Zone System</div>
     </button>
-    <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','toStep2')">
+    <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','step2')">
       <div class="answer-title">Whole Home</div>
       <div class="answer-sub">4+ rooms or full-home coverage</div>
     </button>
-  </div>
-  <div class="step-actions">
-    <button class="btn btn-primary" type="button" id="toStep2" disabled>Continue &#8594;</button>
   </div>
 </div>
 
@@ -228,22 +230,21 @@
  <div class="flow-title">How will you use the system?</div>
   <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
   <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','toStep3')">
+    <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','step3')">
       <div class="answer-title">Heating &amp; Cooling</div>
       <div class="answer-sub">Heat pump mini split</div>
     </button>
-    <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','toStep3')">
+    <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','step3')">
       <div class="answer-title">Cooling Only</div>
       <div class="answer-sub">Traditional AC-focused system</div>
     </button>
-    <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','toStep3')">
+    <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','step3')">
       <div class="answer-title">Not Sure</div>
       <div class="answer-sub">We'll estimate a common setup</div>
     </button>
   </div>
   <div class="step-actions">
     <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
-    <button class="btn btn-primary" type="button" id="toStep3" disabled>Continue &#8594;</button>
   </div>
 </div>
   
@@ -252,22 +253,21 @@
   <div class="flow-title">How big is your home?</div>
   <div class="flow-sub">This helps narrow the system size and installation cost.</div>
   <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','toStep4')">
+    <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','step4')">
       <div class="answer-title">Small</div>
       <div class="answer-sub">Under 1,500 sq ft</div>
     </button>
-    <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','toStep4')">
+    <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','step4')">
       <div class="answer-title">Medium</div>
       <div class="answer-sub">1,500–2,500 sq ft</div>
     </button>
-    <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','toStep4')">
+    <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','step4')">
       <div class="answer-title">Large</div>
       <div class="answer-sub">Over 2,500 sq ft</div>
     </button>
   </div>
   <div class="step-actions">
     <button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button>
-    <button class="btn btn-primary" type="button" id="toStep4" disabled>Continue &#8594;</button>
   </div>
 </div>
 
@@ -298,7 +298,12 @@
     <div class="flow-step" id="resultsStep">
       <div class="results-stack">
         <div class="results-card">
-          <div class="results-label">Local estimate &#8212; <span id="resultCity"></span></div>
+          <div class="results-label">
+            Estimated Local Price Range
+          </div>
+          <div style="font-size:13px; color:var(--navy-soft); margin-bottom:10px;">
+            <span id="resultCity"></span> &bull; Greater Seattle Area
+          </div>
           <div class="results-type" id="resultType">Ductless Mini Split</div>
           <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
           <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
@@ -314,11 +319,11 @@
           <div class="results-includes">
             <div class="results-include-item">
               <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Indoor &amp; outdoor unit installation
+              Indoor &amp; outdoor units
             </div>
             <div class="results-include-item">
               <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Typical install time: 1–2 days
+              Typical install: 1–2 days
             </div>
           </div>
 
@@ -456,13 +461,12 @@
       });
     }
 
-    function selectCard(el, field, value, nextBtnId) {
+    function selectCard(el, field, value, nextStepId) {
       const grid = el.closest('.answers-grid');
       [...grid.querySelectorAll('.answer-card')].forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
       state[field] = value;
-      const btn = document.getElementById(nextBtnId);
-      if (btn) btn.disabled = false;
+      setTimeout(() => showStep(nextStepId), 180);
     }
 
     function showStep(id) {
@@ -474,15 +478,6 @@
         document.getElementById(pid).classList.toggle('active', i === idx);
       });
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const toStep2 = document.getElementById('toStep2');
-      if (toStep2) toStep2.addEventListener('click', () => showStep('step2'));
-      const toStep3 = document.getElementById('toStep3');
-      if (toStep3) toStep3.addEventListener('click', () => showStep('step3'));
-      const toStep4 = document.getElementById('toStep4');
-      if (toStep4) toStep4.addEventListener('click', () => showStep('step4'));
-    });
 
     function onZipInput(el) {
       el.value = el.value.replace(/\D/g,'').slice(0,5);
