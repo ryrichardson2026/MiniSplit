@@ -156,7 +156,6 @@
   .results-range { font-size: 30px; }
   .footer-inner { flex-direction: column; }
 }
-
   </style>
 </head>
 <body>
@@ -205,30 +204,22 @@
 <div class="flow-step active" id="step1">
   <div class="flow-title">How many rooms need cooling?</div>
   <div class="flow-sub">Room count drives installation cost.</div>
-
   <div class="answers-grid cols-3">
-    
     <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','toStep2')">
       <div class="answer-title">1 Room</div>
       <div class="answer-sub">Bedroom, office, garage, or addition</div>
     </button>
-
     <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','toStep2')">
       <div class="answer-title">2–3 Rooms</div>
       <div class="answer-sub">Multi-Zone System</div>
     </button>
-
     <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','toStep2')">
       <div class="answer-title">Whole Home</div>
       <div class="answer-sub">4+ rooms or full-home coverage</div>
     </button>
-
   </div>
-
   <div class="step-actions">
-    <button class="btn btn-primary" type="button" id="toStep2" disabled>
-      Continue &#8594;
-    </button>
+    <button class="btn btn-primary" type="button" id="toStep2" disabled>Continue &#8594;</button>
   </div>
 </div>
 
@@ -236,148 +227,61 @@
 <div class="flow-step" id="step2">
  <div class="flow-title">How will you use the system?</div>
   <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
-
   <div class="answers-grid cols-3">
-
     <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','toStep3')">
       <div class="answer-title">Heating &amp; Cooling</div>
       <div class="answer-sub">Heat pump mini split</div>
     </button>
-
     <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','toStep3')">
       <div class="answer-title">Cooling Only</div>
       <div class="answer-sub">Traditional AC-focused system</div>
     </button>
-
     <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','toStep3')">
       <div class="answer-title">Not Sure</div>
-      <div class="answer-sub">We’ll estimate a common setup</div>
+      <div class="answer-sub">We'll estimate a common setup</div>
     </button>
-
   </div>
-
   <div class="step-actions">
     <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
-    <button class="btn btn-primary" type="button" id="toStep3" disabled>
-      Continue &#8594;
-    </button>
+    <button class="btn btn-primary" type="button" id="toStep3" disabled>Continue &#8594;</button>
   </div>
 </div>
   
    <!-- STEP 3: Home size -->
 <div class="flow-step" id="step3">
   <div class="flow-title">How big is your home?</div>
-
-  <div class="flow-sub">
-    This helps narrow the system size and installation cost.
-  </div>
-
+  <div class="flow-sub">This helps narrow the system size and installation cost.</div>
   <div class="answers-grid cols-3">
-
-    <button class="answer-card" type="button"
-      data-value="small"
-      onclick="selectCard(this,'size','small','toStep4')">
-
+    <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','toStep4')">
       <div class="answer-title">Small</div>
-
-      <div class="answer-sub">
-        Under 1,500 sq ft
-      </div>
+      <div class="answer-sub">Under 1,500 sq ft</div>
     </button>
-
-    <button class="answer-card" type="button"
-      data-value="medium"
-      onclick="selectCard(this,'size','medium','toStep4')">
-
+    <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','toStep4')">
       <div class="answer-title">Medium</div>
-
-      <div class="answer-sub">
-        1,500–2,500 sq ft
-      </div>
+      <div class="answer-sub">1,500–2,500 sq ft</div>
     </button>
-
-    <button class="answer-card" type="button"
-      data-value="large"
-      onclick="selectCard(this,'size','large','toStep4')">
-
+    <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','toStep4')">
       <div class="answer-title">Large</div>
-
-      <div class="answer-sub">
-        Over 2,500 sq ft
-      </div>
+      <div class="answer-sub">Over 2,500 sq ft</div>
     </button>
-
   </div>
-
   <div class="step-actions">
-
-    <button class="btn btn-ghost"
-      type="button"
-      onclick="showStep('step2')">
-
-      &#8592; Back
-    </button>
-
-    <button class="btn btn-primary"
-      type="button"
-      id="toStep4"
-      disabled>
-
-      Continue &#8594;
-    </button>
-
+    <button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button>
+    <button class="btn btn-primary" type="button" id="toStep4" disabled>Continue &#8594;</button>
   </div>
 </div>
 
 <!-- STEP 4: ZIP -->
 <div class="flow-step" id="step4">
-
-  <div class="flow-title">
-    What ZIP code is the project in?
-  </div>
-
-  <div class="flow-sub">
-    Local labor and equipment availability can impact pricing.
-  </div>
-
+  <div class="flow-title">What ZIP code is the project in?</div>
+  <div class="flow-sub">Local labor and equipment availability can impact pricing.</div>
   <div class="city-select-wrap">
-
-    <input
-      class="city-select"
-      type="text"
-      id="zipInput"
-      inputmode="numeric"
-      maxlength="5"
-      placeholder="e.g. 98012"
-      oninput="onZipInput(this)"
-      style="text-align:center;font-size:20px;font-weight:700;letter-spacing:.12em;"
-    />
-
-    <div id="zipHint"
-      style="text-align:center;font-size:13px;color:var(--navy-soft);margin-top:8px;">
-
-      King &amp; Snohomish County ZIP codes only.
-    </div>
-
+    <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center;font-size:20px;font-weight:700;letter-spacing:.12em;" />
+    <div id="zipHint" style="text-align:center;font-size:13px;color:var(--navy-soft);margin-top:8px;">King &amp; Snohomish County ZIP codes only.</div>
   </div>
-
   <div class="step-actions">
-
-    <button class="btn btn-ghost"
-      type="button"
-      onclick="showStep('step3')">
-
-      &#8592; Back
-    </button>
-
-    <button class="btn btn-primary"
-      type="button"
-      id="seeResults"
-      disabled>
-
-      See My Results &#8594;
-    </button>
-
+    <button class="btn btn-ghost" type="button" onclick="showStep('step3')">&#8592; Back</button>
+    <button class="btn btn-primary" type="button" id="seeResults" disabled>See My Results &#8594;</button>
   </div>
 </div>
   
@@ -390,7 +294,7 @@
       </div>
     </div>
 
-    <!-- INSTALL RESULTS -->
+    <!-- RESULTS -->
     <div class="flow-step" id="resultsStep">
       <div class="results-stack">
         <div class="results-card">
@@ -398,15 +302,38 @@
           <div class="results-type" id="resultType">Ductless Mini Split</div>
           <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
           <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
-          <div class="results-copy" id="resultCopy"></div>
+
           <div class="results-divider"></div>
+
+          <div class="mini-kicker">Why this range fits your home</div>
+          <div class="results-reasons" id="resultReasons"></div>
+
+          <div class="results-divider"></div>
+
           <div class="results-includes-head">Usually includes</div>
           <div class="results-includes">
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Indoor &amp; outdoor unit installation</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Line set &amp; electrical connections</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>System startup &amp; testing</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Typical install time: 1&#8211;2 days</div>
+            <div class="results-include-item">
+              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Indoor &amp; outdoor unit installation
+            </div>
+            <div class="results-include-item">
+              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Typical install time: 1–2 days
+            </div>
           </div>
+
+          <div class="results-includes-head" style="margin-top:16px;">May require additional work</div>
+          <div class="results-includes">
+            <div class="results-include-item">
+              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>
+              Electrical panel upgrades
+            </div>
+            <div class="results-include-item">
+              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>
+              Difficult installation routes or access points
+            </div>
+          </div>
+
           <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
             <div style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:4px;">Exact pricing can change based on demand and equipment availability.</div>
             <div style="font-size:13px; color:var(--navy-soft); margin-bottom:14px;">Verify your estimate with a local installer today.</div>
@@ -445,13 +372,11 @@
             <div class="thankyou-body">A local mini split specialist will reach out shortly. Ask about current rebates, financing, and whether the quote includes permits and electrical work.</div>
           </div>
         </div>
-
       </div>
     </div>
 
   </div>
 </div>
-
   </section>
 
   <footer class="footer">
@@ -514,7 +439,21 @@
       document.getElementById('resultType').textContent = systemLabel;
       document.getElementById('resultRange').textContent = pricing.range;
       document.getElementById('resultLabor').textContent = 'Estimated labor: ' + pricing.labor;
-      document.getElementById('resultCopy').textContent = 'Based on a ' + (zoneLabels[state.zones] || 'multi-zone') + ' install for a ' + (state.size || 'medium') + '-size home in your area. Includes typical equipment, materials, labor, and startup.';
+
+      const reasons = [];
+      if (state.zones === 'single') { reasons.push('Single-room systems usually land in the lower end of the range.'); }
+      if (state.zones === 'multi')  { reasons.push('Multi-zone systems typically require additional indoor units and labor.'); }
+      if (state.zones === 'whole')  { reasons.push('Whole-home coverage increases equipment and installation complexity.'); }
+      if (state.use === 'both')     { reasons.push('Heating and cooling systems typically cost more than cooling-only setups.'); }
+      if (state.size === 'large')   { reasons.push('Larger homes often need more system capacity and longer installation time.'); }
+      const wrap = document.getElementById('resultReasons');
+      wrap.innerHTML = '';
+      reasons.slice(0, 3).forEach(r => {
+        const el = document.createElement('div');
+        el.className = 'reason';
+        el.innerHTML = `<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> ${r}`;
+        wrap.appendChild(el);
+      });
     }
 
     function selectCard(el, field, value, nextBtnId) {
@@ -529,21 +468,13 @@
     function showStep(id) {
       document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      const stepMap = {
-  step1:1,
-  step2:2,
-  step3:3,
-  step4:4,
-  loadingStep:5,
-  resultsStep:5
-};
+      const stepMap = { step1:1, step2:2, step3:3, step4:4, loadingStep:5, resultsStep:5 };
       const idx = (stepMap[id] || 1) - 1;
       ['p1','p2','p3','p4','p5'].forEach((pid, i) => {
         document.getElementById(pid).classList.toggle('active', i === idx);
       });
     }
 
-    // Wire step buttons
     document.addEventListener('DOMContentLoaded', () => {
       const toStep2 = document.getElementById('toStep2');
       if (toStep2) toStep2.addEventListener('click', () => showStep('step2'));
@@ -632,16 +563,14 @@
       document.getElementById('thankyouWrap').scrollIntoView({ behavior:'smooth', block:'start' });
     }
 
-// Read intent/zones from URL on load
-window.addEventListener('load', () => {
-  const params = new URLSearchParams(window.location.search);
-  const zones = params.get('zones');
-
-  if (zones && ['single','multi','whole'].includes(zones)) {
-    state.zones = zones;
-    showStep('step2');
-  }
-});
+    window.addEventListener('load', () => {
+      const params = new URLSearchParams(window.location.search);
+      const zones = params.get('zones');
+      if (zones && ['single','multi','whole'].includes(zones)) {
+        state.zones = zones;
+        showStep('step2');
+      }
+    });
   </script>
 
 </body>
