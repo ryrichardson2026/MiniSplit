@@ -10,7 +10,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WF65GPHQ"></script>
+  <script>
+    (function() {
+      const p = new URLSearchParams(window.location.search);
+      if (p.get('zones')) document.documentElement.classList.add('has-zones');
+    })();
+  </script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -36,6 +41,7 @@
     a { color: inherit; text-decoration: none; }
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
+```
 .nav { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(20,33,61,0.05); }
 .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
@@ -146,7 +152,7 @@
 .page-header { padding: 28px 0 0; background: linear-gradient(180deg, #ffffff, #fbfcff); }
 .page-title { font-family: "Fraunces", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.02; letter-spacing: -0.03em; color: var(--navy); max-width: 700px; }
 
-@media (max-width: 1040px) { .answers-grid.cols-3 { grid-template-columns: 1fr; } .answers-grid.cols-2 { grid-template-columns: 1fr; } }
+html.has-zones #step1 { display: none !important; }
 @media (max-width: 720px) {
   .nav-inner { min-height: 64px; }
   .flow-card { padding: 20px 16px; border-radius: 24px; }
@@ -156,6 +162,8 @@
   .results-range { font-size: 30px; }
   .footer-inner { flex-direction: column; }
 }
+```
+
   </style>
 </head>
 <body>
@@ -185,10 +193,7 @@
 
   <section class="page-header">
     <div class="container">
-      <h1 class="page-title">See what a mini split costs near you</h1>
-      <p class="hero-sub" style="margin-top:12px; max-width:680px;">
-        See real local pricing for mini split installation in Greater King County and North Sound.
-      </p>
+      <h1 class="page-title">Build your mini split estimate</h1>
     </div>
   </section>
 
@@ -203,88 +208,135 @@
           <span class="progress-pill" id="p5"></span>
         </div>
 
-   <!-- STEP 1: Zones -->
-<div class="flow-step active" id="step1">
-  <div class="flow-title">How many rooms need cooling?</div>
-  <div class="flow-sub">
-  Based on recent installation pricing across King &amp; Snohomish County.
-</div>
-  <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="single" onclick="selectCard(this,'zones','single','step2')">
-      <div class="answer-title">1 Room</div>
-      <div class="answer-sub">Bedroom, office, garage, or addition</div>
-    </button>
-    <button class="answer-card" type="button" data-value="multi" onclick="selectCard(this,'zones','multi','step2')">
-      <div class="answer-title">2–3 Rooms</div>
-      <div class="answer-sub">Multi-Zone System</div>
-    </button>
-    <button class="answer-card" type="button" data-value="whole" onclick="selectCard(this,'zones','whole','step2')">
-      <div class="answer-title">Whole Home</div>
-      <div class="answer-sub">4+ rooms or full-home coverage</div>
-    </button>
-  </div>
-</div>
+```
+    <!-- STEP 1: Home size -->
+    <div class="flow-step active" id="step1">
+      <div class="flow-title">How big is your home?</div>
+      <div class="flow-sub">This helps narrow the system size and installation cost.</div>
+      <div class="answers-grid cols-3">
+        <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','step2')">
+          <div class="answer-title">Small</div>
+          <div class="answer-sub">Under 1,500 sq ft</div>
+        </button>
+        <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','step2')">
+          <div class="answer-title">Medium</div>
+          <div class="answer-sub">1,500&#8211;2,500 sq ft</div>
+        </button>
+        <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','step2')">
+          <div class="answer-title">Large</div>
+          <div class="answer-sub">Over 2,500 sq ft</div>
+        </button>
+      </div>
+    </div>
 
-    <!-- STEP 2: System type -->
-<div class="flow-step" id="step2">
- <div class="flow-title">How will you use the system?</div>
-  <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
-  <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','step3')">
-      <div class="answer-title">Heating &amp; Cooling</div>
-      <div class="answer-sub">Heat pump mini split</div>
-    </button>
-    <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','step3')">
-      <div class="answer-title">Cooling Only</div>
-      <div class="answer-sub">Traditional AC-focused system</div>
-    </button>
-    <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'use','not_sure','step3')">
-      <div class="answer-title">Not Sure</div>
-      <div class="answer-sub">We'll estimate a common setup</div>
-    </button>
-  </div>
-  <div class="step-actions">
-    <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
-  </div>
-</div>
-  
-   <!-- STEP 3: Home size -->
-<div class="flow-step" id="step3">
-  <div class="flow-title">How big is your home?</div>
-  <div class="flow-sub">This helps narrow the system size and installation cost.</div>
-  <div class="answers-grid cols-3">
-    <button class="answer-card" type="button" data-value="small" onclick="selectCard(this,'size','small','step4')">
-      <div class="answer-title">Small</div>
-      <div class="answer-sub">Under 1,500 sq ft</div>
-    </button>
-    <button class="answer-card" type="button" data-value="medium" onclick="selectCard(this,'size','medium','step4')">
-      <div class="answer-title">Medium</div>
-      <div class="answer-sub">1,500–2,500 sq ft</div>
-    </button>
-    <button class="answer-card" type="button" data-value="large" onclick="selectCard(this,'size','large','step4')">
-      <div class="answer-title">Large</div>
-      <div class="answer-sub">Over 2,500 sq ft</div>
-    </button>
-  </div>
-  <div class="step-actions">
-    <button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button>
-  </div>
-</div>
+    <!-- STEP 2: Heating needed? -->
+    <div class="flow-step" id="step2">
+      <div class="flow-title">Is heating needed?</div>
+      <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
+      <div class="answers-grid cols-2">
+        <button class="answer-card" type="button" data-value="both" onclick="selectCard(this,'use','both','step3')">
+          <div class="answer-title">Yes</div>
+          <div class="answer-sub">Heating &amp; cooling</div>
+        </button>
+        <button class="answer-card" type="button" data-value="cooling" onclick="selectCard(this,'use','cooling','step3')">
+          <div class="answer-title">No</div>
+          <div class="answer-sub">Cooling only</div>
+        </button>
+      </div>
+      <div class="step-actions">
+        <button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button>
+      </div>
+    </div>
 
-<!-- STEP 4: ZIP -->
-<div class="flow-step" id="step4">
-  <div class="flow-title">What ZIP code is the project in?</div>
-  <div class="flow-sub">Local labor and equipment availability can impact pricing.</div>
-  <div class="city-select-wrap">
-    <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center;font-size:20px;font-weight:700;letter-spacing:.12em;" />
-    <div id="zipHint" style="text-align:center;font-size:13px;color:var(--navy-soft);margin-top:8px;">King &amp; Snohomish County ZIP codes only.</div>
-  </div>
-  <div class="step-actions">
-    <button class="btn btn-ghost" type="button" onclick="showStep('step3')">&#8592; Back</button>
-    <button class="btn btn-primary" type="button" id="seeResults" disabled>See My Results &#8594;</button>
-  </div>
-</div>
-  
+    <!-- STEP 3: Home age -->
+    <div class="flow-step" id="step3">
+      <div class="flow-title">When was your home built?</div>
+      <div class="flow-sub">Older homes may require additional electrical work, which affects installation cost.</div>
+      <div class="answers-grid cols-2">
+        <button class="answer-card" type="button" data-value="pre1980" onclick="selectCard(this,'homeAge','pre1980','step4')">
+          <div class="answer-title">Before 1980</div>
+        </button>
+        <button class="answer-card" type="button" data-value="1980to2000" onclick="selectCard(this,'homeAge','1980to2000','step4')">
+          <div class="answer-title">1980–2000</div>
+        </button>
+        <button class="answer-card" type="button" data-value="post2000" onclick="selectCard(this,'homeAge','post2000','step4')">
+          <div class="answer-title">2000 or newer</div>
+        </button>
+        <button class="answer-card" type="button" data-value="not_sure" onclick="selectCard(this,'homeAge','not_sure','step4')">
+          <div class="answer-title">Not sure</div>
+        </button>
+      </div>
+      <div class="step-actions">
+        <button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: ZIP -->
+    <div class="flow-step" id="step4">
+      <div class="flow-title">What ZIP code is the project in?</div>
+      <div class="city-select-wrap">
+        <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center; font-size:20px; font-weight:700; letter-spacing:0.12em;" />
+        <div id="zipHint" style="text-align:center; font-size:13px; color:var(--navy-soft); margin-top:8px;">Snohomish &amp; King County ZIP codes only.</div>
+      </div>
+      <div class="step-actions">
+        <button class="btn btn-ghost" type="button" onclick="showStep('step3')">&#8592; Back</button>
+        <button class="btn btn-primary" type="button" id="seeResults" disabled>See My Results &#8594;</button>
+      </div>
+    </div>
+
+    <!-- REPAIR RESULT -->
+    <div class="flow-step" id="repairStep">
+      <div class="results-stack">
+        <div class="results-card">
+          <div class="results-label">Mini Split Repair Estimate</div>
+          <div class="results-type">Mini Split Repair</div>
+          <div class="results-range">$150 &#8211; $800</div>
+          <div class="results-labor">Most repairs fall in this range depending on the issue</div>
+          <div class="results-copy">Common repairs: refrigerant recharge ($150&#8211;$400), capacitor replacement ($100&#8211;$300), sensor issues ($100&#8211;$250), drain cleaning ($75&#8211;$150). Major compressor or board failures may warrant replacement.</div>
+          <div class="results-divider"></div>
+          <div class="results-includes-head">Usually includes</div>
+          <div class="results-includes">
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Diagnostic visit &amp; assessment</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Parts &amp; labor for standard repairs</div>
+          </div>
+          <div class="results-not-included">Major component failures may require a replacement quote instead.</div>
+          <div style="font-size:13px; color:#16a34a; font-weight:600; text-align:center; margin-top:14px;">Ask your installer about current promotions, rebates, and financing options.</div>
+        </div>
+        <div class="quote-bridge">
+          <div class="quote-title">Have more questions?</div>
+          <div class="quote-sub">Review your estimate with a local mini split specialist.</div>
+          <button class="btn btn-primary" type="button" onclick="showRepairLeadForm()">Yes, let&#8217;s talk &#8594;</button>
+          <div class="lead-form-wrap" id="leadFormWrapRepair">
+            <div class="lead-form-title">Request a Callback</div>
+            <div class="lead-form-sub">Someone from our team will call or text you within 1 hour during business hours.</div>
+            <div class="lead-fields">
+              <div class="lead-field">
+                <label class="lead-label" for="repairFirstName">First name</label>
+                <input class="lead-input" type="text" id="repairFirstName" placeholder="First name" autocomplete="given-name" oninput="updateRepairSubmit()" />
+                <div class="lead-error" id="repairFirstNameError"></div>
+              </div>
+              <div class="lead-field">
+                <label class="lead-label" for="repairPhone">Phone number</label>
+                <input class="lead-input" type="tel" id="repairPhone" placeholder="(206) 555-0100" autocomplete="tel" oninput="updateRepairSubmit()" />
+                <div class="lead-error" id="repairPhoneError"></div>
+              </div>
+            </div>
+            <div class="consent-wrap">
+              <input class="consent-check" type="checkbox" id="repairConsentCheck" onchange="updateRepairSubmit()" />
+              <label class="consent-text" for="repairConsentCheck">I agree to be contacted by a local HVAC professional via call, text, or email regarding my estimate. Consent is not required to obtain services. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
+            </div>
+            <button class="lead-submit" id="repairSubmit" type="button" onclick="submitRepairLead()">Send My Request &#8594;</button>
+          </div>
+          <div class="thankyou-wrap" id="thankyouWrapRepair">
+            <div class="thankyou-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="thankyou-title">You&#8217;re all set.</div>
+            <div class="thankyou-body">A local specialist will reach out shortly to discuss your repair.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- LOADING -->
     <div class="flow-step" id="loadingStep">
       <div class="loading-block">
@@ -294,72 +346,27 @@
       </div>
     </div>
 
-    <!-- RESULTS -->
+    <!-- INSTALL RESULTS -->
     <div class="flow-step" id="resultsStep">
       <div class="results-stack">
         <div class="results-card">
-          <div class="results-label">
-            Estimated Local Price Range
-          </div>
-          <div style="font-size:13px; color:var(--navy-soft); margin-bottom:10px;">
-            <span id="resultCity"></span> &bull; Greater Seattle Area
-          </div>
+          <div class="results-label">Local estimate &#8212; <span id="resultCity"></span></div>
           <div class="results-type" id="resultType">Ductless Mini Split</div>
           <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
           <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
-
+          <div class="results-copy" id="resultCopy"></div>
           <div class="results-divider"></div>
-
-          <div class="mini-kicker">Why this range fits your home</div>
-          <div class="results-reasons" id="resultReasons"></div>
-
-          <div class="results-divider"></div>
-
           <div class="results-includes-head">Usually includes</div>
           <div class="results-includes">
-            <div class="results-include-item">
-              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Indoor &amp; outdoor units
-            </div>
-            <div class="results-include-item">
-              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              Typical install: 1–2 days
-            </div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Indoor &amp; outdoor unit installation</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Line set &amp; electrical connections</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>System startup &amp; testing</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Typical install time: 1&#8211;2 days</div>
           </div>
-
-          <div class="results-includes-head" style="margin-top:16px;">May require additional work</div>
-          <div class="results-includes">
-            <div class="results-include-item">
-              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>
-              Electrical panel upgrades
-            </div>
-            <div class="results-include-item">
-              <svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>
-              Difficult installation routes or access points
-            </div>
-          </div>
-
           <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
-
-  <div style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:6px;">
-    Ready for a real quote?
-  </div>
-
-  <div style="font-size:14px; color:var(--navy-soft); margin-bottom:16px;">
-    Connect with a local installer to compare pricing and availability.
-  </div>
-
-  <button class="btn btn-primary"
-    type="button"
-    onclick="showLeadForm()"
-    id="verifyBtn"
-    style="width:100%;">
-
-    Get My Quote &#8594;
-
-  </button>
-
-</div>
+            <div style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:4px;">Exact pricing can change based on demand and equipment availability.</div>
+            <div style="font-size:13px; color:var(--navy-soft); margin-bottom:14px;">Verify your estimate with a local installer today.</div>
+            <button class="btn btn-primary" type="button" onclick="showLeadForm()" id="verifyBtn" style="width:100%;">Get My Quote &#8594;</button>
           </div>
           <div id="leadFormWrap" style="display:none; margin-top:20px;">
             <div class="lead-fields">
@@ -394,11 +401,14 @@
             <div class="thankyou-body">A local mini split specialist will reach out shortly. Ask about current rebates, financing, and whether the quote includes permits and electrical work.</div>
           </div>
         </div>
+
       </div>
     </div>
 
   </div>
 </div>
+```
+
   </section>
 
   <footer class="footer">
@@ -409,7 +419,7 @@
   </footer>
 
   <script>
-    const state = { jobType: null, zones: null, use: null, size: null, city: null, result_range: null, result_labor: null };
+    const state = { jobType: null, zones: null, use: null, size: null, homeAge: null, city: null, result_range: null, result_labor: null };
     const MAKE_WEBHOOK = 'https://hook.us2.make.com/ut8g68rnnhqxf9a56kj3rjzc71b73m4h';
 
     const BASE = { small:{min:5000,max:8500}, medium:{min:7000,max:12500}, large:{min:9500,max:17000} };
@@ -430,8 +440,10 @@
       if (state.zones === 'whole')  shift += 900;
       if (state.use === 'both')     shift += 600;
       if (state.use === 'not_sure') shift += 300;
+      if (state.homeAge === 'pre1980') shift += 500;
+      if (state.homeAge === '1980to2000') shift += 200;
       midpoint += shift;
-      const answeredCount = [state.zones, state.use, state.size].filter(Boolean).length;
+      const answeredCount = [state.zones, state.use, state.size, state.homeAge].filter(Boolean).length;
       let tf = 0.78;
       if (answeredCount >= 2) tf = 0.68;
       if (answeredCount >= 3) tf = 0.62;
@@ -461,21 +473,7 @@
       document.getElementById('resultType').textContent = systemLabel;
       document.getElementById('resultRange').textContent = pricing.range;
       document.getElementById('resultLabor').textContent = 'Estimated labor: ' + pricing.labor;
-
-      const reasons = [];
-      if (state.zones === 'single') { reasons.push('Single-room systems usually land in the lower end of the range.'); }
-      if (state.zones === 'multi')  { reasons.push('Multi-zone systems typically require additional indoor units and labor.'); }
-      if (state.zones === 'whole')  { reasons.push('Whole-home coverage increases equipment and installation complexity.'); }
-      if (state.use === 'both')     { reasons.push('Heating and cooling systems typically cost more than cooling-only setups.'); }
-      if (state.size === 'large')   { reasons.push('Larger homes often need more system capacity and longer installation time.'); }
-      const wrap = document.getElementById('resultReasons');
-      wrap.innerHTML = '';
-      reasons.slice(0, 3).forEach(r => {
-        const el = document.createElement('div');
-        el.className = 'reason';
-        el.innerHTML = `<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg> ${r}`;
-        wrap.appendChild(el);
-      });
+      document.getElementById('resultCopy').textContent = 'Based on a ' + (zoneLabels[state.zones] || 'multi-zone') + ' install for a ' + (state.size || 'medium') + '-size home in your area. Includes typical equipment, materials, labor, and startup.';
     }
 
     function selectCard(el, field, value, nextStepId) {
@@ -524,9 +522,9 @@
       setTimeout(() => {
         clearInterval(interval);
         buildResults();
-        fireWebhook({ event:'quiz_complete', site_label:'Mini Split Estimator', zip:state.city||'', intent:state.intent||'', job_type:state.jobType||'', zones:state.zones||'', use:state.use||'', size:state.size||'', result_range:state.result_range||'', result_labor:state.result_labor||'', timestamp:new Date().toISOString() });
+        fireWebhook({ event:'quiz_complete', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', size:state.size||'', home_age:state.homeAge||'', result_range:state.result_range||'', result_labor:state.result_labor||'', timestamp:new Date().toISOString() });
         showStep('resultsStep');
-      }, 5200);
+      }, 4000);
     }
 
     function fireWebhook(payload) {
@@ -539,6 +537,11 @@
       setTimeout(() => document.getElementById('leadFormWrap').scrollIntoView({ behavior:'smooth', block:'start' }), 50);
     }
 
+    function showRepairLeadForm() {
+      document.getElementById('leadFormWrapRepair').classList.add('visible');
+      setTimeout(() => document.getElementById('leadFormWrapRepair').scrollIntoView({ behavior:'smooth', block:'start' }), 50);
+    }
+
     function updateSubmit() {
       const firstName = document.getElementById('leadFirstName').value.trim();
       const phone = document.getElementById('leadPhone').value.replace(/\D/g,'');
@@ -548,7 +551,22 @@
       document.getElementById('leadSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && emailRe.test(email) && consent);
     }
 
+    function updateRepairSubmit() {
+      const firstName = document.getElementById('repairFirstName').value.trim();
+      const phone = document.getElementById('repairPhone').value.replace(/\D/g,'');
+      const consent = document.getElementById('repairConsentCheck').checked;
+      document.getElementById('repairSubmit').disabled = !(firstName.length>=2 && phone.length>=10 && consent);
+    }
+
     document.getElementById('leadPhone').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g,'').slice(0,10);
+      if (v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
+      else if (v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
+      else if (v.length>=1) v='('+v;
+      e.target.value=v;
+    });
+
+    document.getElementById('repairPhone').addEventListener('input', function(e) {
       let v = e.target.value.replace(/\D/g,'').slice(0,10);
       if (v.length>=7) v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
       else if (v.length>=4) v='('+v.slice(0,3)+') '+v.slice(3);
@@ -568,19 +586,38 @@
       if (!emailRe.test(email)) { document.getElementById('emailError').textContent='Please enter a valid email address'; document.getElementById('emailError').classList.add('visible'); valid=false; }
       if (!consent) { valid=false; }
       if (!valid) return;
-      fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', intent:state.intent||'', job_type:state.jobType||'', zones:state.zones||'', use:state.use||'', size:state.size||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, phone, email, consent:'yes', timestamp:new Date().toISOString() });
+      fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', size:state.size||'', home_age:state.homeAge||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, phone, email, consent:'yes', timestamp:new Date().toISOString() });
       if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{zip:state.city,system:'mini_split'}); }
       document.getElementById('leadFormWrap').style.display = 'none';
       document.getElementById('thankyouWrap').style.display = 'block';
       document.getElementById('thankyouWrap').scrollIntoView({ behavior:'smooth', block:'start' });
     }
 
+    function submitRepairLead() {
+      const firstName = document.getElementById('repairFirstName').value.trim();
+      const phone = document.getElementById('repairPhone').value.trim();
+      const consent = document.getElementById('repairConsentCheck').checked;
+      let valid = true;
+      if (firstName.length<2) { document.getElementById('repairFirstNameError').textContent='Please enter your first name'; document.getElementById('repairFirstNameError').classList.add('visible'); valid=false; }
+      if (phone.replace(/\D/g,'').length<10) { document.getElementById('repairPhoneError').textContent='Enter a valid 10-digit phone number'; document.getElementById('repairPhoneError').classList.add('visible'); valid=false; }
+      if (!consent) { valid=false; }
+      if (!valid) return;
+      fireWebhook({ event:'lead_submit', site_label:'Mini Split Repair', zip:'', job_type:'repair', first_name:firstName, phone, consent:'yes', timestamp:new Date().toISOString() });
+      if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{system:'mini_split_repair'}); }
+      document.getElementById('leadFormWrapRepair').classList.remove('visible');
+      document.getElementById('thankyouWrapRepair').classList.add('visible');
+      document.getElementById('thankyouWrapRepair').scrollIntoView({ behavior:'smooth', block:'start' });
+    }
+
+    // Read zones from URL on load
     window.addEventListener('load', () => {
       const params = new URLSearchParams(window.location.search);
       const zones = params.get('zones');
-      if (zones && ['single','multi','whole'].includes(zones)) {
+      if (zones && ['single','multi','whole','not_sure'].includes(zones)) {
         state.zones = zones;
         showStep('step2');
+      } else {
+        state.zones = 'multi';
       }
     });
   </script>
