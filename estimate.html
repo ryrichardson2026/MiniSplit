@@ -420,6 +420,27 @@ html.has-zones #step1 { display: none !important; }
 
   <script>
     const state = { jobType: null, zones: null, use: null, size: null, homeAge: null, city: null, result_range: null, result_labor: null };
+
+    const COOLDOWN_MS = 24 * 60 * 60 * 1000;
+
+    function canSubmit(pageKey) {
+      const last = localStorage.getItem('lastSubmit_' + pageKey);
+      return !last || (Date.now() - parseInt(last)) > COOLDOWN_MS;
+    }
+
+    function recordSubmit(pageKey) {
+      localStorage.setItem('lastSubmit_' + pageKey, Date.now().toString());
+    }
+
+    function showCooldownMessage(submitBtnId) {
+      const btn = document.getElementById(submitBtnId);
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Request already submitted — we'll be in touch shortly.";
+        btn.style.opacity = '0.6';
+        btn.style.cursor = 'default';
+      }
+    }
     const MAKE_WEBHOOK = 'https://hook.us2.make.com/ut8g68rnnhqxf9a56kj3rjzc71b73m4h';
 
     const BASE = { small:{min:5000,max:8500}, medium:{min:7000,max:12500}, large:{min:9500,max:17000} };
@@ -481,7 +502,7 @@ html.has-zones #step1 { display: none !important; }
       [...grid.querySelectorAll('.answer-card')].forEach(c => c.classList.remove('selected'));
       el.classList.add('selected');
       state[field] = value;
-      setTimeout(() => showStep(nextStepId), 180);
+      setTimeout(() => showStep(nextStepId), 300);
     }
 
     function showStep(id) {
@@ -575,6 +596,7 @@ html.has-zones #step1 { display: none !important; }
     });
 
     function submitLead() {
+      if (!canSubmit('minisplit')) { showCooldownMessage('leadSubmit'); return; }
       const firstName = document.getElementById('leadFirstName').value.trim();
       const phone = document.getElementById('leadPhone').value.trim();
       const email = document.getElementById('leadEmail').value.trim();
@@ -587,6 +609,8 @@ html.has-zones #step1 { display: none !important; }
       if (!consent) { valid=false; }
       if (!valid) return;
       fireWebhook({ event:'lead_submit', site_label:'Mini Split Estimator', zip:state.city||'', zones:state.zones||'', use:state.use||'', size:state.size||'', home_age:state.homeAge||'', result_range:state.result_range||'', result_labor:state.result_labor||'', first_name:firstName, phone, email, consent:'yes', timestamp:new Date().toISOString() });
+      recordSubmit('minisplit');
+      const msBtn = document.getElementById('leadSubmit'); if(msBtn){ msBtn.disabled=true; msBtn.textContent='Submitting…'; }
       if (typeof gtag !== 'undefined') { gtag('event','conversion',{send_to:'AW-17039190320'}); gtag('event','lead_submit',{zip:state.city,system:'mini_split'}); }
       document.getElementById('leadFormWrap').style.display = 'none';
       document.getElementById('thankyouWrap').style.display = 'block';
