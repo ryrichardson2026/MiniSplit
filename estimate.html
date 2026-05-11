@@ -41,8 +41,8 @@
     a { color: inherit; text-decoration: none; }
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
-```
-.nav { position: sticky; top: 0; z-index: 200; background: rgba(255,255,255,0.96); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(20,33,61,0.05); }
+
+.nav { position: sticky; top: 0; z-index: 200; background: #ffffff; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(20,33,61,0.05); }
 .nav-inner { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .nav-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .nav-logo svg { display: block; }
@@ -162,7 +162,7 @@ html.has-zones #step1 { display: none !important; }
   .results-range { font-size: 30px; }
   .footer-inner { flex-direction: column; }
 }
-```
+
 
   </style>
 </head>
@@ -208,7 +208,7 @@ html.has-zones #step1 { display: none !important; }
           <span class="progress-pill" id="p5"></span>
         </div>
 
-```
+
     <!-- STEP 1: Home size -->
     <div class="flow-step active" id="step1">
       <div class="flow-title">How big is your home?</div>
@@ -273,7 +273,7 @@ html.has-zones #step1 { display: none !important; }
 
     <!-- STEP 4: ZIP -->
     <div class="flow-step" id="step4">
-      <div class="flow-title">What ZIP code is the project in?</div>
+      <div class="flow-title">Where is the home located?</div>
       <div class="city-select-wrap">
         <input class="city-select" type="text" id="zipInput" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" style="text-align:center; font-size:20px; font-weight:700; letter-spacing:0.12em;" />
         <div id="zipHint" style="text-align:center; font-size:13px; color:var(--navy-soft); margin-top:8px;">Snohomish &amp; King County ZIP codes only.</div>
@@ -350,22 +350,22 @@ html.has-zones #step1 { display: none !important; }
     <div class="flow-step" id="resultsStep">
       <div class="results-stack">
         <div class="results-card">
-          <div class="results-label">Local estimate &#8212; <span id="resultCity"></span></div>
+          <div class="results-label">Best starting option &#8212; <span id="resultCity"></span></div>
           <div class="results-type" id="resultType">Ductless Mini Split</div>
           <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
           <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
-          <div class="results-copy" id="resultCopy"></div>
           <div class="results-divider"></div>
-          <div class="results-includes-head">Usually includes</div>
+          <div class="mini-kicker">Why this range fits your home</div>
+          <div class="results-reasons" id="resultReasons"></div>
+
+          <div class="results-includes-head" style="margin-top:16px;">Typically not included</div>
           <div class="results-includes">
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Indoor &amp; outdoor unit installation</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Line set &amp; electrical connections</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>System startup &amp; testing</div>
-            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Typical install time: 1&#8211;2 days</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>Electrical panel upgrades</div>
+            <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>Difficult installation routes or access points</div>
           </div>
           <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
-            <div style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:4px;">Exact pricing can change based on demand and equipment availability.</div>
-            <div style="font-size:13px; color:var(--navy-soft); margin-bottom:14px;">Verify your estimate with a local installer today.</div>
+            <div style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:6px;">Ready for a real quote?</div>
+            <div style="font-size:14px; color:var(--navy-soft); margin-bottom:16px;">Connect with a local installer to compare pricing and availability.</div>
             <button class="btn btn-primary" type="button" onclick="showLeadForm()" id="verifyBtn" style="width:100%;">Get My Quote &#8594;</button>
           </div>
           <div id="leadFormWrap" style="display:none; margin-top:20px;">
@@ -401,13 +401,12 @@ html.has-zones #step1 { display: none !important; }
             <div class="thankyou-body">A local mini split specialist will reach out shortly. Ask about current rebates, financing, and whether the quote includes permits and electrical work.</div>
           </div>
         </div>
-
       </div>
     </div>
 
   </div>
 </div>
-```
+
 
   </section>
 
@@ -494,7 +493,26 @@ html.has-zones #step1 { display: none !important; }
       document.getElementById('resultType').textContent = systemLabel;
       document.getElementById('resultRange').textContent = pricing.range;
       document.getElementById('resultLabor').textContent = 'Estimated labor: ' + pricing.labor;
-      document.getElementById('resultCopy').textContent = 'Based on a ' + (zoneLabels[state.zones] || 'multi-zone') + ' install for a ' + (state.size || 'medium') + '-size home in your area. Includes typical equipment, materials, labor, and startup.';
+      const resultCopyEl = document.getElementById('resultCopy');
+      if (resultCopyEl) resultCopyEl.textContent = '';
+
+      // Build 2 reasons
+      const reasonsWrap = document.getElementById('resultReasons');
+      if (reasonsWrap) {
+        reasonsWrap.innerHTML = '';
+        const zoneReason = state.zones === 'single' ? 'Single-zone systems typically fall at the lower end of the range.' :
+                           state.zones === 'whole'  ? 'Whole-home coverage typically lands at the higher end of the range.' :
+                                                      'Multi-zone systems generally fall in the mid-to-upper part of the range.';
+        const heatReason = state.use === 'both'    ? 'Heat pump mini splits provide both heating and cooling.' :
+                           state.use === 'cooling'  ? 'Cooling-only systems tend to come in at a lower installed cost.' :
+                                                      'Heat pump mini splits provide both heating and cooling.';
+        [zoneReason, heatReason, 'Typical install time for this setup is 1\u20132 days.'].forEach(r => {
+          const el = document.createElement('div');
+          el.className = 'reason';
+          el.innerHTML = `<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${r}`;
+          reasonsWrap.appendChild(el);
+        });
+      }
     }
 
     function selectCard(el, field, value, nextStepId) {
