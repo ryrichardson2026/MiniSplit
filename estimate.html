@@ -364,9 +364,10 @@ html.has-zones #step1 { display: none !important; }
             <div class="results-include-item"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M6 6L18 18M18 6L6 18" stroke="#dc2626" stroke-width="2.4" stroke-linecap="round"/></svg>Difficult installation routes or access points</div>
           </div>
           <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
-            <div style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:6px;">Ready for a real quote?</div>
-            <div style="font-size:14px; color:var(--navy-soft); margin-bottom:16px;">Connect with a local installer to compare pricing and availability.</div>
-            <button class="btn btn-primary" type="button" onclick="showLeadForm()" id="verifyBtn" style="width:100%;">Get My Quote &#8594;</button>
+            <div style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:6px;" id="ctaHeadline">Your install likely runs $7,000 &#8211; $12,500.</div>
+            <div style="font-size:14px; color:var(--navy-soft); margin-bottom:16px;">Final cost depends on what an installer finds on site.</div>
+            <button style="width:100%; appearance:none; border:none; cursor:pointer; border-radius:999px; padding:15px 24px; font-size:15px; font-weight:800; background:#16a34a; color:#fff; box-shadow:0 12px 26px rgba(22,163,74,0.22);" type="button" onclick="showLeadForm()" id="verifyBtn">Get My Quote &#8594;</button>
+
           </div>
           <div id="leadFormWrap" style="display:none; margin-top:20px;">
             <div class="lead-fields">
@@ -490,6 +491,7 @@ html.has-zones #step1 { display: none !important; }
       const systemLabel = state.use === 'both' ? 'Heat Pump Mini Split' : state.use === 'cooling' ? 'Ductless Mini Split' : 'Mini Split System';
       const zoneLabels = { single:'single-zone', multi:'multi-zone', whole:'whole-home' };
       document.getElementById('resultCity').textContent = state.city || 'Your area';
+      document.getElementById('ctaHeadline').textContent = 'Your install likely runs ' + pricing.range + '.';
       document.getElementById('resultType').textContent = systemLabel;
       document.getElementById('resultRange').textContent = pricing.range;
       document.getElementById('resultLabor').textContent = 'Estimated labor: ' + pricing.labor;
