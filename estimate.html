@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini Split Cost Estimate — HVAC Cost Guide</title>
   <meta name="description" content="Get a local mini split installation cost estimate based on real pricing patterns in King and Snohomish County." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg height='52' viewBox='0 0 56 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0%25' stop-color='%237b2ff7'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='36' width='8' height='12' rx='2' fill='url(%23b)'/%3E%3Crect x='15' y='28' width='8' height='20' rx='2' fill='url(%23b)'/%3E%3Crect x='26' y='20' width='8' height='28' rx='2' fill='url(%23b)'/%3E%3Crect x='37' y='12' width='8' height='36' rx='2' fill='url(%23b)'/%3E%3Cpath d='M48 6 Q56 6 56 14 L56 48 L48 48 Z' fill='url(%23b)'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -14,9 +13,9 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GT-WF65GPHQ');gtag('config','AW-17039190320');</script>
   <style>
     :root {
-      --navy:#14213d;--navy-soft:#5f6f89;--accent:#ee4266;--accent-dark:#c72b4f;
-      --highlight:#ffd23f;--purple:#540d6e;--green:#16a34a;--green-dark:#15803d;
-      --white:#ffffff;--border:rgba(20,33,61,0.06);--border-strong:rgba(20,33,61,0.1);
+      --navy:#14213d; --navy-soft:#5f6f89; --accent:#ee4266; --accent-dark:#c72b4f;
+      --highlight:#ffd23f; --purple:#540d6e; --green:#16a34a;
+      --white:#ffffff; --border:rgba(20,33,61,0.06); --border-strong:rgba(20,33,61,0.1);
       --shadow-soft:0 8px 24px rgba(20,33,61,0.05),0 2px 6px rgba(20,33,61,0.04);
       --shadow-card:0 16px 36px rgba(20,33,61,0.08),0 3px 10px rgba(20,33,61,0.05);
       --shadow-hover:0 18px 40px rgba(20,33,61,0.1),0 4px 12px rgba(20,33,61,0.06);
@@ -28,22 +27,34 @@
     button{font:inherit;}
     a{color:inherit;text-decoration:none;}
     .container{width:min(var(--max),calc(100% - 32px));margin:0 auto;}
+
+    /* NAV */
     .nav{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid rgba(20,33,61,0.05);}
     .nav-inner{min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
     .nav-logo{display:flex;align-items:center;text-decoration:none;flex-shrink:0;}
     .nav-back{font-size:14px;font-weight:600;color:var(--navy-soft);}
     .nav-back:hover{color:var(--navy);}
+
+    /* PAGE HEADER */
     .page-header{padding:28px 0 0;background:linear-gradient(180deg,#ffffff,#fbfcff);}
     .page-title{font-family:"Fraunces",serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.02;letter-spacing:-0.03em;color:var(--navy);max-width:700px;}
-    .question-flow{padding:30px 0 18px;background:linear-gradient(180deg,#ffffff,#fbfcff);}
-    .flow-card{max-width:860px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:30px;box-shadow:var(--shadow-card);padding:26px;}
+
+    /* QUESTION FLOW */
+    .question-flow{padding:30px 0 40px;background:linear-gradient(180deg,#ffffff,#fbfcff);}
+    .flow-card{max-width:860px;margin:0 auto;background:var(--white);border:1px solid var(--border);border-radius:30px;box-shadow:var(--shadow-card);padding:26px;overflow:hidden;}
+
+    /* PROGRESS */
     .progress{display:flex;justify-content:center;gap:10px;margin-bottom:16px;}
     .progress-pill{width:12px;height:12px;border-radius:999px;background:#e7ebf3;transition:all 0.22s ease;}
     .progress-pill.active{width:34px;background:var(--accent);}
+
+    /* STEPS */
     .flow-step{display:none;}
     .flow-step.active{display:block;}
     .flow-title{font-family:"Fraunces",serif;font-size:clamp(1.7rem,3vw,2.4rem);line-height:1.04;letter-spacing:-0.03em;text-align:center;margin-bottom:8px;}
     .flow-sub{text-align:center;color:var(--navy-soft);font-size:0.98rem;margin-bottom:20px;max-width:620px;margin-left:auto;margin-right:auto;}
+
+    /* ANSWER CARDS */
     .answers-grid{display:grid;gap:14px;}
     .answers-grid.cols-3{grid-template-columns:repeat(3,1fr);}
     .answers-grid.cols-2{grid-template-columns:repeat(2,1fr);}
@@ -52,9 +63,13 @@
     .answer-card.selected{border-color:var(--accent);border-width:2px;box-shadow:0 0 0 5px rgba(238,66,102,0.16),var(--shadow-card);background:#fff0f3;}
     .answer-title{font-size:17px;font-weight:800;line-height:1.22;margin-bottom:5px;}
     .answer-sub{font-size:13px;color:var(--navy-soft);line-height:1.5;}
+
+    /* ZIP INPUT */
     .city-select-wrap{margin-bottom:18px;}
     .city-select{width:100%;padding:16px 20px;font-size:16px;font-weight:600;font-family:"Inter",sans-serif;color:var(--navy);background:var(--white);border:1.5px solid var(--border-strong);border-radius:16px;box-shadow:var(--shadow-soft);appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%235f6f89' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
     .city-select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(238,66,102,0.12);}
+
+    /* BUTTONS */
     .step-actions{display:flex;justify-content:center;gap:12px;margin-top:18px;}
     .btn{appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:800;transition:transform 0.16s ease,background 0.16s ease;}
     .btn:hover{transform:translateY(-1px);}
@@ -62,6 +77,8 @@
     .btn-primary:hover{background:var(--accent-dark);}
     .btn-primary:disabled{opacity:0.45;cursor:not-allowed;transform:none;}
     .btn-ghost{background:#fff;border:1px solid var(--border);color:var(--navy);box-shadow:var(--shadow-soft);}
+
+    /* LOADING */
     .loading-block{text-align:center;padding:24px 8px;}
     .loading-title{font-family:"Fraunces",serif;font-size:1.95rem;line-height:1.04;letter-spacing:-0.03em;margin-bottom:22px;}
     .loading-cycle{min-height:28px;margin-bottom:28px;}
@@ -71,45 +88,45 @@
     .loading-fill{height:100%;width:40%;border-radius:999px;background:linear-gradient(90deg,var(--highlight),var(--accent));animation:shimmer 1.25s ease-in-out infinite;}
     @keyframes shimmer{0%{transform:translateX(-80%);}100%{transform:translateX(220%);}}
 
-    .results-stack{display:grid;gap:10px;}
-    .results-divider{height:1px;background:var(--border);margin:16px 0;}
+    /* RESULTS */
     .results-card{background:linear-gradient(180deg,#ffffff,#fcfcff);border:1px solid var(--border);border-radius:28px;box-shadow:var(--shadow-card);padding:24px;text-align:center;}
     .results-label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--navy);margin-bottom:10px;}
-    .results-type{
-      font-family:"Fraunces",serif;font-size:32px;line-height:1;letter-spacing:-0.03em;margin-bottom:10px;
-      background:linear-gradient(90deg,#7b2ff7,#f97316);
-      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-    }
+    .results-type{font-family:"Fraunces",serif;font-size:32px;line-height:1;letter-spacing:-0.03em;margin-bottom:10px;background:linear-gradient(90deg,#7b2ff7,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
     .results-range{font-size:34px;font-weight:800;line-height:1;color:var(--purple);margin-bottom:6px;}
     .results-midrange{font-size:13px;color:var(--navy-soft);font-weight:600;margin-bottom:10px;}
     .results-labor{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;}
+    .results-divider{height:1px;background:var(--border);margin:16px 0;}
     .mini-kicker{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent);margin-bottom:10px;text-align:left;}
     .results-reasons{display:grid;gap:10px;text-align:left;}
     .reason{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--navy);}
     .reason-check{width:18px;height:18px;flex-shrink:0;}
-
-    /* details toggle */
     .details-toggle{font-size:13px;font-weight:600;color:var(--navy-soft);cursor:pointer;background:none;border:none;padding:0;margin:10px auto 0;display:block;text-align:center;width:100%;}
     .details-toggle:hover{color:var(--navy);}
 
-    /* installer card */
-    .installer-inline{display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:14px;border:1px solid rgba(238,66,102,0.2);border-radius:16px;background:var(--white);text-align:left;}
+    /* ── SLIDE TRANSITION ───────────────────────────────────────────────────────
+       Two panels sit side-by-side inside .slide-track.
+       .slide-viewport clips the view to one panel at a time.
+       Sliding left reveals the consultation panel.
+    ──────────────────────────────────────────────────────────────────────────── */
+    .slide-viewport{overflow:hidden;position:relative;}
+    .slide-track{display:flex;transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);will-change:transform;}
+    .slide-track.at-consultation{transform:translateX(-50%);}
+    .slide-panel{width:50%;flex-shrink:0;}
+
+    /* INSTALLER CARD */
+    .installer-inline{display:flex;align-items:center;gap:12px;padding:12px 14px;margin-bottom:16px;border:1px solid rgba(20,33,61,0.08);border-radius:16px;background:var(--white);text-align:left;}
     .installer-inline-logo{width:44px;height:44px;border-radius:10px;object-fit:contain;flex-shrink:0;border:1px solid var(--border);background:#f0f4f8;}
     .installer-inline-content{display:flex;flex-direction:column;gap:2px;min-width:0;}
-    .installer-inline-label{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);}
+    .installer-inline-label{font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy-soft);}
     .installer-inline-name{font-size:15px;font-weight:800;color:var(--navy);}
     .installer-inline-meta{font-size:12px;font-weight:600;color:var(--navy-soft);}
 
-    /* availability dot */
-    .avail-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:5px;vertical-align:middle;position:relative;top:-1px;}
-    @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(22,163,74,0.5);}70%{box-shadow:0 0 0 6px rgba(22,163,74,0);}100%{box-shadow:0 0 0 0 rgba(22,163,74,0);}}
-    .avail-dot{animation:pulse 1.8s ease-out infinite;}
-    .avail-text{font-size:11px;font-weight:700;color:var(--green);letter-spacing:0.02em;}
+    /* CONSULTATION LOADING */
+    .consult-loading{text-align:center;padding:32px 8px;}
+    .consult-loading-label{font-size:14px;font-weight:700;color:var(--navy-soft);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:18px;}
+    .consult-cycle-text{font-size:16px;font-weight:700;color:var(--navy);min-height:26px;transition:opacity 0.3s ease;}
 
-    /* lead form slide */
-    #leadFormWrap{overflow:hidden;max-height:0;opacity:0;margin-top:0;padding-top:0;border-top:none;transition:max-height 0.35s ease,opacity 0.3s ease,margin-top 0.35s ease,padding-top 0.35s ease;}
-    #leadFormWrap.open{max-height:800px;opacity:1;margin-top:20px;padding-top:20px;border-top:1px solid var(--border);}
-
+    /* LEAD FORM */
     .lead-fields{display:grid;gap:12px;margin-bottom:14px;}
     .lead-field{display:flex;flex-direction:column;gap:6px;}
     .lead-label{font-size:13px;font-weight:700;color:var(--navy);}
@@ -117,13 +134,14 @@
     .lead-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(238,66,102,0.1);background:#fff;}
     .lead-error{display:none;font-size:12px;color:#ee4266;margin-top:4px;font-weight:600;}
     .lead-error.visible{display:block;}
-    .consent-wrap{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+    .consent-wrap{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;}
     .consent-check{width:20px;height:20px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer;}
     .consent-text{font-size:13px;color:var(--navy-soft);line-height:1.5;}
-    .lead-submit{width:100%;max-width:420px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px;font-size:15px;font-weight:800;font-family:"Inter",sans-serif;background:var(--green);color:#fff;box-shadow:0 12px 26px rgba(22,163,74,0.22);transition:transform 0.16s ease;margin-top:6px;display:block;margin-left:auto;margin-right:auto;}
+    .lead-submit{width:auto;min-width:260px;max-width:320px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:800;font-family:"Inter",sans-serif;background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(22,163,74,0.18);transition:transform 0.16s ease;margin-top:6px;display:block;margin-left:auto;margin-right:auto;}
     .lead-submit:hover:not(:disabled){transform:translateY(-1px);}
     .lead-submit:disabled{opacity:0.45;cursor:not-allowed;}
 
+    /* THANK YOU */
     .thankyou-icon{width:56px;height:56px;border-radius:999px;background:rgba(22,163,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
     .thankyou-title{font-family:"Fraunces",serif;font-size:1.9rem;letter-spacing:-0.03em;color:var(--navy);margin-bottom:8px;}
     .thankyou-body{font-size:15px;color:var(--navy-soft);line-height:1.6;max-width:480px;margin:0 auto 16px;}
@@ -131,8 +149,10 @@
     .thankyou-questions-head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:var(--navy-soft);margin-bottom:10px;}
     .thankyou-question{display:flex;align-items:flex-start;gap:10px;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px;}
 
+    /* FOOTER */
     .footer{background:#fff;border-top:1px solid var(--border);padding:24px 0 40px;}
     .footer-inner{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--navy-soft);font-size:14px;}
+
     html.has-zones #step1{display:none!important;}
 
     @media(max-width:1040px){.answers-grid.cols-3{grid-template-columns:1fr;}}
@@ -143,10 +163,12 @@
       .results-range{font-size:30px;}
       .footer-inner{flex-direction:column;}
       .answers-grid.cols-3{grid-template-columns:1fr;}
+      #ctaBtn,.lead-submit{width:100%;min-width:0;max-width:none;}
     }
   </style>
 </head>
 <body>
+
   <header class="nav">
     <div class="container nav-inner">
       <a class="nav-logo" href="https://minisplit.hvacinstallcosts.com" aria-label="HVAC Cost Guide">
@@ -178,6 +200,7 @@
   <section class="question-flow">
     <div class="container">
       <div class="flow-card">
+
         <div class="progress">
           <span class="progress-pill active" id="p1"></span>
           <span class="progress-pill" id="p2"></span>
@@ -186,6 +209,7 @@
           <span class="progress-pill" id="p5"></span>
         </div>
 
+        <!-- STEP 1: Size -->
         <div class="flow-step active" id="step1">
           <div class="flow-title">How big is your home?</div>
           <div class="flow-sub">This helps narrow the system size and installation cost.</div>
@@ -196,6 +220,7 @@
           </div>
         </div>
 
+        <!-- STEP 2: Heating -->
         <div class="flow-step" id="step2">
           <div class="flow-title">Is heating needed?</div>
           <div class="flow-sub">Most mini splits in the Pacific Northwest provide both heating and cooling.</div>
@@ -206,9 +231,10 @@
           <div class="step-actions"><button class="btn btn-ghost" type="button" onclick="showStep('step1')">&#8592; Back</button></div>
         </div>
 
+        <!-- STEP 3: Home age -->
         <div class="flow-step" id="step3">
           <div class="flow-title">When was your home built?</div>
-          <div class="flow-sub">Older homes may require additional electrical work, which affects installation cost.</div>
+          <div class="flow-sub">Older homes may require additional electrical work, which affects cost.</div>
           <div class="answers-grid cols-2">
             <button class="answer-card" type="button" onclick="selectCard(this,'homeAge','pre1980','step4')"><div class="answer-title">Before 1980</div></button>
             <button class="answer-card" type="button" onclick="selectCard(this,'homeAge','1980to2000','step4')"><div class="answer-title">1980&#8211;2000</div></button>
@@ -218,6 +244,7 @@
           <div class="step-actions"><button class="btn btn-ghost" type="button" onclick="showStep('step2')">&#8592; Back</button></div>
         </div>
 
+        <!-- STEP 4: ZIP -->
         <div class="flow-step" id="step4">
           <div class="flow-title">Where is the home located?</div>
           <div class="city-select-wrap">
@@ -230,6 +257,7 @@
           </div>
         </div>
 
+        <!-- ESTIMATE LOADING -->
         <div class="flow-step" id="loadingStep">
           <div class="loading-block">
             <div class="loading-title">Building your mini split range...</div>
@@ -238,89 +266,132 @@
           </div>
         </div>
 
+        <!-- RESULTS STEP — contains slide viewport -->
         <div class="flow-step" id="resultsStep">
-          <div class="results-stack">
-            <div class="results-card">
-              <div class="results-label">Best starting option &#8212; <span id="resultCity"></span></div>
-              <div class="results-type" id="resultType">Ductless Mini Split</div>
-              <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
-              <div class="results-midrange">Most homes in your area land near the middle of this range.</div>
-              <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
 
-              <button class="details-toggle" id="detailsToggle" onclick="toggleDetails()">+ More details</button>
-              <div id="detailsSection" style="display:none;">
-                <div class="mini-kicker" style="margin-top:10px;">Why this range fits your home</div>
-                <div class="results-reasons" id="resultReasons"></div>
-              </div>
+          <!-- SLIDE VIEWPORT: clips to one panel at a time -->
+          <div class="slide-viewport">
+            <div class="slide-track" id="slideTrack">
 
-              <div class="results-divider"></div>
+              <!-- PANEL A: Estimate result + CTA -->
+              <div class="slide-panel" id="panelEstimate">
+                <div class="results-card">
+                  <div class="results-label">Best starting option &#8212; <span id="resultCity"></span></div>
+                  <div class="results-type" id="resultType">Ductless Mini Split</div>
+                  <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
+                  <div class="results-midrange">Most homes in your area land near the middle of this range.</div>
+                  <div class="results-labor" id="resultLabor">Estimated labor: $1,400 &#8211; $2,800</div>
 
-              <!-- installer card with blinking availability dot -->
-              <div class="installer-inline">
-                <img src="/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-inline-logo" />
-                <div class="installer-inline-content">
-                  <div style="margin-bottom:4px;"><span class="avail-dot"></span><span class="avail-text">Accepting appointments</span></div>
-                  <div class="installer-inline-label">Matched Local Installer</div>
-                  <div class="installer-inline-name">Sapphire Heating &amp; Air</div>
-                  <div class="installer-inline-meta"><span style="color:#f59e0b;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:#f59e0b;font-weight:700;">4.9</span> Rated &bull; Licensed &amp; Insured</div>
-                </div>
-              </div>
-
-              <!-- CTA -->
-              <div id="ctaBlock" style="text-align:center;">
-                <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px;">Ready for a quote?</div>
-                <div style="font-size:14px;color:var(--navy-soft);margin-bottom:16px;">Most installs book out 2&#8211;3 weeks ahead.</div>
-                <button id="verifyBtn" style="width:100%;max-width:420px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:800;background:#16a34a;color:#fff;box-shadow:0 12px 26px rgba(22,163,74,0.22);transition:transform 0.16s ease;" type="button" onclick="showLeadForm()">Get My Quote &#8594;</button>
-              </div>
-
-              <!-- form slides open inside card -->
-              <div id="leadFormWrap">
-                <div class="lead-fields">
-                  <div class="lead-field">
-                    <label class="lead-label" for="leadFirstName">First name</label>
-                    <input class="lead-input" type="text" id="leadFirstName" placeholder="First name" autocomplete="given-name" required oninput="updateSubmit()" />
-                    <div class="lead-error" id="firstNameError"></div>
+                  <button class="details-toggle" id="detailsToggle" onclick="toggleDetails()">+ More details</button>
+                  <div id="detailsSection" style="display:none;">
+                    <div class="mini-kicker" style="margin-top:10px;">Why this range fits your home</div>
+                    <div class="results-reasons" id="resultReasons"></div>
                   </div>
-                  <div class="lead-field">
-                    <label class="lead-label" for="leadPhone">Phone number</label>
-                    <input class="lead-input" type="tel" id="leadPhone" placeholder="(206) 555-0100" autocomplete="tel" required oninput="updateSubmit()" />
-                    <div class="lead-error" id="phoneError"></div>
+
+                  <div class="results-divider"></div>
+
+                  <!-- CTA -->
+                  <div style="text-align:center;padding-top:4px;">
+                    <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px;">Every home cools differently.</div>
+                    <div style="font-size:14px;line-height:1.6;color:var(--navy-soft);margin-bottom:16px;max-width:460px;margin-left:auto;margin-right:auto;">A local technician can help you understand what system fits your space and budget.</div>
+                    <button id="ctaBtn" style="width:auto;min-width:260px;max-width:320px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:800;background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(22,163,74,0.18);transition:transform 0.16s ease;" type="button" onclick="startConsultationFlow()">Get A Consultation &#8594;</button>
                   </div>
-                  <div class="lead-field">
-                    <label class="lead-label" for="leadEmail">Email address</label>
-                    <input class="lead-input" type="email" id="leadEmail" placeholder="you@email.com" autocomplete="email" required oninput="updateSubmit()" />
-                    <div class="lead-error" id="emailError"></div>
+
+                  <div style="border-top:1px solid var(--border);margin-top:20px;padding-top:16px;text-align:center;">
+                    <a href="https://minisplit.hvacinstallcosts.com" style="font-size:13px;color:var(--navy-soft);font-weight:600;">&#8634; Start Over</a>
                   </div>
                 </div>
-                <div class="consent-wrap">
-                  <input class="consent-check" type="checkbox" id="consentCheck" onchange="updateSubmit()" />
-                  <label class="consent-text" for="consentCheck">I agree to be contacted about my HVAC quote.</label>
+              </div>
+              <!-- END PANEL A -->
+
+              <!-- PANEL B: Consultation loading → installer + form -->
+              <div class="slide-panel" id="panelConsultation">
+
+                <!-- B1: Loading state -->
+                <div id="consultLoading" class="results-card" style="min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+                  <div class="consult-loading-label">One moment</div>
+                  <div id="consultCycleText" class="consult-cycle-text" style="margin-bottom:24px;">Reviewing your project&#8230;</div>
+                  <div class="loading-bar" style="width:100%;max-width:320px;"><div class="loading-fill"></div></div>
                 </div>
-                <button id="leadSubmit" type="button" onclick="submitLead()" disabled class="lead-submit">Get My Quote &#8594;</button>
-              </div>
 
-              <!-- thank you inside card -->
-              <div id="thankyouWrap" style="display:none;text-align:center;padding:16px 0;margin-top:16px;">
-                <div class="thankyou-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div class="thankyou-title">You&#8217;re all set.</div>
-                <div class="thankyou-body">A local installer will reach out shortly.</div>
-                <div class="thankyou-questions">
-                  <div class="thankyou-questions-head">Ask them on the call</div>
-                  <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Does this quote include permits and startup?</div>
-                  <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>What&#8217;s the current lead time for installation?</div>
-                  <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Are there any rebates or financing options available?</div>
+                <!-- B2: Match result + form (hidden until loading done) -->
+                <div id="consultMatch" class="results-card" style="display:none;">
+
+                  <!-- Back button -->
+                  <button onclick="goBackToEstimate()" style="background:none;border:none;cursor:pointer;font-size:13px;font-weight:700;color:var(--navy-soft);display:flex;align-items:center;gap:6px;margin-bottom:16px;padding:0;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Back to estimate
+                  </button>
+
+                  <div style="font-family:'Fraunces',serif;font-size:28px;line-height:1.04;letter-spacing:-0.03em;margin-bottom:16px;text-align:center;background:linear-gradient(90deg,#7b2ff7,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">We found a match</div>
+
+                  <div class="installer-inline">
+                    <img src="https://minisplit.hvacinstallcosts.com/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-inline-logo" onerror="this.style.display='none'" />
+                    <div class="installer-inline-content">
+                      <div class="installer-inline-label">Local Licensed Installer</div>
+                      <div class="installer-inline-name">Sapphire Heating &amp; Air</div>
+                      <div class="installer-inline-meta" style="line-height:1.6;">Mini split installation &bull; Heat pumps &bull; Cooling upgrades</div>
+                      <div class="installer-inline-meta" style="margin-top:3px;"><span style="color:#f59e0b;">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:#f59e0b;font-weight:700;">4.9</span> Rated &bull; Licensed &amp; Insured</div>
+                    </div>
+                  </div>
+
+
+                  <!-- Lead form -->
+                  <div id="leadFormWrap">
+                    <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:14px;text-align:left;">Request consultation</div>
+                    <div class="lead-fields">
+                      <div class="lead-field">
+                        <label class="lead-label" for="leadFirstName">First name</label>
+                        <input class="lead-input" type="text" id="leadFirstName" placeholder="First name" autocomplete="given-name" required oninput="updateSubmit()" />
+                        <div class="lead-error" id="firstNameError"></div>
+                      </div>
+                      <div class="lead-field">
+                        <label class="lead-label" for="leadPhone">Phone number</label>
+                        <input class="lead-input" type="tel" id="leadPhone" placeholder="(206) 555-0100" autocomplete="tel" required oninput="updateSubmit()" />
+                        <div class="lead-error" id="phoneError"></div>
+                      </div>
+                      <div class="lead-field">
+                        <label class="lead-label" for="leadEmail">Email address</label>
+                        <input class="lead-input" type="email" id="leadEmail" placeholder="you@email.com" autocomplete="email" required oninput="updateSubmit()" />
+                        <div class="lead-error" id="emailError"></div>
+                      </div>
+                    </div>
+                    <div class="consent-wrap">
+                      <input class="consent-check" type="checkbox" id="consentCheck" onchange="updateSubmit()" />
+                      <label class="consent-text" for="consentCheck">I agree to be contacted about my HVAC quote.</label>
+                    </div>
+                    <button id="leadSubmit" type="button" onclick="submitLead()" disabled class="lead-submit">Submit &#8594;</button>
+                  </div>
+
+                  <!-- Thank you -->
+                  <div id="thankyouWrap" style="display:none;text-align:center;padding:16px 0;margin-top:8px;">
+                    <div class="thankyou-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                    <div class="thankyou-title">You&#8217;re all set.</div>
+                    <div class="thankyou-body">A local technician will help you understand what cooling options make the most sense for your home.</div>
+                    <div class="thankyou-questions">
+                      <div class="thankyou-questions-head">Ask them on the call</div>
+                      <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Does this quote include permits and startup?</div>
+                      <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>What&#8217;s the current lead time for installation?</div>
+                      <div class="thankyou-question"><svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Are there any rebates or financing options available?</div>
+                    </div>
+                  </div>
+
+                  <div style="border-top:1px solid var(--border);margin-top:20px;padding-top:16px;text-align:center;">
+                    <a href="https://minisplit.hvacinstallcosts.com" style="font-size:13px;color:var(--navy-soft);font-weight:600;">&#8634; Start Over</a>
+                  </div>
                 </div>
-              </div>
+                <!-- END B2 -->
 
-              <div style="border-top:1px solid var(--border);margin-top:20px;padding-top:16px;text-align:center;">
-                <a href="https://minisplit.hvacinstallcosts.com" style="font-size:13px;color:var(--navy-soft);font-weight:600;">&#8634; Start Over</a>
               </div>
-            </div>
-          </div>
-        </div>
+              <!-- END PANEL B -->
 
-      </div>
-    </div>
+            </div><!-- end slide-track -->
+          </div><!-- end slide-viewport -->
+
+        </div><!-- end resultsStep -->
+
+      </div><!-- end flow-card -->
+    </div><!-- end container -->
   </section>
 
   <footer class="footer">
@@ -331,93 +402,174 @@
   </footer>
 
   <script>
-    const state={zones:null,use:null,size:null,homeAge:null,city:null,result_range:null,result_labor:null};
-    const COOLDOWN_MS=24*60*60*1000;
+    // ── STATE ────────────────────────────────────────────────────────────────
+    const state = {zones:null, use:null, size:null, homeAge:null, city:null, result_range:null, result_labor:null};
+    const COOLDOWN_MS = 24*60*60*1000;
+    const MAKE_WEBHOOK = 'https://hook.us2.make.com/ut8g68rnnhqxf9a56kj3rjzc71b73m4h';
+
     function canSubmit(k){const l=localStorage.getItem('lastSubmit_'+k);return !l||(Date.now()-parseInt(l))>COOLDOWN_MS;}
     function recordSubmit(k){localStorage.setItem('lastSubmit_'+k,Date.now().toString());}
-    function showCooldownMessage(id){const b=document.getElementById(id);if(b){b.disabled=true;b.textContent="Request already submitted — we'll be in touch shortly.";b.style.opacity='0.6';b.style.cursor='default';}}
-    const MAKE_WEBHOOK='https://hook.us2.make.com/ut8g68rnnhqxf9a56kj3rjzc71b73m4h';
+    function showCooldownMessage(id){const b=document.getElementById(id);if(b){b.disabled=true;b.textContent="Already submitted — we'll be in touch shortly.";b.style.opacity='0.6';b.style.cursor='default';}}
+    function fireWebhook(payload){fetch(MAKE_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});}
+
+    // ── PRICING ──────────────────────────────────────────────────────────────
     const BASE={small:{min:5000,max:8500},medium:{min:7000,max:12500},large:{min:9500,max:17000}};
     const LABOR_PCT={min:0.18,max:0.25};
     const SPREAD_CAPS={small:2800,medium:3600,large:5200};
     const MIN_SPREADS={small:2400,medium:3000,large:4200};
     const GUARDRAILS={min:4500,max:18000};
+
     function roundToHundred(v){return Math.round(v/100)*100;}
+
     function calculatePrice(){
       const size=state.size||'medium';
       const base=BASE[size];
-      let midpoint=(base.min+base.max)/2;
+      let mid=(base.min+base.max)/2;
       let shift=0;
       if(state.zones==='single')shift-=400;
       if(state.zones==='multi')shift+=300;
       if(state.zones==='whole')shift+=900;
       if(state.use==='both')shift+=600;
-      if(state.use==='not_sure')shift+=300;
       if(state.homeAge==='pre1980')shift+=500;
       if(state.homeAge==='1980to2000')shift+=200;
-      midpoint+=shift;
-      const answeredCount=[state.zones,state.use,state.size,state.homeAge].filter(Boolean).length;
-      let tf=0.78;if(answeredCount>=2)tf=0.68;if(answeredCount>=3)tf=0.62;
+      mid+=shift;
+      const count=[state.zones,state.use,state.size,state.homeAge].filter(Boolean).length;
+      let tf=0.78;if(count>=2)tf=0.68;if(count>=3)tf=0.62;
       let spread=(base.max-base.min)*tf;
-      spread=Math.min(spread,SPREAD_CAPS[size]);
-      spread=Math.max(spread,MIN_SPREADS[size]);
-      let min=roundToHundred(midpoint-spread/2);
-      let max=roundToHundred(midpoint+spread/2);
-      min=Math.max(GUARDRAILS.min,min);
-      max=Math.min(GUARDRAILS.max,max);
+      spread=Math.min(spread,SPREAD_CAPS[size]);spread=Math.max(spread,MIN_SPREADS[size]);
+      let min=roundToHundred(mid-spread/2);let max=roundToHundred(mid+spread/2);
+      min=Math.max(GUARDRAILS.min,min);max=Math.min(GUARDRAILS.max,max);
       if((max-min)<MIN_SPREADS[size])max=Math.min(GUARDRAILS.max,roundToHundred(min+MIN_SPREADS[size]));
-      return{range:'$'+min.toLocaleString()+' \u2013 $'+max.toLocaleString(),labor:'$'+roundToHundred(min*LABOR_PCT.min).toLocaleString()+' \u2013 $'+roundToHundred(max*LABOR_PCT.max).toLocaleString()};
+      return{
+        range:'$'+min.toLocaleString()+'\u2013$'+max.toLocaleString(),
+        labor:'$'+roundToHundred(min*LABOR_PCT.min).toLocaleString()+'\u2013$'+roundToHundred(max*LABOR_PCT.max).toLocaleString()
+      };
     }
+
+    // ── BUILD RESULTS ────────────────────────────────────────────────────────
     function buildResults(){
       const pricing=calculatePrice();
       state.result_range=pricing.range;state.result_labor=pricing.labor;
-      const systemLabel=state.use==='both'?'Heat Pump Mini Split':state.use==='cooling'?'Ductless Mini Split':'Mini Split System';
+      const label=state.use==='both'?'Heat Pump Mini Split':state.use==='cooling'?'Ductless Mini Split':'Mini Split System';
       document.getElementById('resultCity').textContent=state.city||'Your area';
-      document.getElementById('resultType').textContent=systemLabel;
+      document.getElementById('resultType').textContent=label;
       document.getElementById('resultRange').textContent=pricing.range;
       document.getElementById('resultLabor').textContent='Estimated labor: '+pricing.labor;
-      const reasonsWrap=document.getElementById('resultReasons');
-      if(reasonsWrap){
-        reasonsWrap.innerHTML='';
+      const wrap=document.getElementById('resultReasons');
+      if(wrap){
+        wrap.innerHTML='';
         const zip=state.city||'your area';
         const reasons=[];
-        if(state.use==='both') reasons.push('Heat pump mini splits handle heating and cooling in one system — common in the Pacific Northwest where winters are mild but real.');
-        if(state.use==='cooling') reasons.push('Cooling-only mini splits come in at a lower installed cost since you\'re skipping the heat pump components.');
-        if(state.size==='small') reasons.push(`Smaller homes in ${zip} typically need a single-zone unit, which keeps this estimate toward the lower end.`);
-        if(state.size==='medium') reasons.push(`Mid-size homes in ${zip} usually need 2–3 zones depending on layout, which is where most of this range sits.`);
-        if(state.size==='large') reasons.push(`Larger homes often need 3+ indoor units. Each additional zone adds roughly $1,500–$2,500 to the installed cost.`);
-        if(state.homeAge==='pre1980') reasons.push('Homes built before 1980 sometimes need an electrical panel upgrade to support a mini split — that cost isn\'t in this range.');
-        reasons.push('Typical install time for this setup is 1–2 days.');
+        if(state.use==='both')reasons.push('Heat pump mini splits handle heating and cooling in one system — common in the Pacific Northwest.');
+        if(state.use==='cooling')reasons.push('Cooling-only systems come in at a lower installed cost.');
+        if(state.size==='small')reasons.push('Smaller homes in '+zip+' typically need a single-zone unit, toward the lower end of this range.');
+        if(state.size==='medium')reasons.push('Mid-size homes in '+zip+' usually need 2\u20133 zones, which is where most of this range sits.');
+        if(state.size==='large')reasons.push('Larger homes often need 3+ indoor units — each additional zone adds $1,500\u2013$2,500.');
+        if(state.homeAge==='pre1980')reasons.push('Homes built before 1980 may need an electrical upgrade — that cost isn\'t in this range.');
+        reasons.push('Typical install time: 1\u20132 days.');
         reasons.slice(0,3).forEach(r=>{
           const el=document.createElement('div');el.className='reason';
-          el.innerHTML=`<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${r}`;
-          reasonsWrap.appendChild(el);
+          el.innerHTML='<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'+r;
+          wrap.appendChild(el);
         });
       }
-      // reset toggle
       document.getElementById('detailsSection').style.display='none';
       document.getElementById('detailsToggle').textContent='+ More details';
+      // sync panel heights so track width stays correct
+      syncPanelHeights();
     }
+
     function toggleDetails(){
       const s=document.getElementById('detailsSection');
       const t=document.getElementById('detailsToggle');
-      const hidden=s.style.display==='none'||s.style.display==='';
+      const hidden=s.style.display==='none';
       s.style.display=hidden?'block':'none';
-      t.textContent=hidden?'− Less details':'+ More details';
+      t.textContent=hidden?'\u2212 Less details':'+ More details';
+      syncPanelHeights();
     }
+
+    // ── SLIDE HELPERS ─────────────────────────────────────────────────────────
+    function syncPanelHeights(){
+      // Make the track width = 2x flow-card width so panels are 50% each
+      const track=document.getElementById('slideTrack');
+      const card=document.querySelector('.flow-card');
+      if(!track||!card)return;
+      const w=card.offsetWidth;
+      track.style.width=(w*2)+'px';
+      document.getElementById('panelEstimate').style.width=w+'px';
+      document.getElementById('panelConsultation').style.width=w+'px';
+      console.log('[slide] card width='+w+', track='+w*2);
+    }
+
+    function slideToConsultation(){
+      syncPanelHeights();
+      document.getElementById('slideTrack').classList.add('at-consultation');
+      console.log('[slide] → consultation panel');
+      // scroll flow-card into view without pulling page header
+      setTimeout(()=>{
+        const card=document.querySelector('.flow-card');
+        const rect=card.getBoundingClientRect();
+        if(rect.top<0){window.scrollBy({top:rect.top-16,behavior:'smooth'});}
+      },100);
+    }
+
+    function goBackToEstimate(){
+      document.getElementById('slideTrack').classList.remove('at-consultation');
+      syncPanelHeights();
+      console.log('[slide] ← back to estimate');
+    }
+
+    // ── CONSULTATION FLOW ─────────────────────────────────────────────────────
+    function startConsultationFlow(){
+      console.log('[consult] starting flow');
+      slideToConsultation();
+
+      // Show loading, hide match
+      document.getElementById('consultLoading').style.display='flex';
+      document.getElementById('consultMatch').style.display='none';
+
+      const messages=['Reviewing your project\u2026','Finding a local installer\u2026','Checking availability\u2026','Preparing your consultation\u2026'];
+      const el=document.getElementById('consultCycleText');
+      let i=0;
+
+      function showMsg(idx){
+        el.style.opacity='0';
+        setTimeout(()=>{el.textContent=messages[idx];el.style.opacity='1';},200);
+        console.log('[consult] message '+idx+': '+messages[idx]);
+      }
+      showMsg(0);
+      const interval=setInterval(()=>{
+        i++;
+        if(i<messages.length)showMsg(i);
+        else clearInterval(interval);
+      },900);
+
+      setTimeout(()=>{
+        clearInterval(interval);
+        console.log('[consult] loading done → showing match');
+        document.getElementById('consultLoading').style.display='none';
+        document.getElementById('consultMatch').style.display='block';
+        syncPanelHeights();
+      },3800);
+    }
+
+    // ── STEP FLOW ─────────────────────────────────────────────────────────────
     function selectCard(el,field,value,nextStepId){
       const grid=el.closest('.answers-grid');
       [...grid.querySelectorAll('.answer-card')].forEach(c=>c.classList.remove('selected'));
       el.classList.add('selected');state[field]=value;
       setTimeout(()=>showStep(nextStepId),300);
     }
+
     function showStep(id){
       document.querySelectorAll('.flow-step').forEach(s=>s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       const stepMap={step1:1,step2:2,step3:3,step4:4,loadingStep:5,resultsStep:5};
       const idx=(stepMap[id]||1)-1;
       ['p1','p2','p3','p4','p5'].forEach((pid,i)=>document.getElementById(pid).classList.toggle('active',i===idx));
+      if(id==='resultsStep')setTimeout(syncPanelHeights,50);
     }
+
     function onZipInput(el){
       el.value=el.value.replace(/\D/g,'').slice(0,5);
       const valid=/^\d{5}$/.test(el.value)&&el.value.startsWith('98');
@@ -425,40 +577,41 @@
       if(valid)state.city=el.value;
       const hint=document.getElementById('zipHint');
       if(hint){
-        if(el.value.length===5&&!valid){hint.textContent="We're currently serving Snohomish & King County. Enter a local ZIP to see your results.";hint.style.color='#ee4266';}
+        if(el.value.length===5&&!valid){hint.textContent="Serving Snohomish & King County — enter a local ZIP.";hint.style.color='#ee4266';}
         else{hint.textContent='Snohomish & King County ZIP codes only.';hint.style.color='';}
       }
     }
+
     document.getElementById('seeResults').addEventListener('click',()=>{if(!state.city)return;runLoading();});
+
     function runLoading(){
       showStep('loadingStep');
-      const messages=['Analyzing your inputs\u2026','Matching to similar mini split installs\u2026','Checking local pricing patterns\u2026','Building your range\u2026'];
+      const msgs=['Analyzing your inputs\u2026','Matching to similar mini split installs\u2026','Checking local pricing patterns\u2026','Building your range\u2026'];
       const el=document.getElementById('loadingCycleText');let i=0;
-      function showMessage(idx){el.classList.remove('visible');setTimeout(()=>{el.textContent=messages[idx];el.classList.add('visible');},300);}
+      function showMessage(idx){el.classList.remove('visible');setTimeout(()=>{el.textContent=msgs[idx];el.classList.add('visible');},300);}
       showMessage(0);
-      const interval=setInterval(()=>{i++;if(i<messages.length)showMessage(i);else clearInterval(interval);},1300);
+      const interval=setInterval(()=>{i++;if(i<msgs.length)showMessage(i);else clearInterval(interval);},1300);
       setTimeout(()=>{
-        clearInterval(interval);buildResults();
+        clearInterval(interval);
+        buildResults();
         fireWebhook({event:'quiz_complete',site_label:'Mini Split Estimator',zip:state.city||'',zones:state.zones||'',use:state.use||'',size:state.size||'',home_age:state.homeAge||'',result_range:state.result_range||'',result_labor:state.result_labor||'',timestamp:new Date().toISOString()});
         showStep('resultsStep');
       },4000);
     }
-    function fireWebhook(payload){fetch(MAKE_WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(()=>{});}
-    function showLeadForm(){
-      document.getElementById('verifyBtn').style.display='none';
-      document.getElementById('leadFormWrap').classList.add('open');
-    }
+
+    // ── FORM ──────────────────────────────────────────────────────────────────
     function updateSubmit(){
-      const firstName=document.getElementById('leadFirstName').value.trim();
-      const phone=document.getElementById('leadPhone').value.replace(/\D/g,'');
-      const email=document.getElementById('leadEmail').value.trim();
-      const consent=document.getElementById('consentCheck').checked;
-      const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      const ready=firstName.length>=2&&phone.length>=10&&emailRe.test(email)&&consent;
+      const fn=document.getElementById('leadFirstName').value.trim();
+      const ph=document.getElementById('leadPhone').value.replace(/\D/g,'');
+      const em=document.getElementById('leadEmail').value.trim();
+      const co=document.getElementById('consentCheck').checked;
+      const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const ready=fn.length>=2&&ph.length>=10&&re.test(em)&&co;
       const btn=document.getElementById('leadSubmit');
-      btn.disabled=!ready;
-      btn.style.opacity=ready?'1':'0.45';
+      btn.disabled=!ready;btn.style.opacity=ready?'1':'0.45';
+      console.log('[form] ready='+ready);
     }
+
     document.getElementById('leadPhone').addEventListener('input',function(e){
       let v=e.target.value.replace(/\D/g,'').slice(0,10);
       if(v.length>=7)v='('+v.slice(0,3)+') '+v.slice(3,6)+'-'+v.slice(6);
@@ -466,32 +619,41 @@
       else if(v.length>=1)v='('+v;
       e.target.value=v;
     });
+
     function submitLead(){
       if(!canSubmit('minisplit')){showCooldownMessage('leadSubmit');return;}
-      const firstName=document.getElementById('leadFirstName').value.trim();
-      const phone=document.getElementById('leadPhone').value.trim();
-      const email=document.getElementById('leadEmail').value.trim();
-      const consent=document.getElementById('consentCheck').checked;
-      const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const fn=document.getElementById('leadFirstName').value.trim();
+      const ph=document.getElementById('leadPhone').value.trim();
+      const em=document.getElementById('leadEmail').value.trim();
+      const co=document.getElementById('consentCheck').checked;
+      const re=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       let valid=true;
-      if(firstName.length<2){document.getElementById('firstNameError').textContent='Please enter your first name';document.getElementById('firstNameError').classList.add('visible');valid=false;}
-      if(phone.replace(/\D/g,'').length<10){document.getElementById('phoneError').textContent='Enter a valid 10-digit phone number';document.getElementById('phoneError').classList.add('visible');valid=false;}
-      if(!emailRe.test(email)){document.getElementById('emailError').textContent='Please enter a valid email address';document.getElementById('emailError').classList.add('visible');valid=false;}
-      if(!consent){valid=false;}
-      if(!valid)return;
-      fireWebhook({event:'lead_submit',site_label:'Mini Split Estimator',zip:state.city||'',zones:state.zones||'',use:state.use||'',size:state.size||'',home_age:state.homeAge||'',result_range:state.result_range||'',result_labor:state.result_labor||'',first_name:firstName,phone,email,consent:'yes',timestamp:new Date().toISOString()});
+      if(fn.length<2){document.getElementById('firstNameError').textContent='Please enter your first name';document.getElementById('firstNameError').classList.add('visible');valid=false;}
+      if(ph.replace(/\D/g,'').length<10){document.getElementById('phoneError').textContent='Enter a valid 10-digit phone number';document.getElementById('phoneError').classList.add('visible');valid=false;}
+      if(!re.test(em)){document.getElementById('emailError').textContent='Please enter a valid email address';document.getElementById('emailError').classList.add('visible');valid=false;}
+      if(!co){valid=false;}
+      if(!valid){console.log('[form] validation failed');return;}
+      console.log('[form] submitting lead');
+      fireWebhook({event:'lead_submit',site_label:'Mini Split Estimator',zip:state.city||'',zones:state.zones||'',use:state.use||'',size:state.size||'',home_age:state.homeAge||'',result_range:state.result_range||'',result_labor:state.result_labor||'',first_name:fn,phone:ph,email:em,consent:'yes',timestamp:new Date().toISOString()});
       recordSubmit('minisplit');
       const btn=document.getElementById('leadSubmit');if(btn){btn.disabled=true;btn.textContent='Submitting\u2026';}
       if(typeof gtag!=='undefined'){gtag('event','conversion',{send_to:'AW-17039190320'});gtag('event','lead_submit',{zip:state.city,system:'mini_split'});}
-      document.getElementById('leadFormWrap').classList.remove('open');
+      document.getElementById('leadFormWrap').style.display='none';
       document.getElementById('thankyouWrap').style.display='block';
+      syncPanelHeights();
+      console.log('[form] submitted → thank you shown');
     }
+
+    // ── INIT ──────────────────────────────────────────────────────────────────
     window.addEventListener('load',()=>{
       const params=new URLSearchParams(window.location.search);
       const zones=params.get('zones');
       if(zones&&['single','multi','whole','not_sure'].includes(zones)){state.zones=zones;showStep('step2');}
       else{state.zones='multi';}
+      syncPanelHeights();
     });
+
+    window.addEventListener('resize',syncPanelHeights);
   </script>
 </body>
 </html>
