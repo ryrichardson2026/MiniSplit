@@ -156,7 +156,7 @@
   </header>
 
   <section class="page-header">
-    <div class="container"><h1 class="page-title">Your mini split estimate</h1></div>
+    <div class="container"><h1 class="page-title">Your Installation Estimate</h1></div>
   </section>
 
   <section class="question-flow">
@@ -167,7 +167,7 @@
     <div class="flow-step active" id="loadingStep">
       <div class="loading-block">
         <div class="loading-title">Building your estimate&#8230;</div>
-        <div class="loading-cycle"><div class="loading-cycle-text" id="loadingCycleText">Reviewing your home setup&#8230;</div></div>
+        <div class="loading-cycle"><div class="loading-cycle-text" id="loadingCycleText"></div></div>
         <div class="loading-bar"><div class="loading-fill"></div></div>
       </div>
     </div>
@@ -178,10 +178,10 @@
       <div class="slide-viewport">
         <div class="slide-track" id="slideTrack">
 
-          <!-- PANEL A: Estimate result + CTA -->
+          <!-- PANEL A: Estimate result + installer match (unified) -->
           <div class="slide-panel" id="panelEstimate">
             <div class="results-card">
-              <div class="results-label">Mini split estimate &#8212; <span id="resultCity"></span></div>
+              <div class="results-label"><span id="resultCity"></span></div>
               <div class="results-type" id="resultType">Ductless Mini Split</div>
               <div class="results-range" id="resultRange">$7,000 &#8211; $12,500</div>
               <div class="results-midrange">Most homes in your area land near the middle of this range.</div>
@@ -195,35 +195,8 @@
 
               <div class="results-divider"></div>
 
-              <div style="text-align:center;padding-top:4px;">
-                <div style="font-size:18px;font-weight:800;color:var(--navy);margin-bottom:6px;">Every home cools differently.</div>
-                <div style="font-size:14px;line-height:1.6;color:var(--navy-soft);margin-bottom:16px;max-width:460px;margin-left:auto;margin-right:auto;">A local technician can help you understand what system fits your space and budget.</div>
-                <button id="ctaBtn" style="width:auto;min-width:260px;max-width:320px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:15px 24px;font-size:15px;font-weight:800;background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(22,163,74,0.18);transition:transform 0.16s ease;" type="button" onclick="startConsultationFlow()">Get A Consultation &#8594;</button>
-              </div>
-
-              <div style="border-top:1px solid var(--border);margin-top:20px;padding-top:16px;text-align:center;">
-                <a href="https://minisplit.hvacinstallcosts.com" style="font-size:13px;color:var(--navy-soft);font-weight:600;">&#8634; Start Over</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- PANEL B: Consultation loading → installer + form -->
-          <div class="slide-panel" id="panelConsultation">
-
-            <div id="consultLoading" class="results-card" style="min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-              <div class="consult-loading-label">One moment</div>
-              <div id="consultCycleText" class="consult-cycle-text" style="margin-bottom:24px;">Reviewing your project&#8230;</div>
-              <div class="loading-bar" style="width:100%;max-width:320px;"><div class="loading-fill"></div></div>
-            </div>
-
-            <div id="consultMatch" class="results-card" style="display:none;">
-
-              <button onclick="goBackToEstimate()" style="background:none;border:none;cursor:pointer;font-size:13px;font-weight:700;color:var(--navy-soft);display:flex;align-items:center;gap:6px;margin-bottom:16px;padding:0;">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12l7 7M5 12l7-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                Back to estimate
-              </button>
-
-              <div style="font-family:'Fraunces',serif;font-size:28px;line-height:1.04;letter-spacing:-0.03em;margin-bottom:16px;text-align:center;background:linear-gradient(90deg,#7b2ff7,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">We found a match</div>
+              <!-- Installer match — embedded as part of estimate -->
+              <div style="font-size:13px;color:var(--navy-soft);font-weight:500;line-height:1.6;margin-bottom:14px;">Based on your information, we found an installer who has worked on similar mini split projects in your area.</div>
 
               <div class="installer-inline">
                 <img src="https://minisplit.hvacinstallcosts.com/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-inline-logo" onerror="this.style.display='none'" />
@@ -235,8 +208,14 @@
                 </div>
               </div>
 
-              <div id="leadFormWrap">
-                <div style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:14px;text-align:left;">Request consultation</div>
+              <!-- Get Connected reveal button -->
+              <div id="getConnectedWrap" style="text-align:center;margin-top:4px;">
+                <button id="getConnectedBtn" type="button" onclick="revealForm()" style="width:auto;min-width:220px;max-width:300px;appearance:none;border:none;cursor:pointer;border-radius:999px;padding:13px 24px;font-size:15px;font-weight:800;font-family:'Inter',sans-serif;background:var(--green);color:#fff;box-shadow:0 8px 18px rgba(22,163,74,0.18);transition:transform 0.16s ease;">Get Connected &#8594;</button>
+              </div>
+
+              <!-- Lead form — hidden until Get Connected clicked -->
+              <div id="leadFormWrap" style="display:none;">
+                <div style="font-size:13px;font-weight:700;color:var(--navy-soft);margin-bottom:14px;text-align:left;margin-top:16px;">Share your information</div>
                 <div class="lead-fields">
                   <div class="lead-field">
                     <label class="lead-label" for="leadFirstName">First name</label>
@@ -261,6 +240,7 @@
                 <button id="leadSubmit" type="button" onclick="submitLead()" disabled class="lead-submit">Submit &#8594;</button>
               </div>
 
+              <!-- Thank you -->
               <div id="thankyouWrap" style="display:none;text-align:center;padding:16px 0;margin-top:8px;">
                 <div class="thankyou-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
                 <div class="thankyou-title">You&#8217;re all set.</div>
@@ -277,8 +257,10 @@
                 <a href="https://minisplit.hvacinstallcosts.com" style="font-size:13px;color:var(--navy-soft);font-weight:600;">&#8634; Start Over</a>
               </div>
             </div>
-
           </div>
+
+          <!-- PANEL B: kept in DOM for slide structure but unused -->
+          <div class="slide-panel" id="panelConsultation" style="display:none;"></div>
 
         </div>
       </div>
@@ -346,7 +328,7 @@
       const pricing=calculatePrice();
       state.result_range=pricing.range;state.result_labor=pricing.labor;
       const label=state.use==='both'?'Heat Pump Mini Split':state.use==='cooling'?'Ductless Mini Split':'Mini Split System';
-      document.getElementById('resultCity').textContent=state.city||'Your area';
+      document.getElementById('resultCity').textContent=state.city?'ZIP '+state.city:'Snohomish & King County';
       document.getElementById('resultType').textContent=label;
       document.getElementById('resultRange').textContent=pricing.range;
       document.getElementById('resultLabor').textContent='Estimated labor: '+pricing.labor;
@@ -383,52 +365,7 @@
     }
 
     // ── SLIDE HELPERS ──────────────────────────────────────────────────────────
-    function syncPanelHeights(){
-      const viewport=document.querySelector('.slide-viewport');
-      const card=document.querySelector('.flow-card');
-      if(!viewport||!card)return;
-    }
-
-    function slideToConsultation(){
-      syncPanelHeights();
-      document.getElementById('slideTrack').classList.add('at-consultation');
-      setTimeout(()=>{
-        const card=document.querySelector('.flow-card');
-        const rect=card.getBoundingClientRect();
-        if(rect.top<0){window.scrollBy({top:rect.top-16,behavior:'smooth'});}
-      },100);
-    }
-
-    function goBackToEstimate(){
-      document.getElementById('slideTrack').classList.remove('at-consultation');
-      syncPanelHeights();
-    }
-
-    // ── CONSULTATION FLOW ──────────────────────────────────────────────────────
-    function startConsultationFlow(){
-      slideToConsultation();
-      document.getElementById('consultLoading').style.display='flex';
-      document.getElementById('consultMatch').style.display='none';
-      const messages=['Reviewing your project\u2026','Finding a local installer\u2026','Checking availability\u2026','Preparing your consultation\u2026'];
-      const el=document.getElementById('consultCycleText');
-      let i=0;
-      function showMsg(idx){
-        el.style.opacity='0';
-        setTimeout(()=>{el.textContent=messages[idx];el.style.opacity='1';},200);
-      }
-      showMsg(0);
-      const interval=setInterval(()=>{
-        i++;
-        if(i<messages.length)showMsg(i);
-        else clearInterval(interval);
-      },900);
-      setTimeout(()=>{
-        clearInterval(interval);
-        document.getElementById('consultLoading').style.display='none';
-        document.getElementById('consultMatch').style.display='block';
-        syncPanelHeights();
-      },3800);
-    }
+    function syncPanelHeights(){ /* no-op — single panel */ }
 
     // ── STEP FLOW ──────────────────────────────────────────────────────────────
     function showStep(id){
@@ -441,16 +378,37 @@
     function runLoading(){
       showStep('loadingStep');
       const msgs=['Reviewing your home setup\u2026','Comparing local installation ranges\u2026','Building your estimate\u2026'];
-      const el=document.getElementById('loadingCycleText');let i=0;
-      function showMessage(idx){el.classList.remove('visible');setTimeout(()=>{el.textContent=msgs[idx];el.classList.add('visible');},300);}
-      showMessage(0);
-      const interval=setInterval(()=>{i++;if(i<msgs.length)showMessage(i);else clearInterval(interval);},1400);
+      const el=document.getElementById('loadingCycleText');
+      let i=0;
+      function showMessage(idx){
+        el.classList.remove('visible');
+        setTimeout(()=>{el.textContent=msgs[idx];el.classList.add('visible');},300);
+      }
+      // Small delay before first message so the fade-in is actually visible
+      setTimeout(()=>showMessage(0),100);
+      const interval=setInterval(()=>{i++;if(i<msgs.length)showMessage(i);else clearInterval(interval);},1500);
+      // Extra 1200ms after last message fires so it has time to read
       setTimeout(()=>{
         clearInterval(interval);
         buildResults();
         fireWebhook({event:'quiz_complete',site_label:'Mini Split Estimator',zip:state.city||'',zones:state.zones||'',use:state.use||'',size:state.size||'',home_age:state.homeAge||'',result_range:state.result_range||'',result_labor:state.result_labor||'',timestamp:new Date().toISOString()});
         showStep('resultsStep');
-      },4200);
+      },4700);
+    }
+
+    // ── FORM REVEAL ────────────────────────────────────────────────────────────
+    function revealForm(){
+      document.getElementById('getConnectedWrap').style.display='none';
+      const fw=document.getElementById('leadFormWrap');
+      fw.style.display='block';
+      fw.style.opacity='0';
+      fw.style.transition='opacity 0.3s ease';
+      setTimeout(()=>{fw.style.opacity='1';},20);
+      // scroll form into view gently
+      setTimeout(()=>{
+        const rect=fw.getBoundingClientRect();
+        if(rect.bottom>window.innerHeight){fw.scrollIntoView({behavior:'smooth',block:'nearest'});}
+      },50);
     }
 
     // ── FORM ───────────────────────────────────────────────────────────────────
@@ -491,6 +449,7 @@
       const btn=document.getElementById('leadSubmit');if(btn){btn.disabled=true;btn.textContent='Submitting\u2026';}
       if(typeof gtag!=='undefined'){gtag('event','conversion',{send_to:'AW-17039190320'});gtag('event','lead_submit',{zip:state.city,system:'mini_split'});}
       document.getElementById('leadFormWrap').style.display='none';
+      document.getElementById('getConnectedWrap').style.display='none';
       document.getElementById('thankyouWrap').style.display='block';
       syncPanelHeights();
     }
