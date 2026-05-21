@@ -180,7 +180,7 @@
           <div style="width:40px;height:40px;border-radius:999px;background:rgba(22,163,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div style="font-size:13px;color:var(--navy-soft);font-weight:600;">We found an AC installer in your area.</div>
+          <div style="font-size:13px;color:var(--navy-soft);font-weight:600;">We found an installer in your area who's available.</div>
         </div>
         <div class="installer-card" style="margin-bottom:14px;">
           <img src="/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
@@ -322,12 +322,9 @@
 
         // Auto-submit lead if contact info came through
         if (state.firstName.length >= 2 && state.email.includes('@') && canSubmit('hvac_landing')) {
-          // Timestamp check — params must have been set by a human navigating the form
           const ts = parseInt(params.get('_t') || '0');
           const elapsed = ts ? Date.now() - ts : 9999;
-          // Honeypot check
-          const hp = params.get('_hp') || '';
-          if (!hp && elapsed > 3000) {
+          if (elapsed > 3000) {
             fireWebhook({
             event:'lead_submit', site_label:'HVAC Landing Funnel',
             zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
