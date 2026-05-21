@@ -377,17 +377,16 @@
           </div>
         </div>
 
-        <!-- RIGHT — sample estimate -->
         <div class="hero-right">
           <div class="sample-card">
             <div class="sample-label">Sample Estimate</div>
-            <div class="sample-range">$7,000 – $12,500</div>
-            <div class="sample-sub">Most mid-size homes land near the middle of this range.</div>
+            <div class="sample-range">$X,XXX – $XX,XXX</div>
+            <div class="sample-sub">Based on your home details and local install data.</div>
             <div class="sample-reasons">
-              <div class="sample-reason"><span class="sample-check">✓</span> Heat pump mini split — heating &amp; cooling</div>
-              <div class="sample-reason"><span class="sample-check">✓</span> Home Size</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> Home size &amp; zone count</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> System type recommendation</div>
               <div class="sample-reason"><span class="sample-check">✓</span> Typical install time</div>
-              <div class="sample-reason"><span class="sample-check">✓</span> Estimated labor</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> Estimated labor range</div>
             </div>
           </div>
         </div>
@@ -555,8 +554,7 @@
         firstName: document.getElementById('fFirst').value.trim(),
         phone: document.getElementById('fPhone').value.trim(),
         email: document.getElementById('fEmail').value.trim(),
-        _t: Date.now(),
-        _hp: ''
+        _t: Date.now()
       });
       window.location.href = 'estimate.html?' + p.toString();
     }
