@@ -1,33 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wkvjq84lgb");
-  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mini Split Cost Calculator — HVAC Cost Guide</title>
-  <meta name="description" content="Get a local mini split installation estimate based on your home setup. Serving King and Snohomish County." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg height='52' viewBox='0 0 56 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0%25' stop-color='%237b2ff7'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='36' width='8' height='12' rx='2' fill='url(%23b)'/%3E%3Crect x='15' y='28' width='8' height='20' rx='2' fill='url(%23b)'/%3E%3Crect x='26' y='20' width='8' height='28' rx='2' fill='url(%23b)'/%3E%3Crect x='37' y='12' width='8' height='36' rx='2' fill='url(%23b)'/%3E%3Cpath d='M48 6 Q56 6 56 14 L56 48 L48 48 Z' fill='url(%23b)'/%3E%3C/svg%3E" />
+  <title>1-Day AC Installation — HVAC Cost Guide</title>
+  <meta name="description" content="Get an instant mini split or central AC installation estimate. Connect with licensed local installers in King & Snohomish County." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg height='52' viewBox='0 0 56 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='1' x2='0' y2='0'%3E%3Cstop offset='0%25' stop-color='%237b2ff7'/%3E%3Cstop offset='100%25' stop-color='%23f97316'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='36' width='8' height='12' rx='2' fill='url(%23b)'/%3E%3Crect x='15' y='28' width='8' height='20' rx='2' fill='url(%23b)'/%3E%3Crect x='26' y='20' width='8' height='28' rx='2' fill='url(%23b)'/%3E%3Crect x='37' y='12' width='8' height='36' rx='2' fill='url(%23b)'/%3E%3Cpath d='M48 6 Q56 6 56 14 L56 48 L48 48 Z' fill='url(%23b)'/%3E%3C/svg%3E' />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WF65GPHQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'GT-WF65GPHQ');
-    gtag('config', 'AW-17039190320');
-  </script>
   <style>
     :root {
-      --navy: #14213d; --navy-soft: #52607a; --accent: #540d6e; --accent-2: #ee4266;
-      --bg: #f7f9fc; --card: #ffffff; --border: rgba(20,33,61,0.06); --border-strong: rgba(20,33,61,0.12);
+      --navy: #14213d;
+      --navy-soft: #52607a;
+      --accent: #540d6e;
+      --blue: #7b2ff7;
+      --blue-dark: #6822e0;
+      --blue-glow: rgba(123,47,247,0.22);
+      --orange: #f97316;
+      --purple: #7b2ff7;
+      --green: #16a34a;
+      --green-dark: #15803d;
+      --bg: #f0edf8;
+      --card: #ffffff;
+      --border: rgba(20,33,61,0.06);
+      --border-strong: rgba(20,33,61,0.12);
       --shadow-soft: 0 4px 16px rgba(20,33,61,0.05), 0 1px 2px rgba(20,33,61,0.03);
       --shadow-card: 0 10px 26px rgba(20,33,61,0.07), 0 2px 6px rgba(20,33,61,0.03);
       --shadow-hover: 0 14px 28px rgba(20,33,61,0.09), 0 3px 8px rgba(20,33,61,0.04);
@@ -36,209 +33,181 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: "Inter", sans-serif; color: var(--navy);
+      font-family: "Inter", sans-serif;
+      color: var(--navy);
       background-color: #f0edf8;
-      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><g opacity='0.5'><g transform='translate(18,12) rotate(-8,22,22) scale(0.55)'><path d='M10 38 L40 10 L70 38' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M18 34 L18 66 L62 66 L62 34' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><rect x='31' y='47' width='18' height='19' rx='2' stroke='%23540d6e' stroke-width='2.5' fill='none'/><circle cx='46' cy='57' r='2' fill='%23540d6e'/></g><g transform='translate(180,10) scale(0.5)'><line x1='40' y1='8' x2='40' y2='72' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='8' y1='40' x2='72' y2='40' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='17' y1='17' x2='63' y2='63' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><line x1='63' y1='17' x2='17' y2='63' stroke='%23540d6e' stroke-width='3' stroke-linecap='round'/><circle cx='40' cy='40' r='4' fill='%23540d6e'/><circle cx='40' cy='8' r='3' fill='%23540d6e'/><circle cx='40' cy='72' r='3' fill='%23540d6e'/><circle cx='8' cy='40' r='3' fill='%23540d6e'/><circle cx='72' cy='40' r='3' fill='%23540d6e'/></g><g transform='translate(10,120) rotate(35,20,20) scale(0.5)'><path d='M22 18 C16 18 11 23 11 29 C11 35 16 40 22 40 C25 40 27 39 29 37 L54 62 C56 64 59 64 61 62 C63 60 63 57 61 55 L36 30 C38 28 39 26 39 23 C39 17 34 12 28 12 C26 12 24 12 22 14 L28 20 L28 26 L22 26 Z' stroke='%23540d6e' stroke-width='3' stroke-linejoin='round' stroke-linecap='round' fill='none'/></g><g transform='translate(160,110) scale(0.5)'><rect x='8' y='22' width='64' height='36' rx='6' stroke='%23540d6e' stroke-width='3.5' fill='none'/><line x1='20' y1='34' x2='20' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><line x1='30' y1='34' x2='30' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><line x1='40' y1='34' x2='40' y2='46' stroke='%23540d6e' stroke-width='2.5' stroke-linecap='round'/><circle cx='58' cy='40' r='10' stroke='%23540d6e' stroke-width='2.5' fill='none'/><circle cx='58' cy='40' r='3' fill='%23540d6e'/><circle cx='16' cy='28' r='3' fill='%23540d6e'/></g><g transform='translate(50,200) scale(0.5)'><rect x='34' y='8' width='12' height='44' rx='6' stroke='%23540d6e' stroke-width='3' fill='none'/><rect x='37.5' y='28' width='5' height='22' rx='2.5' fill='%23540d6e'/><circle cx='40' cy='62' r='12' stroke='%23540d6e' stroke-width='3' fill='none'/><circle cx='40' cy='62' r='7' fill='%23540d6e'/></g></g></svg>");
+      background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><g opacity='0.5'><g transform='translate(18,12) rotate(-8,22,22) scale(0.55)'><path d='M10 38 L40 10 L70 38' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><path d='M18 34 L18 66 L62 66 L62 34' stroke='%23540d6e' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/><rect x='31' y='47' width='18' height='19' rx='2' stroke='%23540d6e' stroke-width='2.5' fill='none'/><circle cx='46' cy='57' r='2' fill='%23540d6e'/></g></g></svg>");
       background-repeat: repeat;
-      line-height: 1.5; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
     }
-    img, svg { max-width: 100%; display: block; }
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
+    button { font: inherit; cursor: pointer; }
+    img, svg { max-width: 100%; display: block; }
     .container { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
     /* NAV */
-    .site-nav { background: #ffffff; border-bottom: 1px solid rgba(20,33,61,0.08); position: sticky; top: 0; z-index: 300; box-shadow: 0 2px 8px rgba(20,33,61,0.05); }
+    .site-nav { background: #fff; border-bottom: 1px solid rgba(20,33,61,0.08); position: sticky; top: 0; z-index: 300; box-shadow: 0 2px 8px rgba(20,33,61,0.05); }
     .site-nav-inner { display: flex; align-items: center; justify-content: space-between; height: 54px; }
     .nav-logo { display: flex; align-items: center; flex-shrink: 0; }
-    .nav-logo svg { display: block; height: 38px; width: auto; }
+    .nav-logo svg { height: 38px; width: auto; }
     .site-nav-links { display: flex; align-items: center; gap: 2px; }
-    .site-nav-links a { font-size: 13px; font-weight: 600; color: var(--navy-soft); padding: 6px 11px; border-radius: 999px; transition: background 0.15s ease, color 0.15s ease; white-space: nowrap; text-decoration: none; }
-    .site-nav-links a:hover { background: rgba(84,13,110,0.07); color: var(--navy); }
-    .site-nav-links a.nav-active { color: var(--navy); font-weight: 700; }
-    .site-nav-links .nav-cta { background: var(--accent-2); color: #fff !important; font-weight: 800; padding: 7px 14px; box-shadow: 0 4px 12px rgba(238,66,102,0.2); }
-    .site-nav-links .nav-cta:hover { background: #d63057; }
-    .mobile-menu-btn { width: 42px; height: 42px; border: none; border-radius: 12px; background: rgba(255,255,255,.72); border: 1px solid rgba(20,33,61,.06); box-shadow: 0 2px 8px rgba(20,33,61,.04); display: none; align-items: center; justify-content: center; cursor: pointer; color: var(--accent); font-size: 22px; flex-shrink: 0; transition: all .18s ease; }
+    .site-nav-links a { font-size: 13px; font-weight: 600; color: var(--navy-soft); padding: 6px 11px; border-radius: 999px; transition: background .15s, color .15s; }
+    .site-nav-links a:hover { background: rgba(123,47,247,0.08); color: var(--navy); }
+    .site-nav-links .nav-cta { background: var(--blue); color: #fff !important; font-weight: 800; padding: 7px 14px; box-shadow: 0 4px 12px var(--blue-glow); }
+    .site-nav-links .nav-cta:hover { background: var(--blue-dark); }
+    .mobile-menu-btn { width: 42px; height: 42px; border: 1px solid rgba(20,33,61,.06); border-radius: 12px; background: rgba(255,255,255,.72); box-shadow: 0 2px 8px rgba(20,33,61,.04); display: none; align-items: center; justify-content: center; color: var(--blue); font-size: 22px; flex-shrink: 0; transition: all .18s; }
     .mobile-menu-btn:hover { transform: translateY(-1px); }
-    .mobile-drawer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .25s ease, opacity .2s ease; }
+    .mobile-drawer { max-height: 0; overflow: hidden; opacity: 0; transition: max-height .25s, opacity .2s; }
     .mobile-drawer.open { max-height: 320px; opacity: 1; padding: 8px 0 14px; }
-    .mobile-drawer a { display: block; padding: 14px 16px; margin-bottom: 8px; border-radius: 14px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px rgba(20,33,61,.04); transition: all .18s ease; }
+    .mobile-drawer a { display: block; padding: 14px 16px; margin-bottom: 8px; border-radius: 14px; background: #fff; color: var(--navy); font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px rgba(20,33,61,.04); transition: all .18s; }
     .mobile-drawer a:hover { transform: translateY(-1px); }
-    .mobile-drawer .drawer-cta { background: #f97316; color: #fff; }
+    .mobile-drawer .drawer-cta { background: var(--blue); color: #fff; }
 
     /* HERO */
-    .hero { padding: 30px 0 26px; background: rgba(255,255,255,0.92); text-align: center; }
-    .section-kicker { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-2); opacity: 0.7; margin-bottom: 6px; }
-    .hero h1 { font-family: "Fraunces", serif; font-size: clamp(2rem, 4.5vw, 3.2rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--navy); max-width: 640px; margin: 0 auto 10px; }
-    .hero-sub { max-width: 480px; font-size: 1.05rem; font-weight: 700; line-height: 1.6; margin: 0 auto 18px; background: linear-gradient(90deg, #f97316, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero { background: rgba(255,255,255,0.92); padding: 48px 0 44px; }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .hero-left { display: flex; flex-direction: column; }
+    .section-kicker { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); opacity: 0.85; margin-bottom: 8px; }
+    .hero h1 { font-family: "Fraunces", serif; font-size: clamp(2.2rem, 4.5vw, 3.2rem); line-height: 1.0; letter-spacing: -0.035em; color: var(--navy); margin-bottom: 10px; }
+    .hero-sub { font-size: 1.05rem; font-weight: 700; line-height: 1.5; margin-bottom: 6px; background: linear-gradient(90deg, #f97316, #7b2ff7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; max-width: 480px; }
+    .hero-microcopy { font-size: 0.9rem; font-weight: 500; color: var(--navy-soft); margin-bottom: 24px; }
+
+    /* PRIMARY CTA — blue */
+    .btn-cta-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; appearance: none; border: none; background: var(--blue); color: #fff; font-size: 15px; font-weight: 800; padding: 14px 28px; border-radius: 999px; box-shadow: 0 10px 28px var(--blue-glow); transition: transform .16s, background .16s, box-shadow .16s; margin-bottom: 16px; width: fit-content; }
+    .btn-cta-primary:hover { transform: translateY(-2px); background: var(--blue-dark); box-shadow: 0 14px 34px rgba(123,47,247,0.32); }
 
     /* PROOF CHIPS */
-    .proof-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; justify-content: center; }
+    .proof-chips { display: flex; flex-wrap: wrap; gap: 8px; }
     .proof-chip { display: inline-flex; align-items: center; gap: 7px; border-radius: 999px; padding: 6px 12px; background: #fff; color: var(--navy); font-size: 12.5px; font-weight: 600; box-shadow: 0 2px 12px rgba(20,33,61,0.08), 0 1px 3px rgba(20,33,61,0.05); }
-    .proof-chip .dot { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; color: var(--accent); flex-shrink: 0; }
+    .proof-chip .dot { width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; color: var(--blue); flex-shrink: 0; }
 
-    /* CALCULATOR CARD */
-    .calc-card {
-      max-width: 560px;
-      margin: 0 auto;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      box-shadow: 0 16px 40px rgba(20,33,61,0.1), 0 4px 12px rgba(20,33,61,0.06);
-      padding: 20px 20px 18px;
-      text-align: left;
-    }
-    .calc-card-label {
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-      color: var(--accent-2);
-      margin-bottom: 14px;
-      text-align: center;
-    }
+    /* HERO RIGHT */
+    .hero-right { border-radius: 28px; overflow: hidden; box-shadow: 0 24px 60px rgba(20,33,61,0.12), 0 4px 14px rgba(20,33,61,0.06); background: linear-gradient(145deg, #f0edf8, #e8e2f5); min-height: 360px; display: flex; align-items: center; justify-content: center; }
+    .sample-card { width: 88%; background: #fff; border-radius: 20px; box-shadow: 0 8px 24px rgba(20,33,61,0.1); padding: 22px 20px 18px; text-align: left; }
+    .sample-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 12px; text-align: center; }
+    .sample-range { font-family: "Fraunces", serif; font-size: 2.2rem; line-height: 1; letter-spacing: -0.04em; background: linear-gradient(90deg, #7b2ff7, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-align: center; margin-bottom: 6px; }
+    .sample-sub { font-size: 12px; font-weight: 600; color: var(--navy-soft); text-align: center; margin-bottom: 16px; }
+    .sample-reasons { display: flex; flex-direction: column; gap: 8px; }
+    .sample-reason { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--navy); }
+    .sample-check { color: var(--green); font-size: 14px; flex-shrink: 0; }
 
-    /* FIELD ROWS */
-    .calc-fields { display: grid; gap: 11px; }
-    .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .calc-field { display: flex; flex-direction: column; gap: 4px; }
-    .calc-field.full { grid-column: 1 / -1; }
-    .calc-label {
-      font-size: 11.5px;
-      font-weight: 700;
-      color: var(--navy-soft);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-    }
+    /* INLINE FORM REVEAL */
+    #quoteFormSection { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.35s ease, margin-top 0.4s ease; margin-top: 0; }
+    #quoteFormSection.open { max-height: 900px; opacity: 1; margin-top: 32px; }
+
+    .form-reveal-card { background: #fff; border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--shadow-card); padding: 24px 22px 22px; }
+
+    /* STEP PROGRESS */
+    .form-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 18px; }
+    .form-step-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--navy-soft); }
+    .form-step-pips { display: flex; gap: 6px; margin-left: auto; }
+    .pip { width: 28px; height: 6px; border-radius: 999px; background: #e7ebf3; transition: background .25s; }
+    .pip.active { background: var(--blue); }
+    .pip.done { background: var(--green); }
+
+    /* FORM STEPS */
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    /* Step 1 header */
+    .form-step-title { font-family: "Fraunces", serif; font-size: 1.25rem; line-height: 1.05; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 14px; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 12px; }
+    .form-field { display: flex; flex-direction: column; gap: 4px; }
+    .form-field.full { grid-column: 1 / -1; }
+    .form-label { font-size: 11.5px; font-weight: 700; color: var(--navy-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+
     .calc-select, .calc-input {
-      appearance: none;
-      width: 100%;
+      appearance: none; width: 100%;
       padding: 9px 34px 9px 12px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: "Inter", sans-serif;
-      color: var(--navy);
-      background: #f7f9fc;
+      font-size: 14px; font-weight: 600; font-family: "Inter", sans-serif;
+      color: var(--navy); background: #f7f9fc;
       border: 1.5px solid var(--border-strong);
-      border-radius: 12px;
-      cursor: pointer;
-      transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      border-radius: 12px; cursor: pointer;
+      transition: border-color .16s, box-shadow .16s, background .16s;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6 9l6 6 6-6' stroke='%2352607a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 10px center;
+      background-repeat: no-repeat; background-position: right 10px center;
     }
-    .calc-input {
-      background-image: none;
-      padding: 9px 12px;
-      letter-spacing: 0.08em;
-    }
-    .calc-select:focus, .calc-input:focus {
-      outline: none;
-      border-color: var(--accent-2);
-      box-shadow: 0 0 0 3px rgba(238,66,102,0.1);
-      background: #fff;
-    }
-    .calc-select option { font-weight: 600; }
-    .zip-hint { font-size: 11px; color: var(--navy-soft); margin-top: 2px; font-weight: 500; }
-    .zip-hint.error { color: var(--accent-2); }
+    .calc-input { background-image: none; padding: 9px 12px; }
+    .calc-select:focus, .calc-input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(123,47,247,0.12); background: #fff; }
+    .zip-hint { font-size: 11px; color: var(--navy-soft); margin-top: 3px; font-weight: 500; }
+    .zip-hint.error { color: #dc2626; }
 
-    /* SUBMIT */
-    .calc-submit {
-      width: 100%;
-      margin-top: 4px;
-      appearance: none;
-      border: none;
-      cursor: pointer;
-      border-radius: 999px;
-      padding: 12px 24px;
-      font-size: 15px;
-      font-weight: 800;
-      font-family: "Inter", sans-serif;
-      background: var(--accent-2);
-      color: #fff;
-      box-shadow: 0 10px 24px rgba(238,66,102,0.22);
-      transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
-    }
-    .calc-submit:hover:not(:disabled) { transform: translateY(-1px); background: #d63057; box-shadow: 0 14px 30px rgba(238,66,102,0.3); }
-    .calc-submit:disabled { opacity: 0.45; cursor: not-allowed; }
-    .calc-microcopy { font-size: 11.5px; color: var(--navy-soft); text-align: center; margin-top: 8px; font-weight: 500; opacity: 0.8; }
+    /* STEP BUTTONS */
+    .form-actions { display: flex; gap: 10px; margin-top: 14px; align-items: center; }
+    .btn-next { flex: 1; appearance: none; border: none; background: var(--blue); color: #fff; font-size: 15px; font-weight: 800; font-family: "Inter", sans-serif; padding: 12px 24px; border-radius: 999px; box-shadow: 0 10px 24px var(--blue-glow); transition: transform .16s, background .16s; }
+    .btn-next:hover:not(:disabled) { transform: translateY(-1px); background: var(--blue-dark); }
+    .btn-next:disabled { opacity: 0.4; cursor: not-allowed; }
+    .btn-back { appearance: none; border: 1px solid var(--border-strong); background: #fff; color: var(--navy-soft); font-size: 14px; font-weight: 700; font-family: "Inter", sans-serif; padding: 12px 18px; border-radius: 999px; transition: background .15s, color .15s; }
+    .btn-back:hover { background: #f7f9fc; color: var(--navy); }
 
-    /* PRICING FACTOR CARDS */
-    .factors-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .factor-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 22px 20px 20px;
-      box-shadow: var(--shadow-soft);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .factor-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-    }
-    .factor-icon-wrap {
-      width: 52px;
-      height: 52px;
-      margin-bottom: 14px;
-    }
-    .factor-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 6px;
-      line-height: 1.2;
-    }
-    .factor-body {
-      font-size: 13.5px;
-      color: var(--navy-soft);
-      line-height: 1.6;
-    }
+    /* SUBMIT — green */
+    .btn-submit-green { flex: 1; appearance: none; border: none; background: var(--green); color: #fff; font-size: 15px; font-weight: 800; font-family: "Inter", sans-serif; padding: 12px 24px; border-radius: 999px; box-shadow: 0 10px 24px rgba(22,163,74,0.25); transition: transform .16s, background .16s; }
+    .btn-submit-green:hover:not(:disabled) { transform: translateY(-1px); background: var(--green-dark); }
+    .btn-submit-green:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* CONSENT */
+    .consent-line { font-size: 11.5px; color: var(--navy-soft); margin-top: 10px; text-align: center; font-weight: 500; line-height: 1.5; opacity: 0.85; }
 
     /* SECTIONS */
     .section { padding: 36px 0; text-align: center; background: #ffffff; }
-    .section-head { margin-bottom: 22px; text-align: center; }
+    .section-alt { background: #f7f9fc; }
+    .section-head { margin-bottom: 22px; }
     .section h2 { font-family: "Fraunces", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.04; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 8px; }
+    .factors-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 860px; margin: 0 auto; text-align: left; }
+    .factor-card { background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 22px 20px 20px; box-shadow: var(--shadow-soft); transition: transform .18s, box-shadow .18s; }
+    .factor-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .step-num { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff; font-size: 16px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .factor-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .factor-body { font-size: 13.5px; color: var(--navy-soft); line-height: 1.6; }
+    .trust-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; max-width: 800px; margin: 0 auto; text-align: left; }
+    .trust-card { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 20px 18px; box-shadow: var(--shadow-soft); display: flex; align-items: flex-start; gap: 14px; }
+    .trust-icon-wrap { width: 44px; height: 44px; flex-shrink: 0; border-radius: 12px; background: linear-gradient(135deg,rgba(123,47,247,0.08),rgba(123,47,247,0.08)); display: flex; align-items: center; justify-content: center; color: var(--blue); }
+    .trust-card-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+    .trust-card-body { font-size: 13px; color: var(--navy-soft); line-height: 1.55; }
     .faq-list { display: grid; gap: 12px; max-width: 640px; margin: 0 auto; text-align: left; }
-    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; box-shadow: var(--shadow-soft); }
-    .faq-q { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
-    .faq-a { font-size: 14px; color: var(--navy-soft); line-height: 1.6; }
-    .faq-question { width: 100%; background: none; border: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; text-align: left; font-size: 15px; font-weight: 800; color: var(--navy); }
-    .faq-icon { font-size: 22px; line-height: 1; color: var(--accent); flex-shrink: 0; transition: transform .2s ease; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .25s ease; color: var(--navy-soft); font-size: 14px; line-height: 1.6; }
-    .faq-item.active .faq-answer { max-height: 220px; margin-top: 12px; }
+    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-soft); }
+    .faq-question { width: 100%; background: none; border: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; cursor: pointer; text-align: left; font-size: 15px; font-weight: 800; color: var(--navy); padding: 18px 20px; }
+    .faq-icon { font-size: 22px; color: var(--blue); flex-shrink: 0; transition: transform .2s; }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height .25s; color: var(--navy-soft); font-size: 14px; line-height: 1.6; }
+    .faq-item.active .faq-answer { max-height: 220px; }
     .faq-item.active .faq-icon { transform: rotate(45deg); }
-
+    .faq-answer-inner { padding: 0 20px 18px; }
+    .cta-section { background: linear-gradient(135deg, #14213d 0%, #2d1b69 100%); padding: 56px 0; text-align: center; }
+    .cta-section .section-kicker { color: rgba(255,255,255,0.5); opacity: 1; }
+    .cta-h2 { font-family: "Fraunces", serif; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.04; letter-spacing: -0.04em; color: #fff; margin-bottom: 10px; }
+    .cta-sub { font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 500; margin-bottom: 28px; }
+    .btn-cta-light { display: inline-flex; align-items: center; gap: 8px; appearance: none; border: none; background: var(--blue); color: #fff; font-size: 16px; font-weight: 800; font-family: "Inter", sans-serif; padding: 16px 32px; border-radius: 999px; box-shadow: 0 10px 28px rgba(123,47,247,0.35); transition: transform .16s, box-shadow .16s; cursor: pointer; }
+    .btn-cta-light:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(123,47,247,0.45); }
     .footer { background: #fff; border-top: 1px solid var(--border); padding: 24px 0 40px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--navy-soft); font-size: 14px; }
 
-    @media (max-width: 720px) {
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 0; }
+      .hero-right { display: none; }
+      .hero { padding: 24px 0 20px; text-align: center; }
+      .hero h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
+      .hero-sub { max-width: 100%; }
+      .btn-cta-primary { width: 100%; justify-content: center; }
+      .proof-chips { justify-content: center; }
+      .factors-grid { grid-template-columns: 1fr; gap: 12px; }
+      .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-reveal-card { padding: 20px 16px; }
       .site-nav-links { display: none; }
       .mobile-menu-btn { display: flex; }
-      .hero { padding: 16px 0 14px; }
-      .hero h1 { font-size: clamp(1.75rem, 7vw, 2.2rem); margin-bottom: 8px; }
-      .hero-sub { font-size: 0.9rem; margin-bottom: 12px; }
-      .proof-chips { gap: 6px; margin-bottom: 14px; }
+      .section { padding: 28px 0; }
+      .cta-section { padding: 40px 0; }
+    }
+    @media (max-width: 600px) {
+      .hero { padding: 18px 0 16px; }
+      .hero h1 { font-size: clamp(1.75rem, 8vw, 2.2rem); margin-bottom: 8px; }
+      .hero-sub { font-size: 0.95rem; }
+      .proof-chips { gap: 6px; }
       .proof-chip { font-size: 11.5px; padding: 5px 10px; }
       .proof-chip .dot { width: 18px; height: 18px; }
-      .calc-card { padding: 16px 14px 14px; border-radius: 18px; }
-      .calc-card-label { margin-bottom: 10px; }
-      .calc-fields { gap: 9px; }
-      .calc-row { grid-template-columns: 1fr; gap: 9px; }
-      .calc-select, .calc-input { padding-top: 11px; padding-bottom: 11px; }
-      .factors-grid { grid-template-columns: 1fr; gap: 12px; }
-      .factor-card { padding: 18px 16px; border-radius: 16px; }
-      .factor-icon-wrap { width: 44px; height: 44px; margin-bottom: 10px; }
-      .section { padding: 28px 0; }
-      .faq-list { max-width: 100%; }
-      .footer-inner { flex-direction: column; }
     }
   </style>
 </head>
@@ -246,7 +215,7 @@
 
   <nav class="site-nav">
     <div class="container site-nav-inner">
-      <a class="nav-logo" href="https://minisplit.hvacinstallcosts.com" aria-label="HVAC Cost Guide">
+      <a class="nav-logo" href="#" aria-label="HVAC Cost Guide">
         <svg height="38" viewBox="0 0 280 52" fill="none" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="barGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
@@ -261,207 +230,199 @@
           <path d="M2 34 Q18 20 46 26" stroke="url(#swoosh2Grad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
           <path d="M8 26 Q28 4 52 10 Q58 11 56 6" stroke="url(#swooshGrad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
           <circle cx="55" cy="6" r="3" fill="#f97316"/>
-          <text x="70" y="37" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#2d3a55">HVAC Cost Guide</text>
+          <text x="70" y="37" font-family="'Inter','Helvetica Neue',Arial,sans-serif" font-size="22" font-weight="800" letter-spacing="-0.3" fill="#2d3a55">HVAC Cost Guide</text>
         </svg>
       </a>
       <div class="site-nav-links">
-        <a href="https://ac.hvacinstallcosts.com">Cooling Guide</a>
-        <a href="https://minisplit.hvacinstallcosts.com" class="nav-active">Mini-Split</a>
-        <a href="https://heating.hvacinstallcosts.com">Heating Guide</a>
-        <a href="https://quotes.hvacinstallcosts.com" class="nav-cta">Compare Quotes →</a>
+        <a href="#">Cooling Guide</a>
+        <a href="#">Mini-Split</a>
+        <a href="#">Heating Guide</a>
+        <a href="estimate.html" class="nav-cta">Get My Estimate →</a>
       </div>
       <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
     </div>
     <div class="container">
       <div class="mobile-drawer" id="mobileDrawer">
-        <a href="https://ac.hvacinstallcosts.com">Cooling Guide</a>
-        <a href="https://minisplit.hvacinstallcosts.com">Mini-Split</a>
-        <a href="https://heating.hvacinstallcosts.com">Heating Guide</a>
-        <a href="https://quotes.hvacinstallcosts.com" class="drawer-cta">Compare Quotes →</a>
+        <a href="#">Cooling Guide</a>
+        <a href="#">Mini-Split</a>
+        <a href="#">Heating Guide</a>
+        <a href="estimate.html" class="drawer-cta">Get My Estimate →</a>
       </div>
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
-      <div class="section-kicker">Serving King &amp; Snohomish County</div>
-      <h1>Mini Split Cost Estimator</h1>
-      <p class="hero-sub">Get a local mini split installation estimate based on your home setup.</p>
+      <div class="hero-inner">
 
-      <div class="proof-chips">
-        <div class="proof-chip">
-          <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
-          No sign-up required
+        <div class="hero-left">
+          <div class="section-kicker">Serving King &amp; Snohomish County</div>
+          <h1>1-Day AC Installation</h1>
+          <p class="hero-sub">Mini Splits, Heat Pumps &amp; Central AC</p>
+          <p style="font-size:0.9rem;font-weight:500;color:var(--navy-soft);margin-bottom:24px;">Get an instant estimate in less than 30 seconds — no obligation.</p>
+
+          <button class="btn-cta-primary" onclick="revealForm()">
+            Yes, I Want an Estimate
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+
+          <div class="proof-chips">
+            <div class="proof-chip">
+              <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+              No sign-up required
+            </div>
+            <div class="proof-chip">
+              <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Realistic local ranges
+            </div>
+            <div class="proof-chip">
+              <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              Discounts available
+            </div>
+          </div>
+
+          <!-- 2-STEP FORM -->
+          <div id="quoteFormSection">
+            <div class="form-reveal-card">
+
+              <div class="form-progress">
+                <span class="form-step-label" id="stepLabel">Step 1 of 2</span>
+                <div class="form-step-pips">
+                  <div class="pip active" id="pip1"></div>
+                  <div class="pip" id="pip2"></div>
+                </div>
+              </div>
+
+              <!-- STEP 1 — Home details -->
+              <div class="form-step active" id="formStep1">
+                <div class="form-step-title">Home Details</div>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label class="form-label" for="fZones">Rooms to cool</label>
+                    <select class="calc-select" id="fZones" onchange="checkStep1()">
+                      <option value="">Select…</option>
+                      <option value="single">One room</option>
+                      <option value="multi">2–3 rooms</option>
+                      <option value="whole">Whole home</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="fUse">Is Heating Needed?</label>
+                    <select class="calc-select" id="fUse" onchange="checkStep1()">
+                      <option value="">Select…</option>
+                      <option value="both">Yes</option>
+                      <option value="cooling">No</option>
+                      <option value="not_sure">Not sure</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="fSize">Home size</label>
+                    <select class="calc-select" id="fSize" onchange="checkStep1()">
+                      <option value="">Select…</option>
+                      <option value="small">Under 1,500 sq ft</option>
+                      <option value="medium">1,500–2,500 sq ft</option>
+                      <option value="large">2,500+ sq ft</option>
+                    </select>
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="fAge">Year built</label>
+                    <select class="calc-select" id="fAge" onchange="checkStep1()">
+                      <option value="">Select…</option>
+                      <option value="pre1980">Before 1980</option>
+                      <option value="1980to2000">1980–2000</option>
+                      <option value="post2000">2000+</option>
+                      <option value="not_sure">Not sure</option>
+                    </select>
+                  </div>
+                  <div class="form-field full">
+                    <label class="form-label" for="fZip">ZIP code</label>
+                    <input class="calc-input" type="text" id="fZip" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" />
+                    <div class="zip-hint" id="zipHint">Snohomish &amp; King County ZIP codes only.</div>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-next" id="btnNext" disabled onclick="goToStep2()">Next →</button>
+                </div>
+              </div>
+
+              <!-- STEP 2 — Contact (naked, no header/subtext) -->
+              <div class="form-step" id="formStep2">
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label class="form-label" for="fFirst">First name</label>
+                    <input class="calc-input" type="text" id="fFirst" placeholder="First name" autocomplete="given-name" oninput="checkStep2()" />
+                  </div>
+                  <div class="form-field">
+                    <label class="form-label" for="fPhone">Phone number</label>
+                    <input class="calc-input" type="tel" id="fPhone" placeholder="(206) 555-0100" autocomplete="tel" oninput="checkStep2()" />
+                  </div>
+                  <div class="form-field full">
+                    <label class="form-label" for="fEmail">Email address</label>
+                    <input class="calc-input" type="email" id="fEmail" placeholder="you@email.com" autocomplete="email" oninput="checkStep2()" />
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button class="btn-back" onclick="goToStep1()">← Back</button>
+                  <button class="btn-submit-green" id="btnSubmit" disabled onclick="goToEstimate()">Submit</button>
+                </div>
+                <div class="consent-line">By submitting, you agree to be contacted by a local installer about your estimate.</div>
+              </div>
+
+            </div>
+          </div>
         </div>
-        <div class="proof-chip">
-          <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Realistic local ranges
+
+        <!-- RIGHT — sample estimate -->
+        <div class="hero-right">
+          <div class="sample-card">
+            <div class="sample-label">Sample Estimate</div>
+            <div class="sample-range">$7,000 – $12,500</div>
+            <div class="sample-sub">Most mid-size homes land near the middle of this range.</div>
+            <div class="sample-reasons">
+              <div class="sample-reason"><span class="sample-check">✓</span> Heat pump mini split — heating &amp; cooling</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> 1,500–2,500 sq ft home</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> Typical install time: 1 day</div>
+              <div class="sample-reason"><span class="sample-check">✓</span> Estimated labor: $1,400 – $2,800</div>
+            </div>
+          </div>
         </div>
-        <div class="proof-chip">
-          <span class="dot"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-          Results in seconds
-        </div>
+
       </div>
-
-      <!-- CALCULATOR CARD -->
-      <div class="calc-card">
-        <div class="calc-card-label">Your home details</div>
-        <div class="calc-fields">
-          <div class="calc-row">
-            <div class="calc-field">
-              <label class="calc-label" for="fZones">Rooms to cool</label>
-              <select class="calc-select" id="fZones">
-                <option value="">Select…</option>
-                <option value="single">One room</option>
-                <option value="multi">2–3 rooms</option>
-                <option value="whole">Whole home</option>
-              </select>
-            </div>
-            <div class="calc-field">
-              <label class="calc-label" for="fUse">Heating needed?</label>
-              <select class="calc-select" id="fUse">
-                <option value="">Select…</option>
-                <option value="both">Yes</option>
-                <option value="cooling">No</option>
-              </select>
-            </div>
-          </div>
-          <div class="calc-row">
-            <div class="calc-field">
-              <label class="calc-label" for="fSize">Home size</label>
-              <select class="calc-select" id="fSize">
-                <option value="">Select…</option>
-                <option value="small">Under 1,500 sq ft</option>
-                <option value="medium">1,500–2,500 sq ft</option>
-                <option value="large">2,500+ sq ft</option>
-              </select>
-            </div>
-            <div class="calc-field">
-              <label class="calc-label" for="fAge">Year built</label>
-              <select class="calc-select" id="fAge">
-                <option value="">Select…</option>
-                <option value="pre1980">Before 1980</option>
-                <option value="1980to2000">1980–2000</option>
-                <option value="post2000">2000+</option>
-                <option value="not_sure">Not sure</option>
-              </select>
-            </div>
-          </div>
-          <div class="calc-field full">
-            <label class="calc-label" for="fZip">ZIP code</label>
-            <input class="calc-input" type="text" id="fZip" inputmode="numeric" maxlength="5" placeholder="e.g. 98012" oninput="onZipInput(this)" />
-            <div class="zip-hint" id="zipHint">Snohomish &amp; King County ZIP codes only.</div>
-          </div>
-          <button class="calc-submit" id="calcSubmit" type="button" disabled onclick="goToEstimate()">Get My Estimate →</button>
-          <div class="calc-microcopy">Instant Estimate. No Obligation</div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <section class="section" style="background:#fff;">
+  <!-- HOW IT WORKS -->
+  <section class="section">
     <div class="container">
       <div class="section-head">
-        <div class="section-kicker">PRICING FACTORS</div>
-        <h2>What impacts the cost</h2>
+        <div class="section-kicker">HOW IT WORKS</div>
+        <h2>Three steps to your estimate</h2>
       </div>
       <div class="factors-grid">
-
-        <!-- Number of rooms -->
-        <div class="factor-card">
-          <div class="factor-icon-wrap">
-            <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Floor plan: 3 rooms -->
-              <rect x="8" y="18" width="28" height="22" rx="3" stroke="url(#fg1)" stroke-width="2.2" fill="none"/>
-              <rect x="44" y="18" width="28" height="22" rx="3" stroke="url(#fg1)" stroke-width="2.2" fill="none"/>
-              <rect x="20" y="48" width="40" height="18" rx="3" stroke="url(#fg1)" stroke-width="2.2" fill="none"/>
-              <!-- Mini split units -->
-              <rect x="13" y="22" width="18" height="5" rx="1.5" fill="url(#fg1)" opacity="0.18"/>
-              <rect x="13" y="22" width="18" height="5" rx="1.5" stroke="url(#fg1)" stroke-width="1.4"/>
-              <rect x="49" y="22" width="18" height="5" rx="1.5" fill="url(#fg1)" opacity="0.18"/>
-              <rect x="49" y="22" width="18" height="5" rx="1.5" stroke="url(#fg1)" stroke-width="1.4"/>
-              <rect x="28" y="52" width="24" height="5" rx="1.5" fill="url(#fg1)" opacity="0.18"/>
-              <rect x="28" y="52" width="24" height="5" rx="1.5" stroke="url(#fg1)" stroke-width="1.4"/>
-              <!-- Connecting dashed line -->
-              <line x1="36" y1="40" x2="44" y2="40" stroke="url(#fg1)" stroke-width="1.4" stroke-dasharray="2.5 2" stroke-linecap="round"/>
-              <line x1="40" y1="40" x2="40" y2="48" stroke="url(#fg1)" stroke-width="1.4" stroke-dasharray="2.5 2" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="fg1" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7b2ff7"/>
-                  <stop offset="1" stop-color="#f97316"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="factor-title">Number of rooms</div>
-          <div class="factor-body">Multi-zone systems need additional indoor units and more labor — each zone adds to the total.</div>
-        </div>
-
-        <!-- Electrical upgrades -->
-        <div class="factor-card">
-          <div class="factor-icon-wrap">
-            <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- Panel box -->
-              <rect x="20" y="12" width="40" height="52" rx="4" stroke="url(#fg2)" stroke-width="2.2" fill="none"/>
-              <!-- Breaker rows -->
-              <rect x="28" y="22" width="10" height="6" rx="1.5" fill="url(#fg2)" opacity="0.22"/>
-              <rect x="28" y="22" width="10" height="6" rx="1.5" stroke="url(#fg2)" stroke-width="1.3"/>
-              <rect x="42" y="22" width="10" height="6" rx="1.5" fill="url(#fg2)" opacity="0.22"/>
-              <rect x="42" y="22" width="10" height="6" rx="1.5" stroke="url(#fg2)" stroke-width="1.3"/>
-              <rect x="28" y="32" width="10" height="6" rx="1.5" fill="url(#fg2)" opacity="0.22"/>
-              <rect x="28" y="32" width="10" height="6" rx="1.5" stroke="url(#fg2)" stroke-width="1.3"/>
-              <rect x="42" y="32" width="10" height="6" rx="1.5" fill="url(#fg2)" opacity="0.22"/>
-              <rect x="42" y="32" width="10" height="6" rx="1.5" stroke="url(#fg2)" stroke-width="1.3"/>
-              <!-- New breaker highlight -->
-              <rect x="28" y="43" width="24" height="8" rx="2" fill="url(#fg2)" opacity="0.13"/>
-              <rect x="28" y="43" width="24" height="8" rx="2" stroke="url(#fg2)" stroke-width="1.8"/>
-              <line x1="35" y1="47" x2="45" y2="47" stroke="url(#fg2)" stroke-width="2" stroke-linecap="round"/>
-              <line x1="40" y1="44.5" x2="40" y2="49.5" stroke="url(#fg2)" stroke-width="2" stroke-linecap="round"/>
-              <defs>
-                <linearGradient id="fg2" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7b2ff7"/>
-                  <stop offset="1" stop-color="#f97316"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="factor-title">Electrical upgrades</div>
-          <div class="factor-body">Older homes may need new breakers or panel work before installation — a cost often quoted separately.</div>
-        </div>
-
-        <!-- Installation difficulty -->
-        <div class="factor-card">
-          <div class="factor-icon-wrap">
-            <svg width="52" height="52" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- House outline -->
-              <path d="M14 42 L40 16 L66 42" stroke="url(#fg3)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <path d="M20 37 L20 64 L60 64 L60 37" stroke="url(#fg3)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <!-- Wall unit -->
-              <rect x="26" y="41" width="14" height="5" rx="1.5" fill="url(#fg3)" opacity="0.18"/>
-              <rect x="26" y="41" width="14" height="5" rx="1.5" stroke="url(#fg3)" stroke-width="1.4"/>
-              <!-- Line run going around corner — dotted -->
-              <path d="M40 43.5 L52 43.5 L52 58 L46 58" stroke="url(#fg3)" stroke-width="1.5" stroke-dasharray="2.5 2" stroke-linecap="round" fill="none"/>
-              <!-- Outdoor unit -->
-              <rect x="38" y="55" width="14" height="9" rx="2" fill="url(#fg3)" opacity="0.13"/>
-              <rect x="38" y="55" width="14" height="9" rx="2" stroke="url(#fg3)" stroke-width="1.8"/>
-              <circle cx="45" cy="59.5" r="2.5" stroke="url(#fg3)" stroke-width="1.4" fill="none"/>
-              <defs>
-                <linearGradient id="fg3" x1="0" y1="0" x2="80" y2="80" gradientUnits="userSpaceOnUse">
-                  <stop stop-color="#7b2ff7"/>
-                  <stop offset="1" stop-color="#f97316"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <div class="factor-title">Installation difficulty</div>
-          <div class="factor-body">Longer line runs, tight attic access, or multi-story installs increase labor time and total cost.</div>
-        </div>
-
+        <div class="factor-card"><div class="step-num">1</div><div class="factor-title">Tell us about your home</div><div class="factor-body">A few quick questions about your space — rooms, size, and year built — help us size the system correctly.</div></div>
+        <div class="factor-card"><div class="step-num">2</div><div class="factor-title">Get your instant estimate</div><div class="factor-body">We generate a realistic local cost range based on homes and installations similar to yours in Snohomish &amp; King County.</div></div>
+        <div class="factor-card"><div class="step-num">3</div><div class="factor-title">Connect with a local installer</div><div class="factor-body">If the estimate looks right, connect directly with a licensed local installer — no obligation to move forward.</div></div>
       </div>
     </div>
   </section>
 
+  <!-- TRUST -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">WHY US</div>
+        <h2>Built for homeowners</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-card"><div class="trust-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="trust-card-title">Licensed &amp; insured installers</div><div class="trust-card-body">Every installer we match you with carries full licensing and insurance for HVAC work in Washington State.</div></div></div>
+        <div class="trust-card"><div class="trust-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M8 12l2.5 2.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="trust-card-title">Local HVAC professionals</div><div class="trust-card-body">We work with contractors who know the Pacific Northwest climate — and what equipment actually performs here.</div></div></div>
+        <div class="trust-card"><div class="trust-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div><div class="trust-card-title">Financing &amp; rebates available</div><div class="trust-card-body">Utility rebates may be available for qualifying high-efficiency systems — ask your installer what you qualify for.</div></div></div>
+        <div class="trust-card"><div class="trust-icon-wrap"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h2l2-7 4 14 4-10 2 3h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><div class="trust-card-title">Mini split &amp; heat pump specialists</div><div class="trust-card-body">From single-zone ductless units to whole-home heat pumps — matched to the right system and the right installer.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section" style="background:#f7f9fc;">
     <div class="container">
       <div class="section-head">
@@ -469,24 +430,46 @@
         <h2>Common questions</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item"><button class="faq-question" type="button"><span>Is this an exact quote?</span><span class="faq-icon">+</span></button><div class="faq-answer">No. This gives you a realistic local range based on homes and installs similar to yours.</div></div>
-        <div class="faq-item"><button class="faq-question" type="button"><span>How do you build your pricing estimates?</span><span class="faq-icon">+</span></button><div class="faq-answer">Our ranges come from contractor quotes, pricing conversations, and local market research.</div></div>
-        <div class="faq-item"><button class="faq-question" type="button"><span>How long does installation usually take?</span><span class="faq-icon">+</span></button><div class="faq-answer">Most mini split installations take one to two days depending on the number of indoor units.</div></div>
-        <div class="faq-item"><button class="faq-question" type="button"><span>Should I still compare multiple quotes?</span><span class="faq-icon">+</span></button><div class="faq-answer">Yes. Comparing quotes helps you understand pricing differences and avoid overpaying.</div></div>
-        <div class="faq-item"><button class="faq-question" type="button"><span>Are rebates available in Washington?</span><span class="faq-icon">+</span></button><div class="faq-answer">Yes. Utility rebates may be available for qualifying high-efficiency systems depending on your provider.</div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span>How accurate is the estimate?</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Our ranges are built from real contractor quotes and local market research — they're realistic starting points, not exact bids.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span>Do mini splits provide heating?</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Most mini splits are heat pumps — they provide both heating and cooling in one system, well-suited to Pacific Northwest winters.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span>How long does installation take?</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Most mini split installations are completed in a single day, start to finish.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span>Are rebates available?</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Utility rebates may be available for qualifying high-efficiency systems in Washington State.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button"><span>Do I need ductwork?</span><span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">No — mini splits are ductless systems that mount directly in the rooms you want to condition.</div></div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-kicker">Ready to get started?</div>
+      <div class="cta-h2">Get Your Instant Estimate →</div>
+      <div class="cta-sub">No sign-up. No obligation. Takes less than 30 seconds.</div>
+      <button class="btn-cta-light" onclick="revealAndScroll()">Yes, I Want an Estimate →</button>
     </div>
   </section>
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div>&copy; 2026 HVAC Cost Guide &middot; hvacinstallcosts.com</div>
-      <div>Informational estimates only &middot; <a href="https://www.termsfeed.com/live/30b803b4-2d68-4cab-a2d5-0ef398f021cf">Privacy Policy</a></div>
+      <div>© 2026 HVAC Cost Guide · hvacinstallcosts.com</div>
+      <div>Informational estimates only · <a href="https://www.termsfeed.com/live/30b803b4-2d68-4cab-a2d5-0ef398f021cf">Privacy Policy</a></div>
     </div>
   </footer>
 
   <script>
     let zipValid = false;
+
+    function revealForm() {
+      document.getElementById('quoteFormSection').classList.add('open');
+      if (window.innerWidth < 900) {
+        setTimeout(() => { document.getElementById('quoteFormSection').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 120);
+      }
+    }
+
+    function revealAndScroll() {
+      revealForm();
+      setTimeout(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, 80);
+    }
 
     function onZipInput(el) {
       el.value = el.value.replace(/\D/g, '').slice(0, 5);
@@ -497,49 +480,77 @@
         hint.textContent = 'Serving Snohomish & King County — enter a local ZIP.';
         hint.classList.add('error');
       } else {
-        hint.textContent = 'King & Snohomish County ZIP codes only.';
+        hint.textContent = 'Snohomish & King County ZIP codes only.';
         hint.classList.remove('error');
       }
-      updateSubmit();
+      checkStep1();
     }
 
-    function updateSubmit() {
-      const zones = document.getElementById('fZones').value;
-      const use = document.getElementById('fUse').value;
-      const size = document.getElementById('fSize').value;
-      const age = document.getElementById('fAge').value;
-      const ready = zones && use && size && age && zipValid;
-      const btn = document.getElementById('calcSubmit');
-      btn.disabled = !ready;
-    }
-
-    ['fZones','fUse','fSize','fAge'].forEach(id => {
-      document.getElementById(id).addEventListener('change', updateSubmit);
-    });
-
-    function goToEstimate() {
+    function checkStep1() {
       const zones = document.getElementById('fZones').value;
       const use   = document.getElementById('fUse').value;
       const size  = document.getElementById('fSize').value;
       const age   = document.getElementById('fAge').value;
-      const zip   = document.getElementById('fZip').value;
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'quiz_start', { system: 'mini_split', zones });
+      document.getElementById('btnNext').disabled = !(zones && use && size && age && zipValid);
+    }
+
+    function checkStep2() {
+      const first = document.getElementById('fFirst').value.trim();
+      const phone = document.getElementById('fPhone').value.replace(/\D/g,'');
+      const email = document.getElementById('fEmail').value.trim();
+      document.getElementById('btnSubmit').disabled = !(first.length >= 2 && phone.length >= 10 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+    }
+
+    function goToStep2() {
+      document.getElementById('formStep1').classList.remove('active');
+      document.getElementById('formStep2').classList.add('active');
+      document.getElementById('stepLabel').textContent = 'Step 2 of 2';
+      document.getElementById('pip1').classList.replace('active','done');
+      document.getElementById('pip2').classList.add('active');
+      document.getElementById('quoteFormSection').style.maxHeight = '1100px';
+      if (window.innerWidth < 900) {
+        setTimeout(() => { document.getElementById('formStep2').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
       }
-      const params = new URLSearchParams({ zones, use, size, homeAge: age, zip });
-      window.location.href = 'estimate.html?' + params.toString();
+    }
+
+    function goToStep1() {
+      document.getElementById('formStep2').classList.remove('active');
+      document.getElementById('formStep1').classList.add('active');
+      document.getElementById('stepLabel').textContent = 'Step 1 of 2';
+      document.getElementById('pip1').classList.replace('done','active');
+      document.getElementById('pip2').classList.remove('active');
+    }
+
+    document.getElementById('fPhone').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g,'').slice(0,10);
+      if (v.length >= 7) v = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
+      else if (v.length >= 4) v = '(' + v.slice(0,3) + ') ' + v.slice(3);
+      else if (v.length >= 1) v = '(' + v;
+      e.target.value = v;
+      checkStep2();
+    });
+
+    function goToEstimate() {
+      const p = new URLSearchParams({
+        zones: document.getElementById('fZones').value,
+        use:   document.getElementById('fUse').value,
+        size:  document.getElementById('fSize').value,
+        homeAge: document.getElementById('fAge').value,
+        zip:   document.getElementById('fZip').value,
+        firstName: document.getElementById('fFirst').value.trim(),
+        phone: document.getElementById('fPhone').value.trim(),
+        email: document.getElementById('fEmail').value.trim()
+      });
+      window.location.href = 'estimate.html?' + p.toString();
     }
 
     function toggleMenu() {
       document.getElementById('mobileDrawer').classList.toggle('open');
     }
 
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        button.parentElement.classList.toggle('active');
-      });
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => { btn.parentElement.classList.toggle('active'); });
     });
   </script>
-
 </body>
 </html>
