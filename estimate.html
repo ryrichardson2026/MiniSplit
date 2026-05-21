@@ -184,7 +184,7 @@
           <div style="font-size:13px;color:var(--navy-soft);font-weight:600;margin-top:8px;">We found an installer in your area who's available.</div>
         </div>
         <div class="installer-card" style="margin-bottom:14px;">
-          <img src="/assets/sapphire-logo.png" alt="Sapphire Cooling and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img src="/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="installer-logo-placeholder" style="display:none;">S</div>
           <div class="installer-content">
             <div class="installer-badge">Matched Local Installer</div>
@@ -233,8 +233,8 @@
 
     const BASE = { small:{min:5000,max:8500}, medium:{min:7000,max:12500}, large:{min:9500,max:17000} };
     const LABOR_PCT = { min:0.18, max:0.25 };
-    const SPREAD_CAPS = { small:2800, medium:3600, large:5200 };
-    const MIN_SPREADS = { small:2400, medium:3000, large:4200 };
+    const SPREAD_CAPS = { small:2000, medium:2500, large:3000 };
+    const MIN_SPREADS = { small:1500, medium:2000, large:2500 };
     const GUARDRAILS = { min:4500, max:18000 };
     function r100(v) { return Math.round(v/100)*100; }
 
