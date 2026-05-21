@@ -164,7 +164,7 @@
           <div class="rc-label">Best starting option &mdash; <span id="rcCity"></span></div>
           <div class="rc-type" id="rcType">Ductless Mini Split</div>
           <div class="rc-range" id="rcRange">$7,000 &ndash; $12,500</div>
-          <div class="rc-midrange">Most homes in your area land near the middle of this range.</div>
+    
           <div class="rc-labor" id="rcLabor">Estimated labor: $1,400 &ndash; $2,800</div>
 
           <button class="details-toggle" id="detailsToggle" onclick="toggleDetails()">+ More details</button>
@@ -183,7 +183,7 @@
           <div style="font-size:13px;color:var(--navy-soft);font-weight:600;">We found an installer in your area who's available.</div>
         </div>
         <div class="installer-card" style="margin-bottom:14px;">
-          <img src="/assets/sapphire-logo.png" alt="Sapphire Cooling and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img src="/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="installer-logo-placeholder" style="display:none;">S</div>
           <div class="installer-content">
             <div class="installer-badge">Matched Local Installer</div>
@@ -322,7 +322,13 @@
 
         // Auto-submit lead if contact info came through
         if (state.firstName.length >= 2 && state.email.includes('@') && canSubmit('hvac_landing')) {
-          fireWebhook({
+          // Timestamp check — params must have been set by a human navigating the form
+          const ts = parseInt(params.get('_t') || '0');
+          const elapsed = ts ? Date.now() - ts : 9999;
+          // Honeypot check
+          const hp = params.get('_hp') || '';
+          if (!hp && elapsed > 3000) {
+            fireWebhook({
             event:'lead_submit', site_label:'HVAC Landing Funnel',
             zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
             result_range:state.result_range, result_labor:state.result_labor,
@@ -330,6 +336,7 @@
             consent:'yes', timestamp:new Date().toISOString()
           });
           recordSubmit('hvac_landing');
+          }
         }
 
         document.getElementById('loadingWrap').style.display = 'none';
