@@ -183,10 +183,25 @@
     .footer { background: #fff; border-top: 1px solid var(--border); padding: 24px 0 40px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--navy-soft); font-size: 14px; }
 
-    /* RESPONSIVE */
+    /* MOBILE SAMPLE CARD — shown only on mobile, between trust and how it works */
+    .mobile-sample-card { display: none; }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; gap: 0; }
       .hero-right { display: none; }
+      .mobile-sample-card {
+        display: block;
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: var(--shadow-soft);
+        padding: 18px 16px;
+        max-width: 480px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .mobile-sample-card .sample-label { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 8px; }
+      .mobile-sample-card .sample-range { font-family: "Fraunces", serif; font-size: 1.8rem; line-height: 1; letter-spacing: -0.04em; background: linear-gradient(90deg, #7b2ff7, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 4px; }
+      .mobile-sample-card .sample-sub { font-size: 12px; font-weight: 600; color: var(--navy-soft); }
       .hero { padding: 24px 0 20px; text-align: center; }
       .hero h1 { font-size: clamp(1.9rem, 7vw, 2.6rem); }
       .hero-sub { max-width: 100%; }
@@ -380,7 +395,7 @@
         <div class="hero-right">
           <div class="sample-card">
             <div class="sample-label">Sample Estimate</div>
-            <div class="sample-range">$X,XXX – $XX,XXX</div>
+            <div class="sample-range">$8,500 – $11,000</div>
             <div class="sample-sub">Based on your home details and local install data.</div>
             <div class="sample-reasons">
               <div class="sample-reason"><span class="sample-check">✓</span> Home size &amp; zone count</div>
@@ -391,21 +406,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-kicker">HOW IT WORKS</div>
-        <h2>Three steps to your estimate</h2>
-      </div>
-      <div class="factors-grid">
-        <div class="factor-card"><div class="step-num">1</div><div class="factor-title">Tell us about your home</div><div class="factor-body">A few quick questions about your space — rooms, size, and year built — help us size the system correctly.</div></div>
-        <div class="factor-card"><div class="step-num">2</div><div class="factor-title">Get your instant estimate</div><div class="factor-body">We generate a realistic local cost range based on homes and installations similar to yours in Snohomish &amp; King County.</div></div>
-        <div class="factor-card"><div class="step-num">3</div><div class="factor-title">Connect with a local installer</div><div class="factor-body">If the estimate looks right, connect directly with a licensed local installer — no obligation to move forward.</div></div>
       </div>
     </div>
   </section>
@@ -425,6 +425,34 @@
       </div>
     </div>
   </section>
+
+
+  <!-- MOBILE SAMPLE CARD — shown only on mobile -->
+  <section class="section" style="padding:20px 0 0;">
+    <div class="container">
+      <div class="mobile-sample-card">
+        <div class="sample-label">Sample Estimate</div>
+        <div class="sample-range">$8,500 – $11,000</div>
+        <div class="sample-sub">Based on your home details and local install data.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-kicker">HOW IT WORKS</div>
+        <h2>Three steps to your estimate</h2>
+      </div>
+      <div class="factors-grid">
+        <div class="factor-card"><div class="step-num">1</div><div class="factor-title">Tell us about your home</div><div class="factor-body">A few quick questions about your space — rooms, size, and year built — help us size the system correctly.</div></div>
+        <div class="factor-card"><div class="step-num">2</div><div class="factor-title">Get your instant estimate</div><div class="factor-body">We generate a realistic local cost range based on homes and installations similar to yours in Snohomish &amp; King County.</div></div>
+        <div class="factor-card"><div class="step-num">3</div><div class="factor-title">Connect with a local installer</div><div class="factor-body">If the estimate looks right, connect directly with a licensed local installer — no obligation to move forward.</div></div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- FAQ -->
   <section class="section" style="background:#f7f9fc;">
