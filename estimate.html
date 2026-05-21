@@ -326,13 +326,13 @@
           const elapsed = ts ? Date.now() - ts : 9999;
           if (elapsed > 3000) {
             fireWebhook({
-            event:'lead_submit', site_label:'HVAC Landing Funnel',
-            zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
-            result_range:state.result_range, result_labor:state.result_labor,
-            first_name:state.firstName, phone:state.phone, email:state.email,
-            consent:'yes', timestamp:new Date().toISOString()
-          });
-          recordSubmit('hvac_landing');
+              event:'lead_submit', site_label:'HVAC Landing Funnel',
+              zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
+              result_range:state.result_range, result_labor:state.result_labor,
+              first_name:state.firstName, phone:state.phone, email:state.email,
+              consent:'yes', timestamp:new Date().toISOString()
+            });
+            recordSubmit('hvac_landing');
           }
         }
 
