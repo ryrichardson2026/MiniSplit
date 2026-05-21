@@ -262,7 +262,7 @@
           <p style="font-size:0.9rem;font-weight:500;color:var(--navy-soft);margin-bottom:24px;">Get an instant estimate in less than 30 seconds — no obligation.</p>
 
           <button class="btn-cta-primary" onclick="revealForm()">
-            Get My Instant Estimate
+            Yes, I Want an Estimate
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
 
@@ -347,6 +347,11 @@
 
               <!-- STEP 2 — Contact (naked, no header/subtext) -->
               <div class="form-step" id="formStep2">
+                <!-- Honeypot — hidden from real users, bots fill it -->
+                <div style="position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden;" aria-hidden="true">
+                  <label for="fWebsite">Website</label>
+                  <input type="text" id="fWebsite" name="website" tabindex="-1" autocomplete="off" />
+                </div>
                 <div class="form-grid">
                   <div class="form-field">
                     <label class="form-label" for="fFirst">First name</label>
@@ -508,6 +513,8 @@
       document.getElementById('pip1').classList.replace('active','done');
       document.getElementById('pip2').classList.add('active');
       document.getElementById('quoteFormSection').style.maxHeight = '1100px';
+      // Timestamp: record when step 2 was shown
+      window._step2Time = Date.now();
       if (window.innerWidth < 900) {
         setTimeout(() => { document.getElementById('formStep2').scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 80);
       }
@@ -531,6 +538,14 @@
     });
 
     function goToEstimate() {
+      // Honeypot check — if filled, silently drop
+      const honeypot = document.getElementById('fWebsite').value;
+      if (honeypot) return;
+
+      // Timestamp check — reject if step 2 completed in under 3 seconds
+      const elapsed = Date.now() - (window._step2Time || Date.now());
+      if (elapsed < 3000) return;
+
       const p = new URLSearchParams({
         zones: document.getElementById('fZones').value,
         use:   document.getElementById('fUse').value,
@@ -539,7 +554,9 @@
         zip:   document.getElementById('fZip').value,
         firstName: document.getElementById('fFirst').value.trim(),
         phone: document.getElementById('fPhone').value.trim(),
-        email: document.getElementById('fEmail').value.trim()
+        email: document.getElementById('fEmail').value.trim(),
+        _t: Date.now(),
+        _hp: ''
       });
       window.location.href = 'estimate.html?' + p.toString();
     }
