@@ -177,13 +177,14 @@
         <!-- CONFIRMATION + INSTALLER -->
         <div class="rc-divider"></div>
         <div style="text-align:center;margin-bottom:12px;">
-          <div style="width:40px;height:40px;border-radius:999px;background:rgba(22,163,74,0.1);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <div style="font-size:13px;color:var(--navy-soft);font-weight:600;">We found an installer in your area who's available.</div>
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="20" stroke="#16a34a" stroke-width="2.5"/>
+            <path d="M12 22.5l7 7 13-14" stroke="#16a34a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div style="font-size:13px;color:var(--navy-soft);font-weight:600;margin-top:8px;">We found an installer in your area who's available.</div>
         </div>
         <div class="installer-card" style="margin-bottom:14px;">
-          <img src="/assets/sapphire-logo.png" alt="Sapphire Heating and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <img src="/assets/sapphire-logo.png" alt="Sapphire Cooling and Air" class="installer-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <div class="installer-logo-placeholder" style="display:none;">S</div>
           <div class="installer-content">
             <div class="installer-badge">Matched Local Installer</div>
@@ -285,7 +286,7 @@
       reasons.slice(0,3).forEach(r => {
         const el = document.createElement('div');
         el.className = 'reason';
-        el.innerHTML = `<svg class="reason-check" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="#16a34a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${r}`;
+        el.innerHTML = `<svg class="reason-check" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="10" cy="10" r="8.5" stroke="#16a34a" stroke-width="1.25"/><path d="M6.5 10.25l2.5 2.5 4.5-5" stroke="#16a34a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>${r}`;
         rl.appendChild(el);
       });
     }
@@ -314,25 +315,29 @@
         clearInterval(iv);
         buildResults();
 
-        fireWebhook({
-          event:'quiz_complete', site_label:'HVAC Landing Funnel',
-          zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
-          result_range:state.result_range, result_labor:state.result_labor, timestamp:new Date().toISOString()
-        });
+        // Only fire quiz_complete if user came through the form
+        const ts = parseInt(params.get('_t') || '0');
+        if (ts > 0) {
+          fireWebhook({
+            event:'quiz_complete', site_label:'HVAC Landing Funnel',
+            zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
+            result_range:state.result_range, result_labor:state.result_labor, timestamp:new Date().toISOString()
+          });
+        }
 
         // Auto-submit lead if contact info came through
-        if (state.firstName.length >= 2 && state.email.includes('@')) {
-          const ts = parseInt(params.get('_t') || '0');
-          const elapsed = ts ? Date.now() - ts : 9999;
-          if (elapsed > 3000) {
-            fireWebhook({
-              event:'lead_submit', site_label:'HVAC Landing Funnel',
-              zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
-              result_range:state.result_range, result_labor:state.result_labor,
-              first_name:state.firstName, phone:state.phone, email:state.email,
-              consent:'yes', timestamp:new Date().toISOString()
-            });
-          }
+        const firstName = state.firstName || '';
+        const email = state.email || '';
+        const ts2 = parseInt(params.get('_t') || '0');
+        const elapsed = ts2 ? Date.now() - ts2 : 9999;
+        if (firstName.length >= 2 && email.includes('@') && elapsed > 3000) {
+          fireWebhook({
+            event:'lead_submit', site_label:'HVAC Landing Funnel',
+            zip:state.city, zones:state.zones, use:state.use, size:state.size, home_age:state.homeAge,
+            result_range:state.result_range, result_labor:state.result_labor,
+            first_name:firstName, phone:state.phone || '', email:email,
+            consent:'yes', timestamp:new Date().toISOString()
+          });
         }
 
         document.getElementById('loadingWrap').style.display = 'none';
