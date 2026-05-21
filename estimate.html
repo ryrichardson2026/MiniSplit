@@ -321,7 +321,7 @@
         });
 
         // Auto-submit lead if contact info came through
-        if (state.firstName.length >= 2 && state.email.includes('@') && canSubmit('hvac_landing')) {
+        if (state.firstName.length >= 2 && state.email.includes('@')) {
           const ts = parseInt(params.get('_t') || '0');
           const elapsed = ts ? Date.now() - ts : 9999;
           if (elapsed > 3000) {
@@ -332,7 +332,6 @@
               first_name:state.firstName, phone:state.phone, email:state.email,
               consent:'yes', timestamp:new Date().toISOString()
             });
-            recordSubmit('hvac_landing');
           }
         }
 
